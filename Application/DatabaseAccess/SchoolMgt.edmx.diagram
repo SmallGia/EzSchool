@@ -48,7 +48,7 @@
         <AssociationConnector Association="SchoolMgDbModel.FK_SubmissionFeeTable_ClassTable" />
         <AssociationConnector Association="SchoolMgDbModel.FK_StudentPromotTable_ProgrameSessionTable" />
         <AssociationConnector Association="SchoolMgDbModel.FK_StudentPromotTable_StudentTable" />
-        <EntityTypeShape EntityType="SchoolMgDbModel.ClassSubjectTable" Width="1.5" PointX="14" PointY="29.875" />
+        <EntityTypeShape EntityType="SchoolMgDbModel.ClassSubjectTable" Width="1.875" PointX="13.375" PointY="29.875" />
         <EntityTypeShape EntityType="SchoolMgDbModel.ExamMarksTable" Width="1.5" PointX="12.75" PointY="18.5" />
         <EntityTypeShape EntityType="SchoolMgDbModel.TimeTblTable" Width="1.5" PointX="16.25" PointY="29.5" />
         <AssociationConnector Association="SchoolMgDbModel.FK_ClassSubjectTable_ClassTable" />

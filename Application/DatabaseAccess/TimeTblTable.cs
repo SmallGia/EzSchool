@@ -11,17 +11,14 @@ namespace DatabaseAccess
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class TimeTblTable
     {
         public int TimeTableID { get; set; }
         public int UserID { get; set; }
         public int SubjectID { get; set; }
         public int StaffID { get; set; }
-        [DataType(DataType.Time)]
         public System.TimeSpan StartTime { get; set; }
-        [DataType(DataType.Time)]
         public System.TimeSpan EndTime { get; set; }
         public string Day { get; set; }
         public int ClassSubjectID { get; set; }

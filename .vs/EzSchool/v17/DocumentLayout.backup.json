@@ -3,40 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4D0FBEAB-92AA-4724-AED4-2CA5766F83A0}|EzSchool\\EzSchool.csproj|c:\\users\\thai ho phu gia\\desktop\\hocki4\\laptrinhwebvaungdung\\schoolmgt\\src2\\ezschool\\ezschool\\controllers\\programesessiontablescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D0FBEAB-92AA-4724-AED4-2CA5766F83A0}|EzSchool\\EzSchool.csproj|solutionrelative:ezschool\\controllers\\programesessiontablescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4D0FBEAB-92AA-4724-AED4-2CA5766F83A0}|EzSchool\\EzSchool.csproj|c:\\users\\thai ho phu gia\\desktop\\hocki4\\laptrinhwebvaungdung\\schoolmgt\\src2\\ezschool\\ezschool\\controllers\\classsubjecttablescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D0FBEAB-92AA-4724-AED4-2CA5766F83A0}|EzSchool\\EzSchool.csproj|solutionrelative:ezschool\\controllers\\classsubjecttablescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D0FBEAB-92AA-4724-AED4-2CA5766F83A0}|EzSchool\\EzSchool.csproj|c:\\users\\thai ho phu gia\\desktop\\hocki4\\laptrinhwebvaungdung\\schoolmgt\\src2\\ezschool\\ezschool\\views\\programesessiontables\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{4D0FBEAB-92AA-4724-AED4-2CA5766F83A0}|EzSchool\\EzSchool.csproj|solutionrelative:ezschool\\views\\programesessiontables\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{4D0FBEAB-92AA-4724-AED4-2CA5766F83A0}|EzSchool\\EzSchool.csproj|c:\\users\\thai ho phu gia\\desktop\\hocki4\\laptrinhwebvaungdung\\schoolmgt\\src2\\ezschool\\ezschool\\views\\classsubjecttables\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4D0FBEAB-92AA-4724-AED4-2CA5766F83A0}|EzSchool\\EzSchool.csproj|solutionrelative:ezschool\\views\\classsubjecttables\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D0FBEAB-92AA-4724-AED4-2CA5766F83A0}|EzSchool\\EzSchool.csproj|c:\\users\\thai ho phu gia\\desktop\\hocki4\\laptrinhwebvaungdung\\schoolmgt\\src2\\ezschool\\ezschool\\views\\programesessiontables\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{4D0FBEAB-92AA-4724-AED4-2CA5766F83A0}|EzSchool\\EzSchool.csproj|solutionrelative:ezschool\\views\\programesessiontables\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{4D0FBEAB-92AA-4724-AED4-2CA5766F83A0}|EzSchool\\EzSchool.csproj|c:\\users\\thai ho phu gia\\desktop\\hocki4\\laptrinhwebvaungdung\\schoolmgt\\src2\\ezschool\\ezschool\\views\\classsubjecttables\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4D0FBEAB-92AA-4724-AED4-2CA5766F83A0}|EzSchool\\EzSchool.csproj|solutionrelative:ezschool\\views\\classsubjecttables\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D0FBEAB-92AA-4724-AED4-2CA5766F83A0}|EzSchool\\EzSchool.csproj|c:\\users\\thai ho phu gia\\desktop\\hocki4\\laptrinhwebvaungdung\\schoolmgt\\src2\\ezschool\\ezschool\\views\\programetables\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{4D0FBEAB-92AA-4724-AED4-2CA5766F83A0}|EzSchool\\EzSchool.csproj|solutionrelative:ezschool\\views\\programetables\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{4D0FBEAB-92AA-4724-AED4-2CA5766F83A0}|EzSchool\\EzSchool.csproj|c:\\users\\thai ho phu gia\\desktop\\hocki4\\laptrinhwebvaungdung\\schoolmgt\\src2\\ezschool\\ezschool\\views\\classsubjecttables\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4D0FBEAB-92AA-4724-AED4-2CA5766F83A0}|EzSchool\\EzSchool.csproj|solutionrelative:ezschool\\views\\classsubjecttables\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D0FBEAB-92AA-4724-AED4-2CA5766F83A0}|EzSchool\\EzSchool.csproj|c:\\users\\thai ho phu gia\\desktop\\hocki4\\laptrinhwebvaungdung\\schoolmgt\\src2\\ezschool\\ezschool\\views\\programesessiontables\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{4D0FBEAB-92AA-4724-AED4-2CA5766F83A0}|EzSchool\\EzSchool.csproj|solutionrelative:ezschool\\views\\programesessiontables\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{4D0FBEAB-92AA-4724-AED4-2CA5766F83A0}|EzSchool\\EzSchool.csproj|c:\\users\\thai ho phu gia\\desktop\\hocki4\\laptrinhwebvaungdung\\schoolmgt\\src2\\ezschool\\ezschool\\views\\classsubjecttables\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4D0FBEAB-92AA-4724-AED4-2CA5766F83A0}|EzSchool\\EzSchool.csproj|solutionrelative:ezschool\\views\\classsubjecttables\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D0FBEAB-92AA-4724-AED4-2CA5766F83A0}|EzSchool\\EzSchool.csproj|c:\\users\\thai ho phu gia\\desktop\\hocki4\\laptrinhwebvaungdung\\schoolmgt\\src2\\ezschool\\ezschool\\views\\programesessiontables\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{4D0FBEAB-92AA-4724-AED4-2CA5766F83A0}|EzSchool\\EzSchool.csproj|solutionrelative:ezschool\\views\\programesessiontables\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{5EB4A5F8-3DA9-47A5-9361-9A4DDC2AD4FD}|Application\\DatabaseAccess\\DatabaseAccess.csproj|c:\\users\\thai ho phu gia\\desktop\\hocki4\\laptrinhwebvaungdung\\schoolmgt\\src2\\ezschool\\application\\databaseaccess\\classsubjecttable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5EB4A5F8-3DA9-47A5-9361-9A4DDC2AD4FD}|Application\\DatabaseAccess\\DatabaseAccess.csproj|solutionrelative:application\\databaseaccess\\classsubjecttable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D0FBEAB-92AA-4724-AED4-2CA5766F83A0}|EzSchool\\EzSchool.csproj|c:\\users\\thai ho phu gia\\desktop\\hocki4\\laptrinhwebvaungdung\\schoolmgt\\src2\\ezschool\\ezschool\\views\\programesessiontables\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{4D0FBEAB-92AA-4724-AED4-2CA5766F83A0}|EzSchool\\EzSchool.csproj|solutionrelative:ezschool\\views\\programesessiontables\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{4D0FBEAB-92AA-4724-AED4-2CA5766F83A0}|EzSchool\\EzSchool.csproj|c:\\users\\thai ho phu gia\\desktop\\hocki4\\laptrinhwebvaungdung\\schoolmgt\\src2\\ezschool\\ezschool\\views\\classsubjecttables\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4D0FBEAB-92AA-4724-AED4-2CA5766F83A0}|EzSchool\\EzSchool.csproj|solutionrelative:ezschool\\views\\classsubjecttables\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D0FBEAB-92AA-4724-AED4-2CA5766F83A0}|EzSchool\\EzSchool.csproj|c:\\users\\thai ho phu gia\\desktop\\hocki4\\laptrinhwebvaungdung\\schoolmgt\\src2\\ezschool\\ezschool\\views\\designationtables\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{4D0FBEAB-92AA-4724-AED4-2CA5766F83A0}|EzSchool\\EzSchool.csproj|solutionrelative:ezschool\\views\\designationtables\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4D0FBEAB-92AA-4724-AED4-2CA5766F83A0}|EzSchool\\EzSchool.csproj|c:\\users\\thai ho phu gia\\desktop\\hocki4\\laptrinhwebvaungdung\\schoolmgt\\src2\\ezschool\\ezschool\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{4D0FBEAB-92AA-4724-AED4-2CA5766F83A0}|EzSchool\\EzSchool.csproj|solutionrelative:ezschool\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{5EB4A5F8-3DA9-47A5-9361-9A4DDC2AD4FD}|Application\\DatabaseAccess\\DatabaseAccess.csproj|c:\\users\\thai ho phu gia\\desktop\\hocki4\\laptrinhwebvaungdung\\schoolmgt\\src2\\ezschool\\application\\databaseaccess\\schoolmgt.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
+      "RelativeMoniker": "D:0:0:{5EB4A5F8-3DA9-47A5-9361-9A4DDC2AD4FD}|Application\\DatabaseAccess\\DatabaseAccess.csproj|solutionrelative:application\\databaseaccess\\schoolmgt.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,119 +46,105 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Delete.cshtml",
-              "DocumentMoniker": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\EzSchool\\Views\\ProgrameSessionTables\\Delete.cshtml",
-              "RelativeDocumentMoniker": "EzSchool\\Views\\ProgrameSessionTables\\Delete.cshtml",
-              "ToolTip": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\EzSchool\\Views\\ProgrameSessionTables\\Delete.cshtml",
-              "RelativeToolTip": "EzSchool\\Views\\ProgrameSessionTables\\Delete.cshtml",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAAADkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-28T14:20:52.074Z",
+              "DocumentIndex": 5,
+              "Title": "ClassSubjectTable.cs",
+              "DocumentMoniker": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\Application\\DatabaseAccess\\ClassSubjectTable.cs",
+              "RelativeDocumentMoniker": "Application\\DatabaseAccess\\ClassSubjectTable.cs",
+              "ToolTip": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\Application\\DatabaseAccess\\ClassSubjectTable.cs",
+              "RelativeToolTip": "Application\\DatabaseAccess\\ClassSubjectTable.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABUAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-28T16:34:18.738Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\EzSchool\\Views\\ProgrameSessionTables\\Edit.cshtml",
-              "RelativeDocumentMoniker": "EzSchool\\Views\\ProgrameSessionTables\\Edit.cshtml",
-              "ToolTip": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\EzSchool\\Views\\ProgrameSessionTables\\Edit.cshtml",
-              "RelativeToolTip": "EzSchool\\Views\\ProgrameSessionTables\\Edit.cshtml",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAAAD4AAABiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-28T14:18:47.621Z",
-              "EditorCaption": ""
+              "DocumentIndex": 7,
+              "Title": "SchoolMgt.edmx [Diagram1]",
+              "DocumentMoniker": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\Application\\DatabaseAccess\\SchoolMgt.edmx",
+              "RelativeDocumentMoniker": "Application\\DatabaseAccess\\SchoolMgt.edmx",
+              "ToolTip": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\Application\\DatabaseAccess\\SchoolMgt.edmx [Diagram1]",
+              "RelativeToolTip": "Application\\DatabaseAccess\\SchoolMgt.edmx [Diagram1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
+              "WhenOpened": "2024-10-28T16:25:56.102Z",
+              "EditorCaption": " [Diagram1]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\EzSchool\\Views\\ProgrameSessionTables\\Create.cshtml",
-              "RelativeDocumentMoniker": "EzSchool\\Views\\ProgrameSessionTables\\Create.cshtml",
-              "ToolTip": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\EzSchool\\Views\\ProgrameSessionTables\\Create.cshtml",
-              "RelativeToolTip": "EzSchool\\Views\\ProgrameSessionTables\\Create.cshtml",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAADIAAABCAAAAAAAAAA==",
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\EzSchool\\Views\\ClassSubjectTables\\Delete.cshtml",
+              "RelativeDocumentMoniker": "EzSchool\\Views\\ClassSubjectTables\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\EzSchool\\Views\\ClassSubjectTables\\Delete.cshtml",
+              "RelativeToolTip": "EzSchool\\Views\\ClassSubjectTables\\Delete.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-28T14:15:14.24Z",
+              "WhenOpened": "2024-10-28T15:58:31.215Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\EzSchool\\Views\\ClassSubjectTables\\Edit.cshtml",
+              "RelativeDocumentMoniker": "EzSchool\\Views\\ClassSubjectTables\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\EzSchool\\Views\\ClassSubjectTables\\Edit.cshtml",
+              "RelativeToolTip": "EzSchool\\Views\\ClassSubjectTables\\Edit.cshtml",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAADMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-28T15:56:11.627Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\EzSchool\\Views\\ClassSubjectTables\\Create.cshtml",
+              "RelativeDocumentMoniker": "EzSchool\\Views\\ClassSubjectTables\\Create.cshtml",
+              "ToolTip": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\EzSchool\\Views\\ClassSubjectTables\\Create.cshtml",
+              "RelativeToolTip": "EzSchool\\Views\\ClassSubjectTables\\Create.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABQAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-28T15:53:40.63Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "Details.cshtml",
-              "DocumentMoniker": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\EzSchool\\Views\\ProgrameSessionTables\\Details.cshtml",
-              "RelativeDocumentMoniker": "EzSchool\\Views\\ProgrameSessionTables\\Details.cshtml",
-              "ToolTip": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\EzSchool\\Views\\ProgrameSessionTables\\Details.cshtml",
-              "RelativeToolTip": "EzSchool\\Views\\ProgrameSessionTables\\Details.cshtml",
-              "ViewState": "AgIAACQAAAAAAAAAAAAAADoAAAANAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\EzSchool\\Views\\ClassSubjectTables\\Details.cshtml",
+              "RelativeDocumentMoniker": "EzSchool\\Views\\ClassSubjectTables\\Details.cshtml",
+              "ToolTip": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\EzSchool\\Views\\ClassSubjectTables\\Details.cshtml",
+              "RelativeToolTip": "EzSchool\\Views\\ClassSubjectTables\\Details.cshtml",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAwwBIAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-28T14:12:00.146Z",
+              "WhenOpened": "2024-10-28T15:51:54.199Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\EzSchool\\Views\\ProgrameSessionTables\\Index.cshtml",
-              "RelativeDocumentMoniker": "EzSchool\\Views\\ProgrameSessionTables\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\EzSchool\\Views\\ProgrameSessionTables\\Index.cshtml",
-              "RelativeToolTip": "EzSchool\\Views\\ProgrameSessionTables\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADcAAAAhAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\EzSchool\\Views\\ClassSubjectTables\\Index.cshtml",
+              "RelativeDocumentMoniker": "EzSchool\\Views\\ClassSubjectTables\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\EzSchool\\Views\\ClassSubjectTables\\Index.cshtml",
+              "RelativeToolTip": "EzSchool\\Views\\ClassSubjectTables\\Index.cshtml",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAC8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-28T14:03:55.317Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\EzSchool\\Views\\DesignationTables\\Index.cshtml",
-              "RelativeDocumentMoniker": "EzSchool\\Views\\DesignationTables\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\EzSchool\\Views\\DesignationTables\\Index.cshtml",
-              "RelativeToolTip": "EzSchool\\Views\\DesignationTables\\Index.cshtml",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-28T14:00:07.141Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\EzSchool\\Views\\ProgrameTables\\Index.cshtml",
-              "RelativeDocumentMoniker": "EzSchool\\Views\\ProgrameTables\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\EzSchool\\Views\\ProgrameTables\\Index.cshtml",
-              "RelativeToolTip": "EzSchool\\Views\\ProgrameTables\\Index.cshtml",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-28T13:59:02.705Z",
+              "WhenOpened": "2024-10-28T15:47:41.264Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ProgrameSessionTablesController.cs",
-              "DocumentMoniker": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\EzSchool\\Controllers\\ProgrameSessionTablesController.cs",
-              "RelativeDocumentMoniker": "EzSchool\\Controllers\\ProgrameSessionTablesController.cs",
-              "ToolTip": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\EzSchool\\Controllers\\ProgrameSessionTablesController.cs",
-              "RelativeToolTip": "EzSchool\\Controllers\\ProgrameSessionTablesController.cs",
-              "ViewState": "AgIAAH4AAAAAAAAAAAAowIQAAAANAAAAAAAAAA==",
+              "Title": "ClassSubjectTablesController.cs",
+              "DocumentMoniker": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\EzSchool\\Controllers\\ClassSubjectTablesController.cs",
+              "RelativeDocumentMoniker": "EzSchool\\Controllers\\ClassSubjectTablesController.cs",
+              "ToolTip": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\EzSchool\\Controllers\\ClassSubjectTablesController.cs",
+              "RelativeToolTip": "EzSchool\\Controllers\\ClassSubjectTablesController.cs",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAQwFQAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T13:57:34.753Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\EzSchool\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "EzSchool\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\EzSchool\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "EzSchool\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAEkAAAAAAAAAAAAQwFkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-28T13:50:00.393Z",
+              "WhenOpened": "2024-10-28T15:44:39.008Z",
               "EditorCaption": ""
             }
           ]

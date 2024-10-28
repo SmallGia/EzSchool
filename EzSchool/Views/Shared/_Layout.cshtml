@@ -87,7 +87,7 @@
                     </div>
                 </div>
             </li>
-
+            <!-- Nav Item - Session Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSession" aria-expanded="true" aria-controls="collapseSession">
                     <i class="fas fa-fw fa-wrench"></i>
@@ -98,6 +98,19 @@
                         <h6 class="collapse-header">Configuration:</h6>
                         @Html.ActionLink("Session", "Index", "SessionTables", null, new { @class = "collapse-item" })
                         @Html.ActionLink("Programe Setting", "Index", "ProgrameSessionTables", null, new { @class = "collapse-item" })
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseClass" aria-expanded="true" aria-controls="collapseClass">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>Class's'</span>
+                </a>
+                <div id="collapseClass" class="collapse" aria-labelledby="headingClass" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Configuration:</h6>
+                        @Html.ActionLink("Class", "Index", "ClassTables", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Class Subject Setting", "Index", "ClassSubjectTables", null, new { @class = "collapse-item" })
                     </div>
                 </div>
             </li>
