@@ -28,12 +28,9 @@ namespace DatabaseAccess
         public virtual DbSet<AnnualTable> AnnualTables { get; set; }
         public virtual DbSet<AttendanceTable> AttendanceTables { get; set; }
         public virtual DbSet<DesignationTable> DesignationTables { get; set; }
-        public virtual DbSet<ExamMarksTable> ExamMarksTables { get; set; }
-        public virtual DbSet<ExamSettingTable> ExamSettingTables { get; set; }
         public virtual DbSet<ExamTable> ExamTables { get; set; }
         public virtual DbSet<ProgrameSessionTable> ProgrameSessionTables { get; set; }
         public virtual DbSet<ProgrameTable> ProgrameTables { get; set; }
-        public virtual DbSet<SessionProgrameSubjectSettingTable> SessionProgrameSubjectSettingTables { get; set; }
         public virtual DbSet<SessionTable> SessionTables { get; set; }
         public virtual DbSet<StaffAttendanceTable> StaffAttendanceTables { get; set; }
         public virtual DbSet<StaffTable> StaffTables { get; set; }
@@ -41,10 +38,12 @@ namespace DatabaseAccess
         public virtual DbSet<SubjectTable> SubjectTables { get; set; }
         public virtual DbSet<SubmissionFeeTable> SubmissionFeeTables { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
-        public virtual DbSet<TimeTblTable> TimeTblTables { get; set; }
         public virtual DbSet<UserTable> UserTables { get; set; }
         public virtual DbSet<UserTypeTable> UserTypeTables { get; set; }
         public virtual DbSet<ClassTable> ClassTables { get; set; }
         public virtual DbSet<StudentPromotTable> StudentPromotTables { get; set; }
+        public virtual DbSet<ClassSubjectTable> ClassSubjectTables { get; set; }
+        public virtual DbSet<ExamMarksTable> ExamMarksTables { get; set; }
+        public virtual DbSet<TimeTblTable> TimeTblTables { get; set; }
     }
 }

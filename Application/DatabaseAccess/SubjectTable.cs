@@ -18,8 +18,7 @@ namespace DatabaseAccess
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public SubjectTable()
         {
-            this.ExamMarksTables = new HashSet<ExamMarksTable>();
-            this.SessionProgrameSubjectSettingTables = new HashSet<SessionProgrameSubjectSettingTable>();
+            this.ClassSubjectTables = new HashSet<ClassSubjectTable>();
             this.TimeTblTables = new HashSet<TimeTblTable>();
         }
     
@@ -31,11 +30,9 @@ namespace DatabaseAccess
         public string Description { get; set; }
         public int TotalMarks { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ExamMarksTable> ExamMarksTables { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SessionProgrameSubjectSettingTable> SessionProgrameSubjectSettingTables { get; set; }
         public virtual UserTable UserTable { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ClassSubjectTable> ClassSubjectTables { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TimeTblTable> TimeTblTables { get; set; }
     }

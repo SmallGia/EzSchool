@@ -19,7 +19,6 @@ namespace DatabaseAccess
         public ExamTable()
         {
             this.ExamMarksTables = new HashSet<ExamMarksTable>();
-            this.ExamSettingTables = new HashSet<ExamSettingTable>();
         }
     
         public int ExamID { get; set; }
@@ -31,10 +30,8 @@ namespace DatabaseAccess
         public System.DateTime EndDate { get; set; }
         public string Descrption { get; set; }
     
+        public virtual UserTable UserTable { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ExamMarksTable> ExamMarksTables { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ExamSettingTable> ExamSettingTables { get; set; }
-        public virtual UserTable UserTable { get; set; }
     }
 }

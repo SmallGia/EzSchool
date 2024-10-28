@@ -12,27 +12,23 @@ namespace DatabaseAccess
     using System;
     using System.Collections.Generic;
     
-    public partial class ExamSettingTable
+    public partial class ClassSubjectTable
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public ExamSettingTable()
+        public ClassSubjectTable()
         {
-            this.ExamMarksTables = new HashSet<ExamMarksTable>();
+            this.TimeTblTables = new HashSet<TimeTblTable>();
         }
     
-        public int ExamSettingID { get; set; }
-        public int UserID { get; set; }
+        public int ClassSubjectID { get; set; }
+        public int ClassID { get; set; }
+        public int SubjectID { get; set; }
         public string Name { get; set; }
-        public int SessionID { get; set; }
-        public int ExamID { get; set; }
-        public int ProgrameSessionID { get; set; }
-        public string Description { get; set; }
+        public Nullable<bool> IsActive { get; set; }
     
+        public virtual ClassTable ClassTable { get; set; }
+        public virtual SubjectTable SubjectTable { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ExamMarksTable> ExamMarksTables { get; set; }
-        public virtual ExamTable ExamTable { get; set; }
-        public virtual ProgrameSessionTable ProgrameSessionTable { get; set; }
-        public virtual SessionTable SessionTable { get; set; }
-        public virtual UserTable UserTable { get; set; }
+        public virtual ICollection<TimeTblTable> TimeTblTables { get; set; }
     }
 }

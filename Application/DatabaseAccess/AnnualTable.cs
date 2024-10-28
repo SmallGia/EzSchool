@@ -14,12 +14,6 @@ namespace DatabaseAccess
     
     public partial class AnnualTable
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public AnnualTable()
-        {
-            this.SessionProgrameSubjectSettingTables = new HashSet<SessionProgrameSubjectSettingTable>();
-        }
-    
         public int AnnualID { get; set; }
         public int UserID { get; set; }
         public int ProgrameID { get; set; }
@@ -30,7 +24,5 @@ namespace DatabaseAccess
     
         public virtual ProgrameTable ProgrameTable { get; set; }
         public virtual UserTable UserTable { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SessionProgrameSubjectSettingTable> SessionProgrameSubjectSettingTables { get; set; }
     }
 }

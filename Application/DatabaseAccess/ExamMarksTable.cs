@@ -15,20 +15,15 @@ namespace DatabaseAccess
     public partial class ExamMarksTable
     {
         public int MarksID { get; set; }
-        public int SessionProgrameSubjectSettingID { get; set; }
         public int ExamID { get; set; }
-        public int ExamSettingID { get; set; }
-        public int SubjectID { get; set; }
+        public int ClassSubjectID { get; set; }
         public int StudentID { get; set; }
         public int UserID { get; set; }
         public int TotalMarks { get; set; }
         public int ObtainMarks { get; set; }
     
-        public virtual ExamSettingTable ExamSettingTable { get; set; }
         public virtual ExamTable ExamTable { get; set; }
-        public virtual SessionProgrameSubjectSettingTable SessionProgrameSubjectSettingTable { get; set; }
         public virtual StudentTable StudentTable { get; set; }
-        public virtual SubjectTable SubjectTable { get; set; }
         public virtual UserTable UserTable { get; set; }
     }
 }

@@ -18,7 +18,6 @@ namespace DatabaseAccess
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public ProgrameSessionTable()
         {
-            this.ExamSettingTables = new HashSet<ExamSettingTable>();
             this.StudentPromotTables = new HashSet<StudentPromotTable>();
         }
     
@@ -31,8 +30,6 @@ namespace DatabaseAccess
         public System.DateTime RegDate { get; set; }
         public string Description { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ExamSettingTable> ExamSettingTables { get; set; }
         public virtual ProgrameTable ProgrameTable { get; set; }
         public virtual SessionTable SessionTable { get; set; }
         public virtual UserTable UserTable { get; set; }
