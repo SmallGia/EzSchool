@@ -143,6 +143,7 @@
     <Compile Include="Controllers\AnnualTablesController.cs" />
     <Compile Include="Controllers\DesignationTablesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProgrameSessionTablesController.cs" />
     <Compile Include="Controllers\ProgrameTablesController.cs" />
     <Compile Include="Controllers\SessionTablesController.cs" />
     <Compile Include="Controllers\SubjectTablesController.cs" />
@@ -2010,6 +2011,11 @@
     <Content Include="Views\AnnualTables\Details.cshtml" />
     <Content Include="Views\AnnualTables\Edit.cshtml" />
     <Content Include="Views\AnnualTables\Index.cshtml" />
+    <Content Include="Views\ProgrameSessionTables\Create.cshtml" />
+    <Content Include="Views\ProgrameSessionTables\Delete.cshtml" />
+    <Content Include="Views\ProgrameSessionTables\Details.cshtml" />
+    <Content Include="Views\ProgrameSessionTables\Edit.cshtml" />
+    <Content Include="Views\ProgrameSessionTables\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
