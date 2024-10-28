@@ -17,11 +17,10 @@ namespace DatabaseAccess
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public ClassTable()
         {
-            this.SessionProgrameSubjectSettingTables = new HashSet<SessionProgrameSubjectSettingTable>();
             this.AttendanceTables = new HashSet<AttendanceTable>();
             this.StudentPromotTables = new HashSet<StudentPromotTable>();
             this.SubmissionFeeTables = new HashSet<SubmissionFeeTable>();
-            this.TimeTblTables = new HashSet<TimeTblTable>();
+            this.ClassSubjectTables = new HashSet<ClassSubjectTable>();
         }
     
         public int ClassID { get; set; }
@@ -29,14 +28,12 @@ namespace DatabaseAccess
         public Nullable<bool> IsActive { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SessionProgrameSubjectSettingTable> SessionProgrameSubjectSettingTables { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AttendanceTable> AttendanceTables { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<StudentPromotTable> StudentPromotTables { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SubmissionFeeTable> SubmissionFeeTables { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TimeTblTable> TimeTblTables { get; set; }
+        public virtual ICollection<ClassSubjectTable> ClassSubjectTables { get; set; }
     }
 }

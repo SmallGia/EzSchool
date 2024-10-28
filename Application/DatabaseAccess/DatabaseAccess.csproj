@@ -56,6 +56,9 @@
     <Compile Include="AttendanceTable.cs">
       <DependentUpon>SchoolMgt.tt</DependentUpon>
     </Compile>
+    <Compile Include="ClassSubjectTable.cs">
+      <DependentUpon>SchoolMgt.tt</DependentUpon>
+    </Compile>
     <Compile Include="ClassTable.cs">
       <DependentUpon>SchoolMgt.tt</DependentUpon>
     </Compile>
@@ -63,9 +66,6 @@
       <DependentUpon>SchoolMgt.tt</DependentUpon>
     </Compile>
     <Compile Include="ExamMarksTable.cs">
-      <DependentUpon>SchoolMgt.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ExamSettingTable.cs">
       <DependentUpon>SchoolMgt.tt</DependentUpon>
     </Compile>
     <Compile Include="ExamTable.cs">
@@ -92,9 +92,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SchoolMgt.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="SessionProgrameSubjectSettingTable.cs">
-      <DependentUpon>SchoolMgt.tt</DependentUpon>
     </Compile>
     <Compile Include="SessionTable.cs">
       <DependentUpon>SchoolMgt.tt</DependentUpon>
