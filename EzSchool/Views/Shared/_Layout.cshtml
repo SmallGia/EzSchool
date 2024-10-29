@@ -120,25 +120,49 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Addons
+                Examination
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
                     <i class="fas fa-fw fa-folder"></i>
-                    <span>Pages</span>
+                    <span>Exam Setting</span>
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Login Screens:</h6>
-                        <a class="collapse-item" href="@Url.Action("Login", "Account")">Login</a>
-                        <a class="collapse-item" href="@Url.Action("Register", "Account")">Register</a>
-                        <a class="collapse-item" href="@Url.Action("ForgotPassword", "Account")">Forgot Password</a>
+                        <h6 class="collapse-header">Exam Setting:</h6>
+                        @Html.ActionLink("Exam Types", "Index", "ExamTables", null, new { @class = "collapse-item" })
+
                         <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Other Pages:</h6>
-                        <a class="collapse-item" href="@Url.Action("PageNotFound", "Error")">404 Page</a>
-                        <a class="collapse-item" href="@Url.Action("Blank", "Home")">Blank Page</a>
+                        <h6 class="collapse-header">Examination:</h6>
+                        @Html.ActionLink("Add Marks Sheet", "Index", "ExamMarksTables", null, new { @class = "collapse-item" })
+                    </div>
+                </div>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Time Table
+            </div>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTimeTable" aria-expanded="true" aria-controls="collapseTimeTable">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Time Table Setting</span>
+                </a>
+                <div id="collapseTimeTable" class="collapse" aria-labelledby="headingTimeTable data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Setting:</h6>
+                        @Html.ActionLink("Set Time Table", "Index", "TimeTblTables", null, new { @class = "collapse-item" })
+
+                        <div class="collapse-divider"></div>
+                        <h6 class="collapse-header">Class Wise:</h6>
+                        @Html.ActionLink("Time Table", "Index", "TimeTblTables", null, new { @class = "collapse-item" })
                     </div>
                 </div>
             </li>

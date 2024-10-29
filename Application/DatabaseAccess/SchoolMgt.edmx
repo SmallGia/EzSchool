@@ -32,7 +32,7 @@
           <Key>
             <PropertyRef Name="ClassSubjectID" />
           </Key>
-          <Property Name="ClassSubjectID" Type="int" Nullable="false" />
+          <Property Name="ClassSubjectID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ClassID" Type="int" Nullable="false" />
           <Property Name="SubjectID" Type="int" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />

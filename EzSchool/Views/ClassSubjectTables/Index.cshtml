@@ -49,7 +49,7 @@
                             <td>
                                 @Html.DisplayFor(modelItem => item.IsActive)
                             </td>
-                            <td>
+                            <td class="btn-group">
                                 @Html.ActionLink("Edit", "Edit", new { id = item.ClassSubjectID }, new { @class = "btn btn-primary" })
                                 @Html.ActionLink("Details", "Details", new { id = item.ClassSubjectID }, new { @class = "btn btn-info" })
                                 @Html.ActionLink("Delete", "Delete", new { id = item.ClassSubjectID }, new { @class = "btn btn-danger" })
