@@ -11,16 +11,13 @@ namespace DatabaseAccess
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class AttendanceTable
     {
         public int AttendanceID { get; set; }
         public int SessionID { get; set; }
         public int StudentID { get; set; }
-        [DataType(DataType.Date)]
         public System.DateTime AttendDate { get; set; }
-        [DataType(DataType.Time)]
         public System.TimeSpan AttendTime { get; set; }
         public int ClassID { get; set; }
     

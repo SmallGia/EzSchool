@@ -21,7 +21,7 @@ namespace EzSchool.Controllers
             {
                 return RedirectToAction("Login", "Home");
             }
-            var timeTblTables = db.TimeTblTables.Include(t => t.ClassSubjectTable).Include(t => t.StaffTable).Include(t => t.SubjectTable).Include(t => t.UserTable);
+            var timeTblTables = db.TimeTblTables.Include(t => t.ClassSubjectTable).Include(t => t.StaffTable).Include(t => t.UserTable);
             return View(timeTblTables.ToList());
         }
 
@@ -53,7 +53,6 @@ namespace EzSchool.Controllers
             }
             ViewBag.ClassSubjectID = new SelectList(db.ClassSubjectTables, "ClassSubjectID", "Name");
             ViewBag.StaffID = new SelectList(db.StaffTables, "StaffID", "Name");
-            ViewBag.SubjectID = new SelectList(db.SubjectTables, "SubjectID", "Name");
             ViewBag.UserID = new SelectList(db.UserTables, "UserID", "FullName");
             return View();
         }
@@ -80,7 +79,6 @@ namespace EzSchool.Controllers
 
             ViewBag.ClassSubjectID = new SelectList(db.ClassSubjectTables, "ClassSubjectID", "Name", timeTblTable.ClassSubjectID);
             ViewBag.StaffID = new SelectList(db.StaffTables, "StaffID", "Name", timeTblTable.StaffID);
-            ViewBag.SubjectID = new SelectList(db.SubjectTables, "SubjectID", "Name", timeTblTable.SubjectID);
             ViewBag.UserID = new SelectList(db.UserTables, "UserID", "FullName", timeTblTable.UserID);
             return View(timeTblTable);
         }
@@ -103,7 +101,6 @@ namespace EzSchool.Controllers
             }
             ViewBag.ClassSubjectID = new SelectList(db.ClassSubjectTables, "ClassSubjectID", "Name", timeTblTable.ClassSubjectID);
             ViewBag.StaffID = new SelectList(db.StaffTables, "StaffID", "Name", timeTblTable.StaffID);
-            ViewBag.SubjectID = new SelectList(db.SubjectTables, "SubjectID", "Name", timeTblTable.SubjectID);
             ViewBag.UserID = new SelectList(db.UserTables, "UserID", "FullName", timeTblTable.UserID);
             return View(timeTblTable);
         }
@@ -129,7 +126,6 @@ namespace EzSchool.Controllers
             }
             ViewBag.ClassSubjectID = new SelectList(db.ClassSubjectTables, "ClassSubjectID", "Name", timeTblTable.ClassSubjectID);
             ViewBag.StaffID = new SelectList(db.StaffTables, "StaffID", "Name", timeTblTable.StaffID);
-            ViewBag.SubjectID = new SelectList(db.SubjectTables, "SubjectID", "Name", timeTblTable.SubjectID);
             ViewBag.UserID = new SelectList(db.UserTables, "UserID", "FullName", timeTblTable.UserID);
             return View(timeTblTable);
         }
