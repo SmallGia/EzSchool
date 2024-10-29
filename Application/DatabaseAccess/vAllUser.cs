@@ -12,18 +12,15 @@ namespace DatabaseAccess
     using System;
     using System.Collections.Generic;
     
-    public partial class ExamMarksTable
+    public partial class vAllUser
     {
-        public int MarksID { get; set; }
-        public int ExamID { get; set; }
-        public int ClassSubjectID { get; set; }
-        public int StudentID { get; set; }
         public int UserID { get; set; }
-        public int TotalMarks { get; set; }
-        public int ObtainMarks { get; set; }
-    
-        public virtual ExamTable ExamTable { get; set; }
-        public virtual UserTable UserTable { get; set; }
-        public virtual StudentTable StudentTable { get; set; }
+        public int UserTypeID { get; set; }
+        public string TypeName { get; set; }
+        public string FullName { get; set; }
+        public string UserName { get; set; }
+        public string ContactNo { get; set; }
+        public string EmailAddress { get; set; }
+        public string Address { get; set; }
     }
 }

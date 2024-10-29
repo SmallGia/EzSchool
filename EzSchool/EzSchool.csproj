@@ -2057,11 +2057,6 @@
     <Content Include="Views\StudentPromotTables\Details.cshtml" />
     <Content Include="Views\StudentPromotTables\Edit.cshtml" />
     <Content Include="Views\StudentPromotTables\Index.cshtml" />
-    <Content Include="Views\StudentTables\Create.cshtml" />
-    <Content Include="Views\StudentTables\Delete.cshtml" />
-    <Content Include="Views\StudentTables\Details.cshtml" />
-    <Content Include="Views\StudentTables\Edit.cshtml" />
-    <Content Include="Views\StudentTables\Index.cshtml" />
     <Content Include="Views\AttendanceTables\Create.cshtml" />
     <Content Include="Views\AttendanceTables\Delete.cshtml" />
     <Content Include="Views\AttendanceTables\Details.cshtml" />
@@ -2082,6 +2077,11 @@
     <Content Include="Views\SubmissionFeeTables\Details.cshtml" />
     <Content Include="Views\SubmissionFeeTables\Edit.cshtml" />
     <Content Include="Views\SubmissionFeeTables\Index.cshtml" />
+    <Content Include="Views\StudentTables\Create.cshtml" />
+    <Content Include="Views\StudentTables\Delete.cshtml" />
+    <Content Include="Views\StudentTables\Details.cshtml" />
+    <Content Include="Views\StudentTables\Edit.cshtml" />
+    <Content Include="Views\StudentTables\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

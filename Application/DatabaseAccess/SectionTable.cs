@@ -11,29 +11,21 @@ namespace DatabaseAccess
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
-    public partial class SessionTable
+    
+    public partial class SectionTable
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public SessionTable()
+        public SectionTable()
         {
-            this.ProgrameSessionTables = new HashSet<ProgrameSessionTable>();
-            this.StudentTables = new HashSet<StudentTable>();
+            this.StudentPromotTables = new HashSet<StudentPromotTable>();
         }
     
-        public int SessionID { get; set; }
+        public int SectionID { get; set; }
+        public string SectionName { get; set; }
         public int UserID { get; set; }
-        public string Name { get; set; }
-        [DataType(DataType.Date)]
-        public System.DateTime StartDate { get; set; }
-        [DataType(DataType.Date)]
-        public System.DateTime EndDate { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProgrameSessionTable> ProgrameSessionTables { get; set; }
         public virtual UserTable UserTable { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<StudentTable> StudentTables { get; set; }
+        public virtual ICollection<StudentPromotTable> StudentPromotTables { get; set; }
     }
 }

@@ -13,21 +13,22 @@ namespace DatabaseAccess
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    public partial class TimeTblTable
+    public partial class EmployeeEducationTable
     {
-        public int TimeTableID { get; set; }
+        public int EmployeeEducationID { get; set; }
+        public string InstituteUniversity { get; set; }
+        public string TitleOfDiploma { get; set; }
+        public string Degree { get; set; }
+        [DataType(DataType.Date)]
+        public Nullable<System.DateTime> FromYear { get; set; }
+        [DataType(DataType.Date)]
+        public Nullable<System.DateTime> ToYear { get; set; }
+        public string City { get; set; }
+        public string Country { get; set; }
+        public Nullable<int> EmployeeResumeID { get; set; }
         public int UserID { get; set; }
-        public int StaffID { get; set; }
-        [DataType(DataType.Time)]
-        public System.TimeSpan StartTime { get; set; }
-        [DataType(DataType.Time)]
-        public System.TimeSpan EndTime { get; set; }
-        public string Day { get; set; }
-        public int ClassSubjectID { get; set; }
-        public bool IsActive { get; set; }
     
-        public virtual ClassSubjectTable ClassSubjectTable { get; set; }
-        public virtual StaffTable StaffTable { get; set; }
+        public virtual EmployeeResumeTable EmployeeResumeTable { get; set; }
         public virtual UserTable UserTable { get; set; }
     }
 }

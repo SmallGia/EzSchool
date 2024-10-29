@@ -11,20 +11,24 @@ namespace DatabaseAccess
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class StudentPromotTable
     {
         public int StudentPromotID { get; set; }
         public int StudentID { get; set; }
         public int ClassID { get; set; }
         public int ProgrameSessionID { get; set; }
+        [DataType(DataType.Date)]
         public System.DateTime PromoteDate { get; set; }
         public int AnnualFee { get; set; }
         public Nullable<bool> IsActive { get; set; }
         public Nullable<bool> IsSubmit { get; set; }
+        public int SectionID { get; set; }
     
         public virtual ClassTable ClassTable { get; set; }
         public virtual ProgrameSessionTable ProgrameSessionTable { get; set; }
+        public virtual SectionTable SectionTable { get; set; }
         public virtual StudentTable StudentTable { get; set; }
     }
 }

@@ -13,17 +13,20 @@ namespace DatabaseAccess
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    public partial class StaffAttendanceTable
+    public partial class SchoolLeavingTable
     {
-        public int StaffAttendanceID { get; set; }
-        public int StaffID { get; set; }
+        public int SchoolLeavingID { get; set; }
+        public int UserID { get; set; }
+        public int StudentID { get; set; }
+        public int ClassID { get; set; }
         [DataType(DataType.Date)]
-        public System.DateTime AttendDate { get; set; }
-        [DataType(DataType.Time)]
-        public Nullable<System.TimeSpan> ComingTime { get; set; }
-        [DataType(DataType.Time)]
-        public Nullable<System.TimeSpan> ClosingTime { get; set; }
+        public System.DateTime LeavingDate { get; set; }
+        public string LeavingReason { get; set; }
+        public string LeavingComments { get; set; }
+        [DataType(DataType.Date)]
+        public System.DateTime CreatedDate { get; set; }
     
-        public virtual StaffTable StaffTable { get; set; }
+        public virtual UserTable UserTable { get; set; }
+        public virtual StudentTable StudentTable { get; set; }
     }
 }
