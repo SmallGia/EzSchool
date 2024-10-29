@@ -138,18 +138,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="SubjectTables">
-      <EntityTypeMapping TypeName="SchoolMgDbModel.SubjectTable">
-        <MappingFragment StoreEntitySet="SubjectTable">
-          <ScalarProperty Name="SubjectID" ColumnName="SubjectID" />
-          <ScalarProperty Name="UserID" ColumnName="UserID" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="RegDate" ColumnName="RegDate" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
-          <ScalarProperty Name="TotalMarks" ColumnName="TotalMarks" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="SubmissionFeeTables">
       <EntityTypeMapping TypeName="SchoolMgDbModel.SubmissionFeeTable">
         <MappingFragment StoreEntitySet="SubmissionFeeTable">
@@ -246,6 +234,18 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="SubjectTables">
+      <EntityTypeMapping TypeName="SchoolMgDbModel.SubjectTable">
+        <MappingFragment StoreEntitySet="SubjectTable">
+          <ScalarProperty Name="TotalMarks" ColumnName="TotalMarks" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="RegDate" ColumnName="RegDate" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="SubjectID" ColumnName="SubjectID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="TimeTblTables">
       <EntityTypeMapping TypeName="SchoolMgDbModel.TimeTblTable">
         <MappingFragment StoreEntitySet="TimeTblTable">
@@ -255,7 +255,6 @@
           <ScalarProperty Name="EndTime" ColumnName="EndTime" />
           <ScalarProperty Name="StartTime" ColumnName="StartTime" />
           <ScalarProperty Name="StaffID" ColumnName="StaffID" />
-          <ScalarProperty Name="SubjectID" ColumnName="SubjectID" />
           <ScalarProperty Name="UserID" ColumnName="UserID" />
           <ScalarProperty Name="TimeTableID" ColumnName="TimeTableID" />
         </MappingFragment>

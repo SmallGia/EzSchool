@@ -27,7 +27,7 @@
     <Key>
       <PropertyRef Name="ClassSubjectID" />
     </Key>
-    <Property Name="ClassSubjectID" Type="int" Nullable="false" />
+    <Property Name="ClassSubjectID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ClassID" Type="int" Nullable="false" />
     <Property Name="SubjectID" Type="int" Nullable="false" />
     <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
@@ -211,7 +211,6 @@
     </Key>
     <Property Name="TimeTableID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="UserID" Type="int" Nullable="false" />
-    <Property Name="SubjectID" Type="int" Nullable="false" />
     <Property Name="StaffID" Type="int" Nullable="false" />
     <Property Name="StartTime" Type="time" Precision="7" Nullable="false" />
     <Property Name="EndTime" Type="time" Precision="7" Nullable="false" />
@@ -624,18 +623,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_TimeTblTable_SubjectTable">
-    <End Role="SubjectTable" Type="Self.SubjectTable" Multiplicity="1" />
-    <End Role="TimeTblTable" Type="Self.TimeTblTable" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="SubjectTable">
-        <PropertyRef Name="SubjectID" />
-      </Principal>
-      <Dependent Role="TimeTblTable">
-        <PropertyRef Name="SubjectID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_TimeTblTable_UserTable">
     <End Role="UserTable" Type="Self.UserTable" Multiplicity="1" />
     <End Role="TimeTblTable" Type="Self.TimeTblTable" Multiplicity="*" />
@@ -807,10 +794,6 @@
     </AssociationSet>
     <AssociationSet Name="FK_TimeTblTable_StaffTable" Association="Self.FK_TimeTblTable_StaffTable">
       <End Role="StaffTable" EntitySet="StaffTable" />
-      <End Role="TimeTblTable" EntitySet="TimeTblTable" />
-    </AssociationSet>
-    <AssociationSet Name="FK_TimeTblTable_SubjectTable" Association="Self.FK_TimeTblTable_SubjectTable">
-      <End Role="SubjectTable" EntitySet="SubjectTable" />
       <End Role="TimeTblTable" EntitySet="TimeTblTable" />
     </AssociationSet>
     <AssociationSet Name="FK_TimeTblTable_UserTable" Association="Self.FK_TimeTblTable_UserTable">

@@ -35,7 +35,6 @@ namespace DatabaseAccess
         public virtual DbSet<StaffAttendanceTable> StaffAttendanceTables { get; set; }
         public virtual DbSet<StaffTable> StaffTables { get; set; }
         public virtual DbSet<StudentTable> StudentTables { get; set; }
-        public virtual DbSet<SubjectTable> SubjectTables { get; set; }
         public virtual DbSet<SubmissionFeeTable> SubmissionFeeTables { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<UserTable> UserTables { get; set; }
@@ -44,6 +43,7 @@ namespace DatabaseAccess
         public virtual DbSet<StudentPromotTable> StudentPromotTables { get; set; }
         public virtual DbSet<ClassSubjectTable> ClassSubjectTables { get; set; }
         public virtual DbSet<ExamMarksTable> ExamMarksTables { get; set; }
+        public virtual DbSet<SubjectTable> SubjectTables { get; set; }
         public virtual DbSet<TimeTblTable> TimeTblTables { get; set; }
     }
 }
