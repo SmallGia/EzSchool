@@ -12,6 +12,8 @@ namespace DatabaseAccess
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Web;
 
     public partial class StudentTable
     {
@@ -52,7 +54,9 @@ namespace DatabaseAccess
         public string FathersGuardiansPostalAddress { get; set; }
         public string PhoneOffice { get; set; }
         public string PhoneResident { get; set; }
-    
+        [NotMapped]
+        public HttpPostedFileBase PhotoFile { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AttendanceTable> AttendanceTables { get; set; }
         public virtual ClassTable ClassTable { get; set; }

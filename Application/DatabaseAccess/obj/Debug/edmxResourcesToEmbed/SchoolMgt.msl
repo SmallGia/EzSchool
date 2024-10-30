@@ -94,33 +94,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="StaffTables">
-      <EntityTypeMapping TypeName="SchoolMgDbModel.StaffTable">
-        <MappingFragment StoreEntitySet="StaffTable">
-          <ScalarProperty Name="RegistrationDate" ColumnName="RegistrationDate" />
-          <ScalarProperty Name="Ifcriminaloffcenceyesthengiveusdetail" ColumnName="Ifcriminaloffcenceyesthengiveusdetail" />
-          <ScalarProperty Name="AnyCriminaloffcenceagainstyou" ColumnName="AnyCriminaloffcenceagainstyou" />
-          <ScalarProperty Name="Imedicationyesthengiveusdetail" ColumnName="Imedicationyesthengiveusdetail" />
-          <ScalarProperty Name="Areyoutakinganymedication" ColumnName="Areyoutakinganymedication" />
-          <ScalarProperty Name="Ifdisabilityyesthengiveusdetail" ColumnName="Ifdisabilityyesthengiveusdetail" />
-          <ScalarProperty Name="Doyouhaveanydisability" ColumnName="Doyouhaveanydisability" />
-          <ScalarProperty Name="HomePhone" ColumnName="HomePhone" />
-          <ScalarProperty Name="Gender" ColumnName="Gender" />
-          <ScalarProperty Name="StaffID" ColumnName="StaffID" />
-          <ScalarProperty Name="UserID" ColumnName="UserID" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="DesignationID" ColumnName="DesignationID" />
-          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
-          <ScalarProperty Name="BasicSalary" ColumnName="BasicSalary" />
-          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
-          <ScalarProperty Name="Address" ColumnName="Address" />
-          <ScalarProperty Name="Qualification" ColumnName="Qualification" />
-          <ScalarProperty Name="Photo" ColumnName="Photo" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
-          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="SubmissionFeeTables">
       <EntityTypeMapping TypeName="SchoolMgDbModel.SubmissionFeeTable">
         <MappingFragment StoreEntitySet="SubmissionFeeTable">
@@ -435,6 +408,33 @@
           <ScalarProperty Name="TypeName" ColumnName="TypeName" />
           <ScalarProperty Name="UserTypeID" ColumnName="UserTypeID" />
           <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StaffTables">
+      <EntityTypeMapping TypeName="SchoolMgDbModel.StaffTable">
+        <MappingFragment StoreEntitySet="StaffTable">
+          <ScalarProperty Name="RegistrationDate" ColumnName="RegistrationDate" />
+          <ScalarProperty Name="Ifcriminaloffcenceyesthengiveusdetail" ColumnName="Ifcriminaloffcenceyesthengiveusdetail" />
+          <ScalarProperty Name="AnyCriminaloffcenceagainstyou" ColumnName="AnyCriminaloffcenceagainstyou" />
+          <ScalarProperty Name="Imedicationyesthengiveusdetail" ColumnName="Imedicationyesthengiveusdetail" />
+          <ScalarProperty Name="Areyoutakinganymedication" ColumnName="Areyoutakinganymedication" />
+          <ScalarProperty Name="Ifdisabilityyesthengiveusdetail" ColumnName="Ifdisabilityyesthengiveusdetail" />
+          <ScalarProperty Name="Doyouhaveanydisability" ColumnName="Doyouhaveanydisability" />
+          <ScalarProperty Name="HomePhone" ColumnName="HomePhone" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="Qualification" ColumnName="Qualification" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="BasicSalary" ColumnName="BasicSalary" />
+          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+          <ScalarProperty Name="DesignationID" ColumnName="DesignationID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="StaffID" ColumnName="StaffID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

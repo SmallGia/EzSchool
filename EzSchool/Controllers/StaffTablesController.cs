@@ -63,13 +63,10 @@ namespace EzSchool.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(StaffTable staffTable)
         {
-
             if (string.IsNullOrEmpty(Convert.ToString(Session["UserName"])))
             {
                 return RedirectToAction("Login", "Home");
             }
-            int userid = Convert.ToInt32(Convert.ToString(Session["UserID"]));
-            staffTable.UserID = userid;
             if (ModelState.IsValid)
             {
                 db.StaffTables.Add(staffTable);
@@ -114,8 +111,6 @@ namespace EzSchool.Controllers
             {
                 return RedirectToAction("Login", "Home");
             }
-            int userid = Convert.ToInt32(Convert.ToString(Session["UserID"]));
-            staffTable.UserID = userid;
             if (ModelState.IsValid)
             {
                 db.Entry(staffTable).State = EntityState.Modified;

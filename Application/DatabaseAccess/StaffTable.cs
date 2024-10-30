@@ -18,10 +18,10 @@ namespace DatabaseAccess
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public StaffTable()
         {
-            this.StaffAttendanceTables = new HashSet<StaffAttendanceTable>();
-            this.TimeTblTables = new HashSet<TimeTblTable>();
             this.EmployeeLeavingTables = new HashSet<EmployeeLeavingTable>();
             this.EmployeeSalaryTables = new HashSet<EmployeeSalaryTable>();
+            this.StaffAttendanceTables = new HashSet<StaffAttendanceTable>();
+            this.TimeTblTables = new HashSet<TimeTblTable>();
         }
     
         public int StaffID { get; set; }
@@ -38,24 +38,24 @@ namespace DatabaseAccess
         public bool IsActive { get; set; }
         public string Gender { get; set; }
         public string HomePhone { get; set; }
-        public Nullable<int> Doyouhaveanydisability { get; set; }
+        public Nullable<bool> Doyouhaveanydisability { get; set; }
         public string Ifdisabilityyesthengiveusdetail { get; set; }
-        public Nullable<int> Areyoutakinganymedication { get; set; }
+        public Nullable<bool> Areyoutakinganymedication { get; set; }
         public string Imedicationyesthengiveusdetail { get; set; }
-        public Nullable<int> AnyCriminaloffcenceagainstyou { get; set; }
+        public Nullable<bool> AnyCriminaloffcenceagainstyou { get; set; }
         public string Ifcriminaloffcenceyesthengiveusdetail { get; set; }
         [DataType(DataType.Date)]
         public System.DateTime RegistrationDate { get; set; }
     
         public virtual DesignationTable DesignationTable { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<EmployeeLeavingTable> EmployeeLeavingTables { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<EmployeeSalaryTable> EmployeeSalaryTables { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<StaffAttendanceTable> StaffAttendanceTables { get; set; }
         public virtual UserTable UserTable { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TimeTblTable> TimeTblTables { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<EmployeeLeavingTable> EmployeeLeavingTables { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<EmployeeSalaryTable> EmployeeSalaryTables { get; set; }
     }
 }

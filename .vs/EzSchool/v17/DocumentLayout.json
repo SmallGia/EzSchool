@@ -3,8 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4D0FBEAB-92AA-4724-AED4-2CA5766F83A0}|EzSchool\\EzSchool.csproj|c:\\users\\thai ho phu gia\\desktop\\hocki4\\laptrinhwebvaungdung\\schoolmgt\\src2\\ezschool\\ezschool\\controllers\\studenttablescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D0FBEAB-92AA-4724-AED4-2CA5766F83A0}|EzSchool\\EzSchool.csproj|solutionrelative:ezschool\\controllers\\studenttablescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5EB4A5F8-3DA9-47A5-9361-9A4DDC2AD4FD}|Application\\DatabaseAccess\\DatabaseAccess.csproj|c:\\users\\thai ho phu gia\\desktop\\hocki4\\laptrinhwebvaungdung\\schoolmgt\\src2\\ezschool\\application\\databaseaccess\\programesessiontable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5EB4A5F8-3DA9-47A5-9361-9A4DDC2AD4FD}|Application\\DatabaseAccess\\DatabaseAccess.csproj|solutionrelative:application\\databaseaccess\\programesessiontable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5EB4A5F8-3DA9-47A5-9361-9A4DDC2AD4FD}|Application\\DatabaseAccess\\DatabaseAccess.csproj|c:\\users\\thai ho phu gia\\desktop\\hocki4\\laptrinhwebvaungdung\\schoolmgt\\src2\\ezschool\\application\\databaseaccess\\sectiontable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5EB4A5F8-3DA9-47A5-9361-9A4DDC2AD4FD}|Application\\DatabaseAccess\\DatabaseAccess.csproj|solutionrelative:application\\databaseaccess\\sectiontable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5EB4A5F8-3DA9-47A5-9361-9A4DDC2AD4FD}|Application\\DatabaseAccess\\DatabaseAccess.csproj|c:\\users\\thai ho phu gia\\desktop\\hocki4\\laptrinhwebvaungdung\\schoolmgt\\src2\\ezschool\\application\\databaseaccess\\classtable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5EB4A5F8-3DA9-47A5-9361-9A4DDC2AD4FD}|Application\\DatabaseAccess\\DatabaseAccess.csproj|solutionrelative:application\\databaseaccess\\classtable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5EB4A5F8-3DA9-47A5-9361-9A4DDC2AD4FD}|Application\\DatabaseAccess\\DatabaseAccess.csproj|c:\\users\\thai ho phu gia\\desktop\\hocki4\\laptrinhwebvaungdung\\schoolmgt\\src2\\ezschool\\application\\databaseaccess\\stafftable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5EB4A5F8-3DA9-47A5-9361-9A4DDC2AD4FD}|Application\\DatabaseAccess\\DatabaseAccess.csproj|solutionrelative:application\\databaseaccess\\stafftable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5EB4A5F8-3DA9-47A5-9361-9A4DDC2AD4FD}|Application\\DatabaseAccess\\DatabaseAccess.csproj|c:\\users\\thai ho phu gia\\desktop\\hocki4\\laptrinhwebvaungdung\\schoolmgt\\src2\\ezschool\\application\\databaseaccess\\schoolmgt.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
+      "RelativeMoniker": "D:0:0:{5EB4A5F8-3DA9-47A5-9361-9A4DDC2AD4FD}|Application\\DatabaseAccess\\DatabaseAccess.csproj|solutionrelative:application\\databaseaccess\\schoolmgt.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,15 +35,66 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "StudentTablesController.cs",
-              "DocumentMoniker": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\EzSchool\\Controllers\\StudentTablesController.cs",
-              "RelativeDocumentMoniker": "EzSchool\\Controllers\\StudentTablesController.cs",
-              "ToolTip": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\EzSchool\\Controllers\\StudentTablesController.cs",
-              "RelativeToolTip": "EzSchool\\Controllers\\StudentTablesController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAVAAAAAAAAAA==",
+              "Title": "ProgrameSessionTable.cs",
+              "DocumentMoniker": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\Application\\DatabaseAccess\\ProgrameSessionTable.cs",
+              "RelativeDocumentMoniker": "Application\\DatabaseAccess\\ProgrameSessionTable.cs",
+              "ToolTip": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\Application\\DatabaseAccess\\ProgrameSessionTable.cs",
+              "RelativeToolTip": "Application\\DatabaseAccess\\ProgrameSessionTable.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABYAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T16:37:59.387Z",
+              "WhenOpened": "2024-10-30T02:33:31.589Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SectionTable.cs",
+              "DocumentMoniker": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\Application\\DatabaseAccess\\SectionTable.cs",
+              "RelativeDocumentMoniker": "Application\\DatabaseAccess\\SectionTable.cs",
+              "ToolTip": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\Application\\DatabaseAccess\\SectionTable.cs",
+              "RelativeToolTip": "Application\\DatabaseAccess\\SectionTable.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T02:33:28.211Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ClassTable.cs",
+              "DocumentMoniker": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\Application\\DatabaseAccess\\ClassTable.cs",
+              "RelativeDocumentMoniker": "Application\\DatabaseAccess\\ClassTable.cs",
+              "ToolTip": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\Application\\DatabaseAccess\\ClassTable.cs",
+              "RelativeToolTip": "Application\\DatabaseAccess\\ClassTable.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T02:33:22.398Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "StaffTable.cs",
+              "DocumentMoniker": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\Application\\DatabaseAccess\\StaffTable.cs",
+              "RelativeDocumentMoniker": "Application\\DatabaseAccess\\StaffTable.cs",
+              "ToolTip": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\Application\\DatabaseAccess\\StaffTable.cs",
+              "RelativeToolTip": "Application\\DatabaseAccess\\StaffTable.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAQwCMAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T02:31:47.034Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SchoolMgt.edmx [Diagram1]",
+              "DocumentMoniker": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\Application\\DatabaseAccess\\SchoolMgt.edmx",
+              "RelativeDocumentMoniker": "Application\\DatabaseAccess\\SchoolMgt.edmx",
+              "ToolTip": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\Application\\DatabaseAccess\\SchoolMgt.edmx [Diagram1]",
+              "RelativeToolTip": "Application\\DatabaseAccess\\SchoolMgt.edmx [Diagram1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
+              "WhenOpened": "2024-10-30T02:29:18.738Z",
+              "EditorCaption": " [Diagram1]"
             }
           ]
         }

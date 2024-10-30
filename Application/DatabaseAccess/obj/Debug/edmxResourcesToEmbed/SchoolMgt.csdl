@@ -36,7 +36,7 @@
     <Property Name="Title" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="IsActive" Type="Boolean" Nullable="false" />
     <NavigationProperty Name="UserTable" Relationship="Self.FK_DesignationTable_UserTable" FromRole="DesignationTable" ToRole="UserTable" />
-    <NavigationProperty Name="StaffTables" Relationship="Self.FK_StaffTable_DesignationTable" FromRole="DesignationTable" ToRole="StaffTable" />
+    <NavigationProperty Name="StaffTables" Relationship="SchoolMgDbModel.FK_StaffTable_DesignationTable" FromRole="DesignationTable" ToRole="StaffTable" />
   </EntityType>
   <EntityType Name="ExamTable">
     <Key>
@@ -104,39 +104,7 @@
     <Property Name="AttendDate" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="ComingTime" Type="Time" Precision="7" />
     <Property Name="ClosingTime" Type="Time" Precision="7" />
-    <NavigationProperty Name="StaffTable" Relationship="Self.FK_StaffAttendanceTable_StaffTable" FromRole="StaffAttendanceTable" ToRole="StaffTable" />
-  </EntityType>
-  <EntityType Name="StaffTable">
-    <Key>
-      <PropertyRef Name="StaffID" />
-    </Key>
-    <Property Name="StaffID" Type="Int32" Nullable="false" />
-    <Property Name="UserID" Type="Int32" Nullable="false" />
-    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="DesignationID" Type="Int32" Nullable="false" />
-    <Property Name="ContactNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="BasicSalary" Type="Double" Nullable="false" />
-    <Property Name="EmailAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="Address" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Qualification" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Name="IsActive" Type="Boolean" Nullable="false" />
-    <NavigationProperty Name="DesignationTable" Relationship="Self.FK_StaffTable_DesignationTable" FromRole="StaffTable" ToRole="DesignationTable" />
-    <NavigationProperty Name="StaffAttendanceTables" Relationship="Self.FK_StaffAttendanceTable_StaffTable" FromRole="StaffTable" ToRole="StaffAttendanceTable" />
-    <NavigationProperty Name="UserTable" Relationship="Self.FK_StaffTable_UserTable" FromRole="StaffTable" ToRole="UserTable" />
-    <NavigationProperty Name="TimeTblTables" Relationship="SchoolMgDbModel.FK_TimeTblTable_StaffTable" FromRole="StaffTable" ToRole="TimeTblTable" />
-    <Property Name="Gender" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="HomePhone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Doyouhaveanydisability" Type="Int32" />
-    <Property Name="Ifdisabilityyesthengiveusdetail" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" />
-    <Property Name="Areyoutakinganymedication" Type="Int32" />
-    <Property Name="Imedicationyesthengiveusdetail" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" />
-    <Property Name="AnyCriminaloffcenceagainstyou" Type="Int32" />
-    <Property Name="Ifcriminaloffcenceyesthengiveusdetail" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" />
-    <Property Name="RegistrationDate" Type="DateTime" Nullable="false" Precision="0" />
-    <NavigationProperty Name="EmployeeLeavingTables" Relationship="SchoolMgDbModel.FK_EmployeeLeavingTable_StaffTable" FromRole="StaffTable" ToRole="EmployeeLeavingTable" />
-    <NavigationProperty Name="EmployeeSalaryTables" Relationship="SchoolMgDbModel.FK_EmployeeSalaryTable_StaffTable" FromRole="StaffTable" ToRole="EmployeeSalaryTable" />
+    <NavigationProperty Name="StaffTable" Relationship="SchoolMgDbModel.FK_StaffAttendanceTable_StaffTable" FromRole="StaffAttendanceTable" ToRole="StaffTable" />
   </EntityType>
   <EntityType Name="SubmissionFeeTable">
     <Key>
@@ -184,7 +152,6 @@
     <NavigationProperty Name="ProgrameSessionTables" Relationship="Self.FK_ProgrameSessionTable_UserTable" FromRole="UserTable" ToRole="ProgrameSessionTable" />
     <NavigationProperty Name="ProgrameTables" Relationship="Self.FK_ProgrameTable_UserTable" FromRole="UserTable" ToRole="ProgrameTable" />
     <NavigationProperty Name="SessionTables" Relationship="Self.FK_SessionTable_UserTable" FromRole="UserTable" ToRole="SessionTable" />
-    <NavigationProperty Name="StaffTables" Relationship="Self.FK_StaffTable_UserTable" FromRole="UserTable" ToRole="StaffTable" />
     <NavigationProperty Name="SubmissionFeeTables" Relationship="Self.FK_SubmissionFeeTable_UserTable" FromRole="UserTable" ToRole="SubmissionFeeTable" />
     <NavigationProperty Name="UserTypeTable" Relationship="Self.FK_UserTable_UserTypeTable" FromRole="UserTable" ToRole="UserTypeTable" />
     <NavigationProperty Name="ExamMarksTables" Relationship="SchoolMgDbModel.FK_ExamMarksTable_UserTable" FromRole="UserTable" ToRole="ExamMarksTable" />
@@ -201,6 +168,7 @@
     <NavigationProperty Name="SchoolLeavingTables" Relationship="SchoolMgDbModel.FK_SchoolLeavingTable_UserTable" FromRole="UserTable" ToRole="SchoolLeavingTable" />
     <NavigationProperty Name="SectionTables" Relationship="SchoolMgDbModel.FK_SectionTable_UserTable" FromRole="UserTable" ToRole="SectionTable" />
     <NavigationProperty Name="StudentTables" Relationship="SchoolMgDbModel.FK_StudentTable_UserTable" FromRole="UserTable" ToRole="StudentTable" />
+    <NavigationProperty Name="StaffTables" Relationship="SchoolMgDbModel.FK_StaffTable_UserTable" FromRole="UserTable" ToRole="StaffTable" />
   </EntityType>
   <EntityType Name="UserTypeTable">
     <Key>
@@ -244,18 +212,6 @@
       </Principal>
       <Dependent Role="DesignationTable">
         <PropertyRef Name="UserID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_StaffTable_DesignationTable">
-    <End Role="DesignationTable" Type="Self.DesignationTable" Multiplicity="1" />
-    <End Role="StaffTable" Type="Self.StaffTable" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="DesignationTable">
-        <PropertyRef Name="DesignationID" />
-      </Principal>
-      <Dependent Role="StaffTable">
-        <PropertyRef Name="DesignationID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -343,30 +299,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_StaffAttendanceTable_StaffTable">
-    <End Role="StaffTable" Type="Self.StaffTable" Multiplicity="1" />
-    <End Role="StaffAttendanceTable" Type="Self.StaffAttendanceTable" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="StaffTable">
-        <PropertyRef Name="StaffID" />
-      </Principal>
-      <Dependent Role="StaffAttendanceTable">
-        <PropertyRef Name="StaffID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_StaffTable_UserTable">
-    <End Role="UserTable" Type="Self.UserTable" Multiplicity="1" />
-    <End Role="StaffTable" Type="Self.StaffTable" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="UserTable">
-        <PropertyRef Name="UserID" />
-      </Principal>
-      <Dependent Role="StaffTable">
-        <PropertyRef Name="UserID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_SubmissionFeeTable_UserTable">
     <End Role="UserTable" Type="Self.UserTable" Multiplicity="1" />
     <End Role="SubmissionFeeTable" Type="Self.SubmissionFeeTable" Multiplicity="*" />
@@ -400,7 +332,6 @@
     <EntitySet Name="ProgrameTables" EntityType="Self.ProgrameTable" />
     <EntitySet Name="SessionTables" EntityType="Self.SessionTable" />
     <EntitySet Name="StaffAttendanceTables" EntityType="Self.StaffAttendanceTable" />
-    <EntitySet Name="StaffTables" EntityType="Self.StaffTable" />
     <EntitySet Name="SubmissionFeeTables" EntityType="Self.SubmissionFeeTable" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
     <EntitySet Name="UserTables" EntityType="Self.UserTable" />
@@ -416,10 +347,6 @@
     <AssociationSet Name="FK_DesignationTable_UserTable" Association="Self.FK_DesignationTable_UserTable">
       <End Role="UserTable" EntitySet="UserTables" />
       <End Role="DesignationTable" EntitySet="DesignationTables" />
-    </AssociationSet>
-    <AssociationSet Name="FK_StaffTable_DesignationTable" Association="Self.FK_StaffTable_DesignationTable">
-      <End Role="DesignationTable" EntitySet="DesignationTables" />
-      <End Role="StaffTable" EntitySet="StaffTables" />
     </AssociationSet>
     <AssociationSet Name="FK_ExamTable_UserTable" Association="Self.FK_ExamTable_UserTable">
       <End Role="UserTable" EntitySet="UserTables" />
@@ -448,14 +375,6 @@
     <AssociationSet Name="FK_SessionTable_UserTable" Association="Self.FK_SessionTable_UserTable">
       <End Role="UserTable" EntitySet="UserTables" />
       <End Role="SessionTable" EntitySet="SessionTables" />
-    </AssociationSet>
-    <AssociationSet Name="FK_StaffAttendanceTable_StaffTable" Association="Self.FK_StaffAttendanceTable_StaffTable">
-      <End Role="StaffTable" EntitySet="StaffTables" />
-      <End Role="StaffAttendanceTable" EntitySet="StaffAttendanceTables" />
-    </AssociationSet>
-    <AssociationSet Name="FK_StaffTable_UserTable" Association="Self.FK_StaffTable_UserTable">
-      <End Role="UserTable" EntitySet="UserTables" />
-      <End Role="StaffTable" EntitySet="StaffTables" />
     </AssociationSet>
     <AssociationSet Name="FK_SubmissionFeeTable_UserTable" Association="Self.FK_SubmissionFeeTable_UserTable">
       <End Role="UserTable" EntitySet="UserTables" />
@@ -507,10 +426,6 @@
       <End Role="ClassSubjectTable" EntitySet="ClassSubjectTables" />
       <End Role="TimeTblTable" EntitySet="TimeTblTables" />
     </AssociationSet>
-    <AssociationSet Name="FK_TimeTblTable_StaffTable" Association="SchoolMgDbModel.FK_TimeTblTable_StaffTable">
-      <End Role="StaffTable" EntitySet="StaffTables" />
-      <End Role="TimeTblTable" EntitySet="TimeTblTables" />
-    </AssociationSet>
     <AssociationSet Name="FK_SubjectTable_UserTable" Association="SchoolMgDbModel.FK_SubjectTable_UserTable">
       <End Role="UserTable" EntitySet="UserTables" />
       <End Role="SubjectTable" EntitySet="SubjectTables" />
@@ -554,10 +469,6 @@
       <End Role="UserTable" EntitySet="UserTables" />
       <End Role="EmployeeLanguageTable" EntitySet="EmployeeLanguageTables" />
     </AssociationSet>
-    <AssociationSet Name="FK_EmployeeLeavingTable_StaffTable" Association="SchoolMgDbModel.FK_EmployeeLeavingTable_StaffTable">
-      <End Role="StaffTable" EntitySet="StaffTables" />
-      <End Role="EmployeeLeavingTable" EntitySet="EmployeeLeavingTables" />
-    </AssociationSet>
     <AssociationSet Name="FK_EmployeeLeavingTable_UserTable" Association="SchoolMgDbModel.FK_EmployeeLeavingTable_UserTable">
       <End Role="UserTable" EntitySet="UserTables" />
       <End Role="EmployeeLeavingTable" EntitySet="EmployeeLeavingTables" />
@@ -572,10 +483,6 @@
     </AssociationSet>
     <AssociationSet Name="FK_EmployeeSalaryTable_EmployeeSalaryTable" Association="SchoolMgDbModel.FK_EmployeeSalaryTable_EmployeeSalaryTable">
       <End Role="UserTable" EntitySet="UserTables" />
-      <End Role="EmployeeSalaryTable" EntitySet="EmployeeSalaryTables" />
-    </AssociationSet>
-    <AssociationSet Name="FK_EmployeeSalaryTable_StaffTable" Association="SchoolMgDbModel.FK_EmployeeSalaryTable_StaffTable">
-      <End Role="StaffTable" EntitySet="StaffTables" />
       <End Role="EmployeeSalaryTable" EntitySet="EmployeeSalaryTables" />
     </AssociationSet>
     <AssociationSet Name="FK_EmployeeSkillTable_UserTable" Association="SchoolMgDbModel.FK_EmployeeSkillTable_UserTable">
@@ -640,6 +547,31 @@
       <End Role="SubmissionFeeTable" EntitySet="SubmissionFeeTables" />
     </AssociationSet>
     <EntitySet Name="vAllUsers" EntityType="SchoolMgDbModel.vAllUser" />
+    <EntitySet Name="StaffTables" EntityType="SchoolMgDbModel.StaffTable" />
+    <AssociationSet Name="FK_StaffTable_DesignationTable" Association="SchoolMgDbModel.FK_StaffTable_DesignationTable">
+      <End Role="DesignationTable" EntitySet="DesignationTables" />
+      <End Role="StaffTable" EntitySet="StaffTables" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeeLeavingTable_StaffTable" Association="SchoolMgDbModel.FK_EmployeeLeavingTable_StaffTable">
+      <End Role="StaffTable" EntitySet="StaffTables" />
+      <End Role="EmployeeLeavingTable" EntitySet="EmployeeLeavingTables" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeeSalaryTable_StaffTable" Association="SchoolMgDbModel.FK_EmployeeSalaryTable_StaffTable">
+      <End Role="StaffTable" EntitySet="StaffTables" />
+      <End Role="EmployeeSalaryTable" EntitySet="EmployeeSalaryTables" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StaffAttendanceTable_StaffTable" Association="SchoolMgDbModel.FK_StaffAttendanceTable_StaffTable">
+      <End Role="StaffTable" EntitySet="StaffTables" />
+      <End Role="StaffAttendanceTable" EntitySet="StaffAttendanceTables" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StaffTable_UserTable" Association="SchoolMgDbModel.FK_StaffTable_UserTable">
+      <End Role="UserTable" EntitySet="UserTables" />
+      <End Role="StaffTable" EntitySet="StaffTables" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TimeTblTable_StaffTable" Association="SchoolMgDbModel.FK_TimeTblTable_StaffTable">
+      <End Role="StaffTable" EntitySet="StaffTables" />
+      <End Role="TimeTblTable" EntitySet="TimeTblTables" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="ClassTable">
     <Key>
@@ -810,8 +742,8 @@
     <Property Name="ClassSubjectID" Type="Int32" Nullable="false" />
     <Property Name="IsActive" Type="Boolean" Nullable="false" />
     <NavigationProperty Name="ClassSubjectTable" Relationship="SchoolMgDbModel.FK_TimeTblTable_ClassSubjectTable" FromRole="TimeTblTable" ToRole="ClassSubjectTable" />
-    <NavigationProperty Name="StaffTable" Relationship="SchoolMgDbModel.FK_TimeTblTable_StaffTable" FromRole="TimeTblTable" ToRole="StaffTable" />
     <NavigationProperty Name="UserTable" Relationship="SchoolMgDbModel.FK_TimeTblTable_UserTable" FromRole="TimeTblTable" ToRole="UserTable" />
+    <NavigationProperty Name="StaffTable" Relationship="SchoolMgDbModel.FK_TimeTblTable_StaffTable" FromRole="TimeTblTable" ToRole="StaffTable" />
   </EntityType>
   <Association Name="FK_ClassSubjectTable_SubjectTable">
     <End Type="SchoolMgDbModel.SubjectTable" Role="SubjectTable" Multiplicity="1" />
@@ -834,18 +766,6 @@
       </Principal>
       <Dependent Role="TimeTblTable">
         <PropertyRef Name="ClassSubjectID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_TimeTblTable_StaffTable">
-    <End Type="SchoolMgDbModel.StaffTable" Role="StaffTable" Multiplicity="1" />
-    <End Type="SchoolMgDbModel.TimeTblTable" Role="TimeTblTable" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="StaffTable">
-        <PropertyRef Name="StaffID" />
-      </Principal>
-      <Dependent Role="TimeTblTable">
-        <PropertyRef Name="StaffID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -927,8 +847,8 @@
     <Property Name="LeavingReason" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
     <Property Name="LeavingComments" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="0" />
-    <NavigationProperty Name="StaffTable" Relationship="SchoolMgDbModel.FK_EmployeeLeavingTable_StaffTable" FromRole="EmployeeLeavingTable" ToRole="StaffTable" />
     <NavigationProperty Name="UserTable" Relationship="SchoolMgDbModel.FK_EmployeeLeavingTable_UserTable" FromRole="EmployeeLeavingTable" ToRole="UserTable" />
+    <NavigationProperty Name="StaffTable" Relationship="SchoolMgDbModel.FK_EmployeeLeavingTable_StaffTable" FromRole="EmployeeLeavingTable" ToRole="StaffTable" />
   </EntityType>
   <EntityType Name="EmployeeResumeTable">
     <Key>
@@ -1107,18 +1027,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_EmployeeLeavingTable_StaffTable">
-    <End Type="SchoolMgDbModel.StaffTable" Role="StaffTable" Multiplicity="1" />
-    <End Type="SchoolMgDbModel.EmployeeLeavingTable" Role="EmployeeLeavingTable" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="StaffTable">
-        <PropertyRef Name="StaffID" />
-      </Principal>
-      <Dependent Role="EmployeeLeavingTable">
-        <PropertyRef Name="StaffID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_EmployeeLeavingTable_UserTable">
     <End Type="SchoolMgDbModel.UserTable" Role="UserTable" Multiplicity="1" />
     <End Type="SchoolMgDbModel.EmployeeLeavingTable" Role="EmployeeLeavingTable" Multiplicity="*" />
@@ -1164,18 +1072,6 @@
       </Principal>
       <Dependent Role="EmployeeSalaryTable">
         <PropertyRef Name="UserID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_EmployeeSalaryTable_StaffTable">
-    <End Type="SchoolMgDbModel.StaffTable" Role="StaffTable" Multiplicity="1" />
-    <End Type="SchoolMgDbModel.EmployeeSalaryTable" Role="EmployeeSalaryTable" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="StaffTable">
-        <PropertyRef Name="StaffID" />
-      </Principal>
-      <Dependent Role="EmployeeSalaryTable">
-        <PropertyRef Name="StaffID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -1416,4 +1312,108 @@
     <Property Name="EmailAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="Address" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
   </EntityType>
+  <EntityType Name="StaffTable">
+    <Key>
+      <PropertyRef Name="StaffID" />
+    </Key>
+    <Property Name="StaffID" Type="Int32" Nullable="false" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="DesignationID" Type="Int32" Nullable="false" />
+    <Property Name="ContactNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BasicSalary" Type="Double" Nullable="false" />
+    <Property Name="EmailAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Qualification" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Photo" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="Gender" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="HomePhone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Doyouhaveanydisability" Type="Boolean" />
+    <Property Name="Ifdisabilityyesthengiveusdetail" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" />
+    <Property Name="Areyoutakinganymedication" Type="Boolean" />
+    <Property Name="Imedicationyesthengiveusdetail" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" />
+    <Property Name="AnyCriminaloffcenceagainstyou" Type="Boolean" />
+    <Property Name="Ifcriminaloffcenceyesthengiveusdetail" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" />
+    <Property Name="RegistrationDate" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="DesignationTable" Relationship="SchoolMgDbModel.FK_StaffTable_DesignationTable" FromRole="StaffTable" ToRole="DesignationTable" />
+    <NavigationProperty Name="EmployeeLeavingTables" Relationship="SchoolMgDbModel.FK_EmployeeLeavingTable_StaffTable" FromRole="StaffTable" ToRole="EmployeeLeavingTable" />
+    <NavigationProperty Name="EmployeeSalaryTables" Relationship="SchoolMgDbModel.FK_EmployeeSalaryTable_StaffTable" FromRole="StaffTable" ToRole="EmployeeSalaryTable" />
+    <NavigationProperty Name="StaffAttendanceTables" Relationship="SchoolMgDbModel.FK_StaffAttendanceTable_StaffTable" FromRole="StaffTable" ToRole="StaffAttendanceTable" />
+    <NavigationProperty Name="UserTable" Relationship="SchoolMgDbModel.FK_StaffTable_UserTable" FromRole="StaffTable" ToRole="UserTable" />
+    <NavigationProperty Name="TimeTblTables" Relationship="SchoolMgDbModel.FK_TimeTblTable_StaffTable" FromRole="StaffTable" ToRole="TimeTblTable" />
+  </EntityType>
+  <Association Name="FK_StaffTable_DesignationTable">
+    <End Type="SchoolMgDbModel.DesignationTable" Role="DesignationTable" Multiplicity="1" />
+    <End Type="SchoolMgDbModel.StaffTable" Role="StaffTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DesignationTable">
+        <PropertyRef Name="DesignationID" />
+      </Principal>
+      <Dependent Role="StaffTable">
+        <PropertyRef Name="DesignationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeeLeavingTable_StaffTable">
+    <End Type="SchoolMgDbModel.StaffTable" Role="StaffTable" Multiplicity="1" />
+    <End Type="SchoolMgDbModel.EmployeeLeavingTable" Role="EmployeeLeavingTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StaffTable">
+        <PropertyRef Name="StaffID" />
+      </Principal>
+      <Dependent Role="EmployeeLeavingTable">
+        <PropertyRef Name="StaffID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeeSalaryTable_StaffTable">
+    <End Type="SchoolMgDbModel.StaffTable" Role="StaffTable" Multiplicity="1" />
+    <End Type="SchoolMgDbModel.EmployeeSalaryTable" Role="EmployeeSalaryTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StaffTable">
+        <PropertyRef Name="StaffID" />
+      </Principal>
+      <Dependent Role="EmployeeSalaryTable">
+        <PropertyRef Name="StaffID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StaffAttendanceTable_StaffTable">
+    <End Type="SchoolMgDbModel.StaffTable" Role="StaffTable" Multiplicity="1" />
+    <End Type="SchoolMgDbModel.StaffAttendanceTable" Role="StaffAttendanceTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StaffTable">
+        <PropertyRef Name="StaffID" />
+      </Principal>
+      <Dependent Role="StaffAttendanceTable">
+        <PropertyRef Name="StaffID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StaffTable_UserTable">
+    <End Type="SchoolMgDbModel.UserTable" Role="UserTable" Multiplicity="1" />
+    <End Type="SchoolMgDbModel.StaffTable" Role="StaffTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserTable">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="StaffTable">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TimeTblTable_StaffTable">
+    <End Type="SchoolMgDbModel.StaffTable" Role="StaffTable" Multiplicity="1" />
+    <End Type="SchoolMgDbModel.TimeTblTable" Role="TimeTblTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StaffTable">
+        <PropertyRef Name="StaffID" />
+      </Principal>
+      <Dependent Role="TimeTblTable">
+        <PropertyRef Name="StaffID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>
