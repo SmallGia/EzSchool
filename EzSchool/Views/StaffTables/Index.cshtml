@@ -1,77 +1,36 @@
 ﻿@model IEnumerable<DatabaseAccess.StaffTable>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Employees";
 }
 
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Add New Employee", "Create",null,new {@class = "btn btn-success"})
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Name)
+            Full Name
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ContactNo)
+            Conntact No
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.BasicSalary)
+            Salary
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.EmailAddress)
+            Address
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Address)
+            Photo
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Qualification)
+            Status
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Photo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IsActive)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Gender)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.HomePhone)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Doyouhaveanydisability)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Ifdisabilityyesthengiveusdetail)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Areyoutakinganymedication)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Imedicationyesthengiveusdetail)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AnyCriminaloffcenceagainstyou)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Ifcriminaloffcenceyesthengiveusdetail)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.RegistrationDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DesignationTable.Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.UserTable.FullName)
-        </th>
-        <th></th>
+      
+        <th>Actions</th>
     </tr>
 
 @foreach (var item in Model) {
@@ -86,60 +45,23 @@
             @Html.DisplayFor(modelItem => item.BasicSalary)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.EmailAddress)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.Address)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Qualification)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Photo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
+            @if (!string.IsNullOrEmpty(item.Photo))
+            {
+                <img src="@Url.Content(item.Photo)" alt="Photo" style="width:100px;heigt:150px;max-width:100%;height:auto" />
+            }
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.IsActive)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Gender)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HomePhone)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Doyouhaveanydisability)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Ifdisabilityyesthengiveusdetail)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Areyoutakinganymedication)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Imedicationyesthengiveusdetail)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AnyCriminaloffcenceagainstyou)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Ifcriminaloffcenceyesthengiveusdetail)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.RegistrationDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DesignationTable.Title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UserTable.FullName)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.StaffID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.StaffID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.StaffID })
+      
+        <td class="btn-group">
+            @Html.ActionLink("Edit", "Edit", new { id=item.StaffID }, new {@class = "btn btn-primary"}) 
+            @Html.ActionLink("Details", "Details", new { id=item.StaffID }, new {@class = "btn btn-info"})
+            @Html.ActionLink("Add Resume","Resume",new {id=item.StaffID}, new {@class = "btn btn-success"})
+            @*@Html.ActionLink("Delete", "Delete", new { id=item.StaffID }, new {@class = "btn btn-danger"})*@
         </td>
     </tr>
 }

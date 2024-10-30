@@ -91,7 +91,7 @@
         <AssociationConnector Association="SchoolMgDbModel.FK_StaffAttendanceTable_StaffTable" />
         <AssociationConnector Association="SchoolMgDbModel.FK_StaffTable_UserTable" />
         <AssociationConnector Association="SchoolMgDbModel.FK_TimeTblTable_StaffTable" />
-      </Diagram>
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

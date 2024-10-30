@@ -257,7 +257,7 @@
     <Key>
       <PropertyRef Name="StaffID" />
     </Key>
-    <Property Name="StaffID" Type="int" Nullable="false" />
+    <Property Name="StaffID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="UserID" Type="int" Nullable="false" />
     <Property Name="Name" Type="nvarchar" MaxLength="200" Nullable="false" />
     <Property Name="DesignationID" Type="int" Nullable="false" />
@@ -266,16 +266,16 @@
     <Property Name="EmailAddress" Type="nvarchar" MaxLength="100" />
     <Property Name="Address" Type="nvarchar" MaxLength="200" Nullable="false" />
     <Property Name="Qualification" Type="nvarchar" MaxLength="500" Nullable="false" />
-    <Property Name="Photo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Photo" Type="nvarchar(max)" />
     <Property Name="Description" Type="nvarchar" MaxLength="500" />
     <Property Name="IsActive" Type="bit" Nullable="false" />
     <Property Name="Gender" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="HomePhone" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Doyouhaveanydisability" Type="bit" />
+    <Property Name="Doyouhaveanydisability" Type="bit" Nullable="false" />
     <Property Name="Ifdisabilityyesthengiveusdetail" Type="nvarchar" MaxLength="3000" />
-    <Property Name="Areyoutakinganymedication" Type="bit" />
-    <Property Name="Imedicationyesthengiveusdetail" Type="nvarchar" MaxLength="3000" />
-    <Property Name="AnyCriminaloffcenceagainstyou" Type="bit" />
+    <Property Name="Areyoutakinganymedication" Type="bit" Nullable="false" />
+    <Property Name="Ifedicationyesthengiveusdetail" Type="nvarchar" MaxLength="3000" />
+    <Property Name="AnyCriminaloffcenceagainstyou" Type="bit" Nullable="false" />
     <Property Name="Ifcriminaloffcenceyesthengiveusdetail" Type="nvarchar" MaxLength="3000" />
     <Property Name="RegistrationDate" Type="date" Nullable="false" />
   </EntityType>

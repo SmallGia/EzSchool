@@ -63,7 +63,10 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Photo)
+            @{
+                string imagepath = Model.Photo;
+                <img src="@Url.Content(imagepath)" alt="Photo" style="width:100px;heigt:150px;max-width:100%;height:auto" />
+            }
         </dd>
 
         <dt>
@@ -123,11 +126,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Imedicationyesthengiveusdetail)
+            @Html.DisplayNameFor(model => model.Ifedicationyesthengiveusdetail)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Imedicationyesthengiveusdetail)
+            @Html.DisplayFor(model => model.Ifedicationyesthengiveusdetail)
         </dd>
 
         <dt>

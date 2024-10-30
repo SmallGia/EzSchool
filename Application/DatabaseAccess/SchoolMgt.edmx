@@ -262,7 +262,7 @@
           <Key>
             <PropertyRef Name="StaffID" />
           </Key>
-          <Property Name="StaffID" Type="int" Nullable="false" />
+          <Property Name="StaffID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="UserID" Type="int" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="DesignationID" Type="int" Nullable="false" />
@@ -271,16 +271,16 @@
           <Property Name="EmailAddress" Type="nvarchar" MaxLength="100" />
           <Property Name="Address" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="Qualification" Type="nvarchar" MaxLength="500" Nullable="false" />
-          <Property Name="Photo" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Photo" Type="nvarchar(max)" />
           <Property Name="Description" Type="nvarchar" MaxLength="500" />
           <Property Name="IsActive" Type="bit" Nullable="false" />
           <Property Name="Gender" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="HomePhone" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Doyouhaveanydisability" Type="bit" />
+          <Property Name="Doyouhaveanydisability" Type="bit" Nullable="false" />
           <Property Name="Ifdisabilityyesthengiveusdetail" Type="nvarchar" MaxLength="3000" />
-          <Property Name="Areyoutakinganymedication" Type="bit" />
-          <Property Name="Imedicationyesthengiveusdetail" Type="nvarchar" MaxLength="3000" />
-          <Property Name="AnyCriminaloffcenceagainstyou" Type="bit" />
+          <Property Name="Areyoutakinganymedication" Type="bit" Nullable="false" />
+          <Property Name="Ifedicationyesthengiveusdetail" Type="nvarchar" MaxLength="3000" />
+          <Property Name="AnyCriminaloffcenceagainstyou" Type="bit" Nullable="false" />
           <Property Name="Ifcriminaloffcenceyesthengiveusdetail" Type="nvarchar" MaxLength="3000" />
           <Property Name="RegistrationDate" Type="date" Nullable="false" />
         </EntityType>
@@ -2646,7 +2646,7 @@ warning 6002: The table/view 'SchoolMgDb.dbo.vAllUsers' does not have a primary 
           <Key>
             <PropertyRef Name="StaffID" />
           </Key>
-          <Property Name="StaffID" Type="Int32" Nullable="false" />
+          <Property Name="StaffID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="UserID" Type="Int32" Nullable="false" />
           <Property Name="Name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="DesignationID" Type="Int32" Nullable="false" />
@@ -2655,16 +2655,16 @@ warning 6002: The table/view 'SchoolMgDb.dbo.vAllUsers' does not have a primary 
           <Property Name="EmailAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Address" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="Qualification" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="Photo" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="IsActive" Type="Boolean" Nullable="false" />
           <Property Name="Gender" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="HomePhone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Doyouhaveanydisability" Type="Boolean" />
+          <Property Name="Doyouhaveanydisability" Type="Boolean" Nullable="false" />
           <Property Name="Ifdisabilityyesthengiveusdetail" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" />
-          <Property Name="Areyoutakinganymedication" Type="Boolean" />
-          <Property Name="Imedicationyesthengiveusdetail" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" />
-          <Property Name="AnyCriminaloffcenceagainstyou" Type="Boolean" />
+          <Property Name="Areyoutakinganymedication" Type="Boolean" Nullable="false" />
+          <Property Name="Ifedicationyesthengiveusdetail" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" />
+          <Property Name="AnyCriminaloffcenceagainstyou" Type="Boolean" Nullable="false" />
           <Property Name="Ifcriminaloffcenceyesthengiveusdetail" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" />
           <Property Name="RegistrationDate" Type="DateTime" Nullable="false" Precision="0" />
           <NavigationProperty Name="DesignationTable" Relationship="SchoolMgDbModel.FK_StaffTable_DesignationTable" FromRole="StaffTable" ToRole="DesignationTable" />
@@ -3168,7 +3168,7 @@ warning 6002: The table/view 'SchoolMgDb.dbo.vAllUsers' does not have a primary 
                 <ScalarProperty Name="RegistrationDate" ColumnName="RegistrationDate" />
                 <ScalarProperty Name="Ifcriminaloffcenceyesthengiveusdetail" ColumnName="Ifcriminaloffcenceyesthengiveusdetail" />
                 <ScalarProperty Name="AnyCriminaloffcenceagainstyou" ColumnName="AnyCriminaloffcenceagainstyou" />
-                <ScalarProperty Name="Imedicationyesthengiveusdetail" ColumnName="Imedicationyesthengiveusdetail" />
+                <ScalarProperty Name="Ifedicationyesthengiveusdetail" ColumnName="Ifedicationyesthengiveusdetail" />
                 <ScalarProperty Name="Areyoutakinganymedication" ColumnName="Areyoutakinganymedication" />
                 <ScalarProperty Name="Ifdisabilityyesthengiveusdetail" ColumnName="Ifdisabilityyesthengiveusdetail" />
                 <ScalarProperty Name="Doyouhaveanydisability" ColumnName="Doyouhaveanydisability" />

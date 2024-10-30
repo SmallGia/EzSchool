@@ -1316,7 +1316,7 @@
     <Key>
       <PropertyRef Name="StaffID" />
     </Key>
-    <Property Name="StaffID" Type="Int32" Nullable="false" />
+    <Property Name="StaffID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="UserID" Type="Int32" Nullable="false" />
     <Property Name="Name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
     <Property Name="DesignationID" Type="Int32" Nullable="false" />
@@ -1325,16 +1325,16 @@
     <Property Name="EmailAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="Address" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
     <Property Name="Qualification" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Name="Photo" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
     <Property Name="IsActive" Type="Boolean" Nullable="false" />
     <Property Name="Gender" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="HomePhone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Doyouhaveanydisability" Type="Boolean" />
+    <Property Name="Doyouhaveanydisability" Type="Boolean" Nullable="false" />
     <Property Name="Ifdisabilityyesthengiveusdetail" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" />
-    <Property Name="Areyoutakinganymedication" Type="Boolean" />
-    <Property Name="Imedicationyesthengiveusdetail" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" />
-    <Property Name="AnyCriminaloffcenceagainstyou" Type="Boolean" />
+    <Property Name="Areyoutakinganymedication" Type="Boolean" Nullable="false" />
+    <Property Name="Ifedicationyesthengiveusdetail" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" />
+    <Property Name="AnyCriminaloffcenceagainstyou" Type="Boolean" Nullable="false" />
     <Property Name="Ifcriminaloffcenceyesthengiveusdetail" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" />
     <Property Name="RegistrationDate" Type="DateTime" Nullable="false" Precision="0" />
     <NavigationProperty Name="DesignationTable" Relationship="SchoolMgDbModel.FK_StaffTable_DesignationTable" FromRole="StaffTable" ToRole="DesignationTable" />

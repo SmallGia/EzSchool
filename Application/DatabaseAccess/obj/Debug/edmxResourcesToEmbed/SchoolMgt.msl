@@ -417,7 +417,7 @@
           <ScalarProperty Name="RegistrationDate" ColumnName="RegistrationDate" />
           <ScalarProperty Name="Ifcriminaloffcenceyesthengiveusdetail" ColumnName="Ifcriminaloffcenceyesthengiveusdetail" />
           <ScalarProperty Name="AnyCriminaloffcenceagainstyou" ColumnName="AnyCriminaloffcenceagainstyou" />
-          <ScalarProperty Name="Imedicationyesthengiveusdetail" ColumnName="Imedicationyesthengiveusdetail" />
+          <ScalarProperty Name="Ifedicationyesthengiveusdetail" ColumnName="Ifedicationyesthengiveusdetail" />
           <ScalarProperty Name="Areyoutakinganymedication" ColumnName="Areyoutakinganymedication" />
           <ScalarProperty Name="Ifdisabilityyesthengiveusdetail" ColumnName="Ifdisabilityyesthengiveusdetail" />
           <ScalarProperty Name="Doyouhaveanydisability" ColumnName="Doyouhaveanydisability" />
