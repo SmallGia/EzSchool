@@ -46,6 +46,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=8.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.8.1.1\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonServiceLocator, Version=2.0.7.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.2.0.7\lib\net47\CommonServiceLocator.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -56,6 +62,13 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.2\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -109,6 +122,21 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Abstractions, Version=5.11.1.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Abstractions.5.11.1\lib\net47\Unity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Container, Version=5.11.1.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Container.5.11.1\lib\net47\Unity.Container.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Interception, Version=5.11.1.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Interception.5.11.1\lib\net47\Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mvc, Version=5.11.1.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Mvc.5.11.1\lib\net47\Unity.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
@@ -139,6 +167,8 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\UnityConfig.cs" />
+    <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AnnualTablesController.cs" />
     <Compile Include="Controllers\AttendanceTablesController.cs" />
@@ -150,6 +180,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProgrameSessionTablesController.cs" />
     <Compile Include="Controllers\ProgrameTablesController.cs" />
+    <Compile Include="Controllers\ResumeController.cs" />
     <Compile Include="Controllers\SessionTablesController.cs" />
     <Compile Include="Controllers\StaffAttendanceTablesController.cs" />
     <Compile Include="Controllers\StaffTablesController.cs" />
@@ -163,8 +194,22 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Certification.cs" />
+    <Compile Include="Models\Education.cs" />
+    <Compile Include="Models\Language.cs" />
+    <Compile Include="Models\Person.cs" />
+    <Compile Include="Models\Skill.cs" />
+    <Compile Include="Models\WorkExperience.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\StudentPromotTablesController.cs" />
+    <Compile Include="Repository\IResumeRepository.cs" />
+    <Compile Include="Repository\ResumeRepository.cs" />
+    <Compile Include="ViewModels\EmployeeCertificationVM.cs" />
+    <Compile Include="ViewModels\EmployeeEducationTableMV.cs" />
+    <Compile Include="ViewModels\EmployeeLanguageVM.cs" />
+    <Compile Include="ViewModels\EmployeeResumeTableMV.cs" />
+    <Compile Include="ViewModels\EmployeeSkillsVM.cs" />
+    <Compile Include="ViewModels\EmployeeWorkExperienceVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\AdminTemp\css\sb-admin-2.css" />
@@ -2084,10 +2129,22 @@
     <Content Include="Views\StaffTables\Details.cshtml" />
     <Content Include="Views\StaffTables\Edit.cshtml" />
     <Content Include="Views\StaffTables\Index.cshtml" />
+    <Content Include="Views\Shared\_MyCertificationCV.cshtml" />
+    <Content Include="Views\Shared\_MyCertifications.cshtml" />
+    <Content Include="Views\Shared\_MyEducation.cshtml" />
+    <Content Include="Views\Shared\_MyEducationCV.cshtml" />
+    <Content Include="Views\Shared\_MyLanguage.cshtml" />
+    <Content Include="Views\Shared\_MyLanguageCV.cshtml" />
+    <Content Include="Views\Shared\_MyPersonnalInfo.cshtml" />
+    <Content Include="Views\Shared\_MySkills.cshtml" />
+    <Content Include="Views\Shared\_MySkillsCV.cshtml" />
+    <Content Include="Views\Shared\_MyWorkExperience.cshtml" />
+    <Content Include="Views\Shared\_ResumeLayoutPage.cshtml" />
+    <Content Include="Views\Shared\_WorkExperienceCV.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+    <Folder Include="Views\Resume\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
