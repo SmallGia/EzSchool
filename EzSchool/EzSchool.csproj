@@ -164,6 +164,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\Bootstrapper.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -1832,7 +1833,9 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\EmployeePhoto\default.png" />
+    <Content Include="Content\StudentPhoto\default.png" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -2008,6 +2011,10 @@
     <Content Include="Content\AdminTemp\vendor\fontawesome-free\webfonts\fa-solid-900.woff2" />
     <Content Include="Content\AdminTemp\vendor\jquery\jquery.min.map" />
     <Content Include="Content\AdminTemp\vendor\jquery\jquery.slim.min.map" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
@@ -2119,11 +2126,6 @@
     <Content Include="Views\SubmissionFeeTables\Details.cshtml" />
     <Content Include="Views\SubmissionFeeTables\Edit.cshtml" />
     <Content Include="Views\SubmissionFeeTables\Index.cshtml" />
-    <Content Include="Views\StudentTables\Create.cshtml" />
-    <Content Include="Views\StudentTables\Delete.cshtml" />
-    <Content Include="Views\StudentTables\Details.cshtml" />
-    <Content Include="Views\StudentTables\Edit.cshtml" />
-    <Content Include="Views\StudentTables\Index.cshtml" />
     <Content Include="Views\StaffTables\Create.cshtml" />
     <Content Include="Views\StaffTables\Delete.cshtml" />
     <Content Include="Views\StaffTables\Details.cshtml" />
@@ -2141,6 +2143,11 @@
     <Content Include="Views\Shared\_MyWorkExperience.cshtml" />
     <Content Include="Views\Shared\_ResumeLayoutPage.cshtml" />
     <Content Include="Views\Shared\_WorkExperienceCV.cshtml" />
+    <Content Include="Views\StudentTables\Create.cshtml" />
+    <Content Include="Views\StudentTables\Delete.cshtml" />
+    <Content Include="Views\StudentTables\Details.cshtml" />
+    <Content Include="Views\StudentTables\Edit.cshtml" />
+    <Content Include="Views\StudentTables\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

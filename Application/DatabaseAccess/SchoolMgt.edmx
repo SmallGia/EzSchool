@@ -312,21 +312,13 @@
           <Property Name="DateofBirth" Type="date" Nullable="false" />
           <Property Name="Gender" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="ContactNo" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="CNIC" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="FNIC" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Photo" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Photo" Type="nvarchar(max)" />
           <Property Name="AddmissionDate" Type="date" Nullable="false" />
           <Property Name="PreviousSchool" Type="nvarchar" MaxLength="500" />
           <Property Name="PreviousPercentage" Type="float" />
           <Property Name="EmailAddress" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="Address" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="Nationality" Type="nvarchar" MaxLength="120" Nullable="false" />
-          <Property Name="Religion" Type="nvarchar" MaxLength="50" />
-          <Property Name="TribeorCaste" Type="nvarchar" MaxLength="50" />
-          <Property Name="FathersGuardiansOccupationofProfession" Type="nvarchar" MaxLength="150" />
-          <Property Name="FathersGuardiansPostalAddress" Type="nvarchar" MaxLength="200" />
-          <Property Name="PhoneOffice" Type="nvarchar" MaxLength="50" />
-          <Property Name="PhoneResident" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="SubjectTable">
           <Key>
@@ -1497,8 +1489,8 @@ warning 6002: The table/view 'SchoolMgDb.dbo.vAllUsers' does not have a primary 
           <NavigationProperty Name="EventTables" Relationship="SchoolMgDbModel.FK_EventTable_UserTable" FromRole="UserTable" ToRole="EventTable" />
           <NavigationProperty Name="SchoolLeavingTables" Relationship="SchoolMgDbModel.FK_SchoolLeavingTable_UserTable" FromRole="UserTable" ToRole="SchoolLeavingTable" />
           <NavigationProperty Name="SectionTables" Relationship="SchoolMgDbModel.FK_SectionTable_UserTable" FromRole="UserTable" ToRole="SectionTable" />
-          <NavigationProperty Name="StudentTables" Relationship="SchoolMgDbModel.FK_StudentTable_UserTable" FromRole="UserTable" ToRole="StudentTable" />
           <NavigationProperty Name="StaffTables" Relationship="SchoolMgDbModel.FK_StaffTable_UserTable" FromRole="UserTable" ToRole="StaffTable" />
+          <NavigationProperty Name="StudentTables" Relationship="SchoolMgDbModel.FK_StudentTable_UserTable" FromRole="UserTable" ToRole="StudentTable" />
         </EntityType>
         <EntityType Name="UserTypeTable">
           <Key>
@@ -1839,6 +1831,32 @@ warning 6002: The table/view 'SchoolMgDb.dbo.vAllUsers' does not have a primary 
             <End Role="SectionTable" EntitySet="SectionTables" />
             <End Role="StudentPromotTable" EntitySet="StudentPromotTables" />
           </AssociationSet>
+          <EntitySet Name="vAllUsers" EntityType="SchoolMgDbModel.vAllUser" />
+          <EntitySet Name="StaffTables" EntityType="SchoolMgDbModel.StaffTable" />
+          <AssociationSet Name="FK_StaffTable_DesignationTable" Association="SchoolMgDbModel.FK_StaffTable_DesignationTable">
+            <End Role="DesignationTable" EntitySet="DesignationTables" />
+            <End Role="StaffTable" EntitySet="StaffTables" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeLeavingTable_StaffTable" Association="SchoolMgDbModel.FK_EmployeeLeavingTable_StaffTable">
+            <End Role="StaffTable" EntitySet="StaffTables" />
+            <End Role="EmployeeLeavingTable" EntitySet="EmployeeLeavingTables" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeSalaryTable_StaffTable" Association="SchoolMgDbModel.FK_EmployeeSalaryTable_StaffTable">
+            <End Role="StaffTable" EntitySet="StaffTables" />
+            <End Role="EmployeeSalaryTable" EntitySet="EmployeeSalaryTables" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StaffAttendanceTable_StaffTable" Association="SchoolMgDbModel.FK_StaffAttendanceTable_StaffTable">
+            <End Role="StaffTable" EntitySet="StaffTables" />
+            <End Role="StaffAttendanceTable" EntitySet="StaffAttendanceTables" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StaffTable_UserTable" Association="SchoolMgDbModel.FK_StaffTable_UserTable">
+            <End Role="UserTable" EntitySet="UserTables" />
+            <End Role="StaffTable" EntitySet="StaffTables" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TimeTblTable_StaffTable" Association="SchoolMgDbModel.FK_TimeTblTable_StaffTable">
+            <End Role="StaffTable" EntitySet="StaffTables" />
+            <End Role="TimeTblTable" EntitySet="TimeTblTables" />
+          </AssociationSet>
           <EntitySet Name="StudentTables" EntityType="SchoolMgDbModel.StudentTable" />
           <AssociationSet Name="FK_AttendanceTable_StudentTable" Association="SchoolMgDbModel.FK_AttendanceTable_StudentTable">
             <End Role="StudentTable" EntitySet="StudentTables" />
@@ -1875,32 +1893,6 @@ warning 6002: The table/view 'SchoolMgDb.dbo.vAllUsers' does not have a primary 
           <AssociationSet Name="FK_SubmissionFeeTable_StudentTable" Association="SchoolMgDbModel.FK_SubmissionFeeTable_StudentTable">
             <End Role="StudentTable" EntitySet="StudentTables" />
             <End Role="SubmissionFeeTable" EntitySet="SubmissionFeeTables" />
-          </AssociationSet>
-          <EntitySet Name="vAllUsers" EntityType="SchoolMgDbModel.vAllUser" />
-          <EntitySet Name="StaffTables" EntityType="SchoolMgDbModel.StaffTable" />
-          <AssociationSet Name="FK_StaffTable_DesignationTable" Association="SchoolMgDbModel.FK_StaffTable_DesignationTable">
-            <End Role="DesignationTable" EntitySet="DesignationTables" />
-            <End Role="StaffTable" EntitySet="StaffTables" />
-          </AssociationSet>
-          <AssociationSet Name="FK_EmployeeLeavingTable_StaffTable" Association="SchoolMgDbModel.FK_EmployeeLeavingTable_StaffTable">
-            <End Role="StaffTable" EntitySet="StaffTables" />
-            <End Role="EmployeeLeavingTable" EntitySet="EmployeeLeavingTables" />
-          </AssociationSet>
-          <AssociationSet Name="FK_EmployeeSalaryTable_StaffTable" Association="SchoolMgDbModel.FK_EmployeeSalaryTable_StaffTable">
-            <End Role="StaffTable" EntitySet="StaffTables" />
-            <End Role="EmployeeSalaryTable" EntitySet="EmployeeSalaryTables" />
-          </AssociationSet>
-          <AssociationSet Name="FK_StaffAttendanceTable_StaffTable" Association="SchoolMgDbModel.FK_StaffAttendanceTable_StaffTable">
-            <End Role="StaffTable" EntitySet="StaffTables" />
-            <End Role="StaffAttendanceTable" EntitySet="StaffAttendanceTables" />
-          </AssociationSet>
-          <AssociationSet Name="FK_StaffTable_UserTable" Association="SchoolMgDbModel.FK_StaffTable_UserTable">
-            <End Role="UserTable" EntitySet="UserTables" />
-            <End Role="StaffTable" EntitySet="StaffTables" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TimeTblTable_StaffTable" Association="SchoolMgDbModel.FK_TimeTblTable_StaffTable">
-            <End Role="StaffTable" EntitySet="StaffTables" />
-            <End Role="TimeTblTable" EntitySet="TimeTblTables" />
           </AssociationSet>
           </EntityContainer>
         <EntityType Name="ClassTable">
@@ -2477,153 +2469,6 @@ warning 6002: The table/view 'SchoolMgDb.dbo.vAllUsers' does not have a primary 
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="StudentTable">
-          <Key>
-            <PropertyRef Name="StudentID" />
-          </Key>
-          <Property Name="StudentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="SessionID" Type="Int32" Nullable="false" />
-          <Property Name="ProgrameID" Type="Int32" Nullable="false" />
-          <Property Name="ClassID" Type="Int32" Nullable="false" />
-          <Property Name="UserID" Type="Int32" Nullable="false" />
-          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="FatherName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="DateofBirth" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="Gender" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="ContactNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="CNIC" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="FNIC" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Photo" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="AddmissionDate" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="PreviousSchool" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="PreviousPercentage" Type="Double" />
-          <Property Name="EmailAddress" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Address" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="Nationality" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="true" />
-          <Property Name="Religion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="TribeorCaste" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="FathersGuardiansOccupationofProfession" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Name="FathersGuardiansPostalAddress" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="PhoneOffice" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="PhoneResident" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="AttendanceTables" Relationship="SchoolMgDbModel.FK_AttendanceTable_StudentTable" FromRole="StudentTable" ToRole="AttendanceTable" />
-          <NavigationProperty Name="ClassTable" Relationship="SchoolMgDbModel.FK_StudentTable_ClassTable" FromRole="StudentTable" ToRole="ClassTable" />
-          <NavigationProperty Name="ExamMarksTables" Relationship="SchoolMgDbModel.FK_ExamMarksTable_StudentTable" FromRole="StudentTable" ToRole="ExamMarksTable" />
-          <NavigationProperty Name="ProgrameTable" Relationship="SchoolMgDbModel.FK_StudentTable_ProgrameTable" FromRole="StudentTable" ToRole="ProgrameTable" />
-          <NavigationProperty Name="SchoolLeavingTables" Relationship="SchoolMgDbModel.FK_SchoolLeavingTable_StudentTable" FromRole="StudentTable" ToRole="SchoolLeavingTable" />
-          <NavigationProperty Name="SessionTable" Relationship="SchoolMgDbModel.FK_StudentTable_SessionTable" FromRole="StudentTable" ToRole="SessionTable" />
-          <NavigationProperty Name="StudentPromotTables" Relationship="SchoolMgDbModel.FK_StudentPromotTable_StudentTable" FromRole="StudentTable" ToRole="StudentPromotTable" />
-          <NavigationProperty Name="UserTable" Relationship="SchoolMgDbModel.FK_StudentTable_UserTable" FromRole="StudentTable" ToRole="UserTable" />
-          <NavigationProperty Name="SubmissionFeeTables" Relationship="SchoolMgDbModel.FK_SubmissionFeeTable_StudentTable" FromRole="StudentTable" ToRole="SubmissionFeeTable" />
-        </EntityType>
-        <Association Name="FK_AttendanceTable_StudentTable">
-          <End Type="SchoolMgDbModel.StudentTable" Role="StudentTable" Multiplicity="1" />
-          <End Type="SchoolMgDbModel.AttendanceTable" Role="AttendanceTable" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="StudentTable">
-              <PropertyRef Name="StudentID" />
-            </Principal>
-            <Dependent Role="AttendanceTable">
-              <PropertyRef Name="StudentID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_StudentTable_ClassTable">
-          <End Type="SchoolMgDbModel.ClassTable" Role="ClassTable" Multiplicity="1" />
-          <End Type="SchoolMgDbModel.StudentTable" Role="StudentTable" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ClassTable">
-              <PropertyRef Name="ClassID" />
-            </Principal>
-            <Dependent Role="StudentTable">
-              <PropertyRef Name="ClassID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ExamMarksTable_StudentTable">
-          <End Type="SchoolMgDbModel.StudentTable" Role="StudentTable" Multiplicity="1" />
-          <End Type="SchoolMgDbModel.ExamMarksTable" Role="ExamMarksTable" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="StudentTable">
-              <PropertyRef Name="StudentID" />
-            </Principal>
-            <Dependent Role="ExamMarksTable">
-              <PropertyRef Name="StudentID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_StudentTable_ProgrameTable">
-          <End Type="SchoolMgDbModel.ProgrameTable" Role="ProgrameTable" Multiplicity="1" />
-          <End Type="SchoolMgDbModel.StudentTable" Role="StudentTable" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ProgrameTable">
-              <PropertyRef Name="ProgrameID" />
-            </Principal>
-            <Dependent Role="StudentTable">
-              <PropertyRef Name="ProgrameID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_SchoolLeavingTable_StudentTable">
-          <End Type="SchoolMgDbModel.StudentTable" Role="StudentTable" Multiplicity="1" />
-          <End Type="SchoolMgDbModel.SchoolLeavingTable" Role="SchoolLeavingTable" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="StudentTable">
-              <PropertyRef Name="StudentID" />
-            </Principal>
-            <Dependent Role="SchoolLeavingTable">
-              <PropertyRef Name="StudentID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_StudentTable_SessionTable">
-          <End Type="SchoolMgDbModel.SessionTable" Role="SessionTable" Multiplicity="1" />
-          <End Type="SchoolMgDbModel.StudentTable" Role="StudentTable" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SessionTable">
-              <PropertyRef Name="SessionID" />
-            </Principal>
-            <Dependent Role="StudentTable">
-              <PropertyRef Name="SessionID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_StudentPromotTable_StudentTable">
-          <End Type="SchoolMgDbModel.StudentTable" Role="StudentTable" Multiplicity="1" />
-          <End Type="SchoolMgDbModel.StudentPromotTable" Role="StudentPromotTable" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="StudentTable">
-              <PropertyRef Name="StudentID" />
-            </Principal>
-            <Dependent Role="StudentPromotTable">
-              <PropertyRef Name="StudentID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_StudentTable_UserTable">
-          <End Type="SchoolMgDbModel.UserTable" Role="UserTable" Multiplicity="1" />
-          <End Type="SchoolMgDbModel.StudentTable" Role="StudentTable" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="UserTable">
-              <PropertyRef Name="UserID" />
-            </Principal>
-            <Dependent Role="StudentTable">
-              <PropertyRef Name="UserID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_SubmissionFeeTable_StudentTable">
-          <End Type="SchoolMgDbModel.StudentTable" Role="StudentTable" Multiplicity="1" />
-          <End Type="SchoolMgDbModel.SubmissionFeeTable" Role="SubmissionFeeTable" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="StudentTable">
-              <PropertyRef Name="StudentID" />
-            </Principal>
-            <Dependent Role="SubmissionFeeTable">
-              <PropertyRef Name="StudentID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="vAllUser">
           <Key>
             <PropertyRef Name="UserID" />
@@ -2743,6 +2588,145 @@ warning 6002: The table/view 'SchoolMgDb.dbo.vAllUsers' does not have a primary 
             </Principal>
             <Dependent Role="TimeTblTable">
               <PropertyRef Name="StaffID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="StudentTable">
+          <Key>
+            <PropertyRef Name="StudentID" />
+          </Key>
+          <Property Name="StudentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SessionID" Type="Int32" Nullable="false" />
+          <Property Name="ProgrameID" Type="Int32" Nullable="false" />
+          <Property Name="ClassID" Type="Int32" Nullable="false" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FatherName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DateofBirth" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Gender" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ContactNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AddmissionDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="PreviousSchool" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="PreviousPercentage" Type="Double" />
+          <Property Name="EmailAddress" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Nationality" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AttendanceTables" Relationship="SchoolMgDbModel.FK_AttendanceTable_StudentTable" FromRole="StudentTable" ToRole="AttendanceTable" />
+          <NavigationProperty Name="ClassTable" Relationship="SchoolMgDbModel.FK_StudentTable_ClassTable" FromRole="StudentTable" ToRole="ClassTable" />
+          <NavigationProperty Name="ExamMarksTables" Relationship="SchoolMgDbModel.FK_ExamMarksTable_StudentTable" FromRole="StudentTable" ToRole="ExamMarksTable" />
+          <NavigationProperty Name="ProgrameTable" Relationship="SchoolMgDbModel.FK_StudentTable_ProgrameTable" FromRole="StudentTable" ToRole="ProgrameTable" />
+          <NavigationProperty Name="SchoolLeavingTables" Relationship="SchoolMgDbModel.FK_SchoolLeavingTable_StudentTable" FromRole="StudentTable" ToRole="SchoolLeavingTable" />
+          <NavigationProperty Name="SessionTable" Relationship="SchoolMgDbModel.FK_StudentTable_SessionTable" FromRole="StudentTable" ToRole="SessionTable" />
+          <NavigationProperty Name="StudentPromotTables" Relationship="SchoolMgDbModel.FK_StudentPromotTable_StudentTable" FromRole="StudentTable" ToRole="StudentPromotTable" />
+          <NavigationProperty Name="UserTable" Relationship="SchoolMgDbModel.FK_StudentTable_UserTable" FromRole="StudentTable" ToRole="UserTable" />
+          <NavigationProperty Name="SubmissionFeeTables" Relationship="SchoolMgDbModel.FK_SubmissionFeeTable_StudentTable" FromRole="StudentTable" ToRole="SubmissionFeeTable" />
+        </EntityType>
+        <Association Name="FK_AttendanceTable_StudentTable">
+          <End Type="SchoolMgDbModel.StudentTable" Role="StudentTable" Multiplicity="1" />
+          <End Type="SchoolMgDbModel.AttendanceTable" Role="AttendanceTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StudentTable">
+              <PropertyRef Name="StudentID" />
+            </Principal>
+            <Dependent Role="AttendanceTable">
+              <PropertyRef Name="StudentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StudentTable_ClassTable">
+          <End Type="SchoolMgDbModel.ClassTable" Role="ClassTable" Multiplicity="1" />
+          <End Type="SchoolMgDbModel.StudentTable" Role="StudentTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ClassTable">
+              <PropertyRef Name="ClassID" />
+            </Principal>
+            <Dependent Role="StudentTable">
+              <PropertyRef Name="ClassID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ExamMarksTable_StudentTable">
+          <End Type="SchoolMgDbModel.StudentTable" Role="StudentTable" Multiplicity="1" />
+          <End Type="SchoolMgDbModel.ExamMarksTable" Role="ExamMarksTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StudentTable">
+              <PropertyRef Name="StudentID" />
+            </Principal>
+            <Dependent Role="ExamMarksTable">
+              <PropertyRef Name="StudentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StudentTable_ProgrameTable">
+          <End Type="SchoolMgDbModel.ProgrameTable" Role="ProgrameTable" Multiplicity="1" />
+          <End Type="SchoolMgDbModel.StudentTable" Role="StudentTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProgrameTable">
+              <PropertyRef Name="ProgrameID" />
+            </Principal>
+            <Dependent Role="StudentTable">
+              <PropertyRef Name="ProgrameID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SchoolLeavingTable_StudentTable">
+          <End Type="SchoolMgDbModel.StudentTable" Role="StudentTable" Multiplicity="1" />
+          <End Type="SchoolMgDbModel.SchoolLeavingTable" Role="SchoolLeavingTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StudentTable">
+              <PropertyRef Name="StudentID" />
+            </Principal>
+            <Dependent Role="SchoolLeavingTable">
+              <PropertyRef Name="StudentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StudentTable_SessionTable">
+          <End Type="SchoolMgDbModel.SessionTable" Role="SessionTable" Multiplicity="1" />
+          <End Type="SchoolMgDbModel.StudentTable" Role="StudentTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SessionTable">
+              <PropertyRef Name="SessionID" />
+            </Principal>
+            <Dependent Role="StudentTable">
+              <PropertyRef Name="SessionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StudentPromotTable_StudentTable">
+          <End Type="SchoolMgDbModel.StudentTable" Role="StudentTable" Multiplicity="1" />
+          <End Type="SchoolMgDbModel.StudentPromotTable" Role="StudentPromotTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StudentTable">
+              <PropertyRef Name="StudentID" />
+            </Principal>
+            <Dependent Role="StudentPromotTable">
+              <PropertyRef Name="StudentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StudentTable_UserTable">
+          <End Type="SchoolMgDbModel.UserTable" Role="UserTable" Multiplicity="1" />
+          <End Type="SchoolMgDbModel.StudentTable" Role="StudentTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserTable">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="StudentTable">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SubmissionFeeTable_StudentTable">
+          <End Type="SchoolMgDbModel.StudentTable" Role="StudentTable" Multiplicity="1" />
+          <End Type="SchoolMgDbModel.SubmissionFeeTable" Role="SubmissionFeeTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StudentTable">
+              <PropertyRef Name="StudentID" />
+            </Principal>
+            <Dependent Role="SubmissionFeeTable">
+              <PropertyRef Name="StudentID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -3117,37 +3101,6 @@ warning 6002: The table/view 'SchoolMgDb.dbo.vAllUsers' does not have a primary 
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="StudentTables">
-            <EntityTypeMapping TypeName="SchoolMgDbModel.StudentTable">
-              <MappingFragment StoreEntitySet="StudentTable">
-                <ScalarProperty Name="PhoneResident" ColumnName="PhoneResident" />
-                <ScalarProperty Name="PhoneOffice" ColumnName="PhoneOffice" />
-                <ScalarProperty Name="FathersGuardiansPostalAddress" ColumnName="FathersGuardiansPostalAddress" />
-                <ScalarProperty Name="FathersGuardiansOccupationofProfession" ColumnName="FathersGuardiansOccupationofProfession" />
-                <ScalarProperty Name="TribeorCaste" ColumnName="TribeorCaste" />
-                <ScalarProperty Name="Religion" ColumnName="Religion" />
-                <ScalarProperty Name="Nationality" ColumnName="Nationality" />
-                <ScalarProperty Name="Address" ColumnName="Address" />
-                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
-                <ScalarProperty Name="PreviousPercentage" ColumnName="PreviousPercentage" />
-                <ScalarProperty Name="PreviousSchool" ColumnName="PreviousSchool" />
-                <ScalarProperty Name="AddmissionDate" ColumnName="AddmissionDate" />
-                <ScalarProperty Name="Photo" ColumnName="Photo" />
-                <ScalarProperty Name="FNIC" ColumnName="FNIC" />
-                <ScalarProperty Name="CNIC" ColumnName="CNIC" />
-                <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
-                <ScalarProperty Name="Gender" ColumnName="Gender" />
-                <ScalarProperty Name="DateofBirth" ColumnName="DateofBirth" />
-                <ScalarProperty Name="FatherName" ColumnName="FatherName" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="UserID" ColumnName="UserID" />
-                <ScalarProperty Name="ClassID" ColumnName="ClassID" />
-                <ScalarProperty Name="ProgrameID" ColumnName="ProgrameID" />
-                <ScalarProperty Name="SessionID" ColumnName="SessionID" />
-                <ScalarProperty Name="StudentID" ColumnName="StudentID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="vAllUsers">
             <EntityTypeMapping TypeName="SchoolMgDbModel.vAllUser">
               <MappingFragment StoreEntitySet="vAllUsers">
@@ -3186,6 +3139,29 @@ warning 6002: The table/view 'SchoolMgDb.dbo.vAllUsers' does not have a primary 
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="UserID" ColumnName="UserID" />
                 <ScalarProperty Name="StaffID" ColumnName="StaffID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StudentTables">
+            <EntityTypeMapping TypeName="SchoolMgDbModel.StudentTable">
+              <MappingFragment StoreEntitySet="StudentTable">
+                <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="PreviousPercentage" ColumnName="PreviousPercentage" />
+                <ScalarProperty Name="PreviousSchool" ColumnName="PreviousSchool" />
+                <ScalarProperty Name="AddmissionDate" ColumnName="AddmissionDate" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="DateofBirth" ColumnName="DateofBirth" />
+                <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="ClassID" ColumnName="ClassID" />
+                <ScalarProperty Name="ProgrameID" ColumnName="ProgrameID" />
+                <ScalarProperty Name="SessionID" ColumnName="SessionID" />
+                <ScalarProperty Name="StudentID" ColumnName="StudentID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

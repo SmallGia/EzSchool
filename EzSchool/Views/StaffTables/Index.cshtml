@@ -60,7 +60,7 @@
         <td class="btn-group">
             @Html.ActionLink("Edit", "Edit", new { id=item.StaffID }, new {@class = "btn btn-primary"}) 
             @Html.ActionLink("Details", "Details", new { id=item.StaffID }, new {@class = "btn btn-info"})
-            @Html.ActionLink("Add Resume","Resume",new {id=item.StaffID}, new {@class = "btn btn-success"})
+            @Html.ActionLink("Add Resume","CheckCV","Resume",new {id=item.StaffID}, new {@class = "btn btn-success"})
             @*@Html.ActionLink("Delete", "Delete", new { id=item.StaffID }, new {@class = "btn btn-danger"})*@
         </td>
     </tr>

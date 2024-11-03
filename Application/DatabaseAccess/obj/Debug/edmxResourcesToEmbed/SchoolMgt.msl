@@ -366,37 +366,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="StudentTables">
-      <EntityTypeMapping TypeName="SchoolMgDbModel.StudentTable">
-        <MappingFragment StoreEntitySet="StudentTable">
-          <ScalarProperty Name="PhoneResident" ColumnName="PhoneResident" />
-          <ScalarProperty Name="PhoneOffice" ColumnName="PhoneOffice" />
-          <ScalarProperty Name="FathersGuardiansPostalAddress" ColumnName="FathersGuardiansPostalAddress" />
-          <ScalarProperty Name="FathersGuardiansOccupationofProfession" ColumnName="FathersGuardiansOccupationofProfession" />
-          <ScalarProperty Name="TribeorCaste" ColumnName="TribeorCaste" />
-          <ScalarProperty Name="Religion" ColumnName="Religion" />
-          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
-          <ScalarProperty Name="Address" ColumnName="Address" />
-          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
-          <ScalarProperty Name="PreviousPercentage" ColumnName="PreviousPercentage" />
-          <ScalarProperty Name="PreviousSchool" ColumnName="PreviousSchool" />
-          <ScalarProperty Name="AddmissionDate" ColumnName="AddmissionDate" />
-          <ScalarProperty Name="Photo" ColumnName="Photo" />
-          <ScalarProperty Name="FNIC" ColumnName="FNIC" />
-          <ScalarProperty Name="CNIC" ColumnName="CNIC" />
-          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
-          <ScalarProperty Name="Gender" ColumnName="Gender" />
-          <ScalarProperty Name="DateofBirth" ColumnName="DateofBirth" />
-          <ScalarProperty Name="FatherName" ColumnName="FatherName" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="UserID" ColumnName="UserID" />
-          <ScalarProperty Name="ClassID" ColumnName="ClassID" />
-          <ScalarProperty Name="ProgrameID" ColumnName="ProgrameID" />
-          <ScalarProperty Name="SessionID" ColumnName="SessionID" />
-          <ScalarProperty Name="StudentID" ColumnName="StudentID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="vAllUsers">
       <EntityTypeMapping TypeName="SchoolMgDbModel.vAllUser">
         <MappingFragment StoreEntitySet="vAllUsers">
@@ -435,6 +404,29 @@
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="UserID" ColumnName="UserID" />
           <ScalarProperty Name="StaffID" ColumnName="StaffID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StudentTables">
+      <EntityTypeMapping TypeName="SchoolMgDbModel.StudentTable">
+        <MappingFragment StoreEntitySet="StudentTable">
+          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="PreviousPercentage" ColumnName="PreviousPercentage" />
+          <ScalarProperty Name="PreviousSchool" ColumnName="PreviousSchool" />
+          <ScalarProperty Name="AddmissionDate" ColumnName="AddmissionDate" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="DateofBirth" ColumnName="DateofBirth" />
+          <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ClassID" ColumnName="ClassID" />
+          <ScalarProperty Name="ProgrameID" ColumnName="ProgrameID" />
+          <ScalarProperty Name="SessionID" ColumnName="SessionID" />
+          <ScalarProperty Name="StudentID" ColumnName="StudentID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -26,10 +26,16 @@ namespace EzSchool.Controllers
             return View();
         }
 
-        public ActionResult CheckCV()
+        public ActionResult CheckCV(int? id)
         {
-            var employeeid = 0;
-            int.TryParse(Convert.ToString(Session["EmployeeID"]), out employeeid);
+            int employeeid = 0;
+            if (id == null || id == 0)
+            {
+                //var employeeid = 0;
+                int.TryParse(Convert.ToString(Session["EmployeeID"]), out employeeid);
+            }
+            else 
+                employeeid = Convert.ToInt32(id);
             using (SchoolMgDbEntities db = new SchoolMgDbEntities())
             {
                 var people = db.EmployeeResumeTables.Where(p => p.EmployeeID == employeeid);

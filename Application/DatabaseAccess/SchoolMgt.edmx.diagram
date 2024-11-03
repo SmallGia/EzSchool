@@ -73,7 +73,15 @@
         <AssociationConnector Association="SchoolMgDbModel.FK_SchoolLeavingTable_UserTable" />
         <AssociationConnector Association="SchoolMgDbModel.FK_SectionTable_UserTable" />
         <AssociationConnector Association="SchoolMgDbModel.FK_StudentPromotTable_SectionTable" />
-        <EntityTypeShape EntityType="SchoolMgDbModel.StudentTable" Width="1.5" PointX="21" PointY="21.375" />
+        <EntityTypeShape EntityType="SchoolMgDbModel.vAllUser" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="SchoolMgDbModel.StaffTable" Width="1.5" PointX="7.5" PointY="18.375" />
+        <AssociationConnector Association="SchoolMgDbModel.FK_StaffTable_DesignationTable" />
+        <AssociationConnector Association="SchoolMgDbModel.FK_EmployeeLeavingTable_StaffTable" />
+        <AssociationConnector Association="SchoolMgDbModel.FK_EmployeeSalaryTable_StaffTable" />
+        <AssociationConnector Association="SchoolMgDbModel.FK_StaffAttendanceTable_StaffTable" />
+        <AssociationConnector Association="SchoolMgDbModel.FK_StaffTable_UserTable" />
+        <AssociationConnector Association="SchoolMgDbModel.FK_TimeTblTable_StaffTable" />
+        <EntityTypeShape EntityType="SchoolMgDbModel.StudentTable" Width="1.5" PointX="21" PointY="22.125" />
         <AssociationConnector Association="SchoolMgDbModel.FK_AttendanceTable_StudentTable" />
         <AssociationConnector Association="SchoolMgDbModel.FK_StudentTable_ClassTable" />
         <AssociationConnector Association="SchoolMgDbModel.FK_ExamMarksTable_StudentTable" />
@@ -83,14 +91,6 @@
         <AssociationConnector Association="SchoolMgDbModel.FK_StudentPromotTable_StudentTable" />
         <AssociationConnector Association="SchoolMgDbModel.FK_StudentTable_UserTable" />
         <AssociationConnector Association="SchoolMgDbModel.FK_SubmissionFeeTable_StudentTable" />
-        <EntityTypeShape EntityType="SchoolMgDbModel.vAllUser" Width="1.5" PointX="0.75" PointY="3.75" />
-        <EntityTypeShape EntityType="SchoolMgDbModel.StaffTable" Width="1.5" PointX="7.5" PointY="18.375" />
-        <AssociationConnector Association="SchoolMgDbModel.FK_StaffTable_DesignationTable" />
-        <AssociationConnector Association="SchoolMgDbModel.FK_EmployeeLeavingTable_StaffTable" />
-        <AssociationConnector Association="SchoolMgDbModel.FK_EmployeeSalaryTable_StaffTable" />
-        <AssociationConnector Association="SchoolMgDbModel.FK_StaffAttendanceTable_StaffTable" />
-        <AssociationConnector Association="SchoolMgDbModel.FK_StaffTable_UserTable" />
-        <AssociationConnector Association="SchoolMgDbModel.FK_TimeTblTable_StaffTable" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

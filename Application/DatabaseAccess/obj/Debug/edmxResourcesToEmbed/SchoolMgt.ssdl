@@ -307,21 +307,13 @@
     <Property Name="DateofBirth" Type="date" Nullable="false" />
     <Property Name="Gender" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="ContactNo" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="CNIC" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="FNIC" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Photo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Photo" Type="nvarchar(max)" />
     <Property Name="AddmissionDate" Type="date" Nullable="false" />
     <Property Name="PreviousSchool" Type="nvarchar" MaxLength="500" />
     <Property Name="PreviousPercentage" Type="float" />
     <Property Name="EmailAddress" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="Address" Type="nvarchar" MaxLength="200" Nullable="false" />
     <Property Name="Nationality" Type="nvarchar" MaxLength="120" Nullable="false" />
-    <Property Name="Religion" Type="nvarchar" MaxLength="50" />
-    <Property Name="TribeorCaste" Type="nvarchar" MaxLength="50" />
-    <Property Name="FathersGuardiansOccupationofProfession" Type="nvarchar" MaxLength="150" />
-    <Property Name="FathersGuardiansPostalAddress" Type="nvarchar" MaxLength="200" />
-    <Property Name="PhoneOffice" Type="nvarchar" MaxLength="50" />
-    <Property Name="PhoneResident" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="SubjectTable">
     <Key>

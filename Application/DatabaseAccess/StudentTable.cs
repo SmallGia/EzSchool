@@ -38,8 +38,6 @@ namespace DatabaseAccess
         public System.DateTime DateofBirth { get; set; }
         public string Gender { get; set; }
         public string ContactNo { get; set; }
-        public string CNIC { get; set; }
-        public string FNIC { get; set; }
         public string Photo { get; set; }
         [DataType(DataType.Date)]
         public System.DateTime AddmissionDate { get; set; }
@@ -48,13 +46,8 @@ namespace DatabaseAccess
         public string EmailAddress { get; set; }
         public string Address { get; set; }
         public string Nationality { get; set; }
-        public string Religion { get; set; }
-        public string TribeorCaste { get; set; }
-        public string FathersGuardiansOccupationofProfession { get; set; }
-        public string FathersGuardiansPostalAddress { get; set; }
-        public string PhoneOffice { get; set; }
-        public string PhoneResident { get; set; }
         [NotMapped]
+        [Required(ErrorMessage = "{0} Required Field!")]
         public HttpPostedFileBase PhotoFile { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
