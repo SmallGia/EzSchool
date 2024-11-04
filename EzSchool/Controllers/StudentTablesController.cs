@@ -21,7 +21,7 @@ namespace EzSchool.Controllers
             {
                 return RedirectToAction("Login", "Home");
             }
-            var studentTables = db.StudentTables.Include(s => s.ClassTable).Include(s => s.ProgrameTable).Include(s => s.SessionTable).Include(s => s.UserTable);
+            var studentTables = db.StudentTables.Include(s => s.ClassTable).Include(s => s.ProgrameTable).Include(s => s.SessionTable).Include(s => s.UserTable).OrderByDescending(s => s.StudentID);
             return View(studentTables.ToList());
         }
 

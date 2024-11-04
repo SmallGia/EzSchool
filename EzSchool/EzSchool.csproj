@@ -185,6 +185,7 @@
     <Compile Include="Controllers\SessionTablesController.cs" />
     <Compile Include="Controllers\StaffAttendanceTablesController.cs" />
     <Compile Include="Controllers\StaffTablesController.cs" />
+    <Compile Include="Controllers\StudentPromotTablesController.cs" />
     <Compile Include="Controllers\StudentTablesController.cs" />
     <Compile Include="Controllers\SubjectTablesController.cs" />
     <Compile Include="Controllers\SubmissionFeeTablesController.cs" />
@@ -202,7 +203,6 @@
     <Compile Include="Models\Skill.cs" />
     <Compile Include="Models\WorkExperience.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Controllers\StudentPromotTablesController.cs" />
     <Compile Include="Repository\IResumeRepository.cs" />
     <Compile Include="Repository\ResumeRepository.cs" />
     <Compile Include="ViewModels\EmployeeCertificationVM.cs" />
@@ -2106,11 +2106,6 @@
     <Content Include="Views\TimeTblTables\Details.cshtml" />
     <Content Include="Views\TimeTblTables\Edit.cshtml" />
     <Content Include="Views\TimeTblTables\Index.cshtml" />
-    <Content Include="Views\StudentPromotTables\Create.cshtml" />
-    <Content Include="Views\StudentPromotTables\Delete.cshtml" />
-    <Content Include="Views\StudentPromotTables\Details.cshtml" />
-    <Content Include="Views\StudentPromotTables\Edit.cshtml" />
-    <Content Include="Views\StudentPromotTables\Index.cshtml" />
     <Content Include="Views\AttendanceTables\Create.cshtml" />
     <Content Include="Views\AttendanceTables\Delete.cshtml" />
     <Content Include="Views\AttendanceTables\Details.cshtml" />
@@ -2148,6 +2143,11 @@
     <Content Include="Views\StudentTables\Details.cshtml" />
     <Content Include="Views\StudentTables\Edit.cshtml" />
     <Content Include="Views\StudentTables\Index.cshtml" />
+    <Content Include="Views\StudentPromotTables\Create.cshtml" />
+    <Content Include="Views\StudentPromotTables\Delete.cshtml" />
+    <Content Include="Views\StudentPromotTables\Details.cshtml" />
+    <Content Include="Views\StudentPromotTables\Edit.cshtml" />
+    <Content Include="Views\StudentPromotTables\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

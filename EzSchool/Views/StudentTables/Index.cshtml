@@ -17,10 +17,13 @@
                 <thead>
                     <tr>
                         <th>
-                            Name
+                            Student ID
                         </th>
                         <th>
-                           Fathe Name
+                            Student Name
+                        </th>
+                        <th>
+                            Father Name
                         </th>
                         <th>
                             Date Of Birth
@@ -32,10 +35,10 @@
                             Contact No
                         </th>
                         <th>
-                           Photo
+                            Photo
                         </th>
                         <th>
-                           User
+                            User
                         </th>
                         <th>
                             Class
@@ -50,6 +53,9 @@
                     @foreach (var item in Model)
                     {
                         <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.StudentID)
+                            </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.Name)
                             </td>
