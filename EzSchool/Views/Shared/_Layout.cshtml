@@ -77,7 +77,7 @@
                         <h6 class="collapse-header">Fee's:</h6>
                         @Html.ActionLink("Submit Tution Fee", "Create", "SubmissionFeeTables", null, new { @class = "collapse-item" })
                         @Html.ActionLink("Tution Fee Records", "Index", "SubmissionFeeTables", null, new { @class = "collapse-item" })
-                        @Html.ActionLink("Annual Fee", "Index", "AnnualTables", null, new { @class = "collapse-item" })                      
+                        @Html.ActionLink("Annual Fee", "Index", "AnnualTables", null, new { @class = "collapse-item" })
 
                         <div class="collapse-divider"></div>
                         <h6 class="collapse-header">Attendance Reports:</h6>
@@ -105,13 +105,21 @@
                 <div id="collapseStaff" class="collapse" aria-labelledby="headingStaff data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Staff Registration:</h6>
-                        @Html.ActionLink("Staff", "Index", "StaffTables", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Staff Registeration", "Create", "StaffTables", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("All Staff", "Index", "StaffTables", null, new { @class = "collapse-item" })
+
 
                         <div class="collapse-divider"></div>
                         <h6 class="collapse-header">Attendance:</h6>
-                        @Html.ActionLink("Staff Attendance", "Index", "StaffAttendanceTables", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Staff Attendance", "Create", "StaffAttendanceTables", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Staff Attendance Record", "Index", "StaffAttendanceTables", null, new { @class = "collapse-item" })
 
-                </div>
+                        <div class="collapse-divider"></div>
+                        <h6 class="collapse-header">Salary:</h6>
+                        @Html.ActionLink("Employee Salary", "Create", "EmployeeSalaryTables", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Salaries Record", "Index", "EmployeeSalaryTables", null, new { @class = "collapse-item" })
+
+                    </div>
             </li>
 
 
@@ -200,14 +208,46 @@
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Exam Setting:</h6>
+                        @Html.ActionLink("New Exam Types", "Create", "ExamTables", null, new { @class = "collapse-item" })
                         @Html.ActionLink("Exam Types", "Index", "ExamTables", null, new { @class = "collapse-item" })
 
                         <div class="collapse-divider"></div>
                         <h6 class="collapse-header">Examination:</h6>
-                        @Html.ActionLink("Add Marks Sheet", "Index", "ExamMarksTables", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Add Marks Sheet", "Create", "ExamMarksTables", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Exam Marks Sheet", "Index", "ExamMarksTables", null, new { @class = "collapse-item" })
                     </div>
                 </div>
             </li>
+
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                School Event
+            </div>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseEvent" aria-expanded="true" aria-controls="collapseEvent">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Event Setting</span>
+                </a>
+                <div id="collapseEvent" class="collapse" aria-labelledby="headingEvent" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Exam Setting:</h6>
+                        @Html.ActionLink("New Event", "Create", "EventTables", null, new { @class = "collapse-item" })
+
+                        <div class="collapse-divider"></div>
+                        <h6 class="collapse-header">Events:</h6>
+                        @Html.ActionLink("ALl Events", "Create", "EventTables", null, new { @class = "collapse-item" })
+                    </div>
+                </div>
+            </li>
+
+
+
 
             <!-- Divider -->
             <hr class="sidebar-divider">
@@ -226,7 +266,7 @@
                 <div id="collapseTimeTable" class="collapse" aria-labelledby="headingTimeTable data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Setting:</h6>
-                        @Html.ActionLink("Set Time Table", "Index", "TimeTblTables", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Set Time Table", "Create", "TimeTblTables", null, new { @class = "collapse-item" })
 
                         <div class="collapse-divider"></div>
                         <h6 class="collapse-header">Class Wise:</h6>

@@ -668,6 +668,18 @@ warning 6002: The table/view 'SchoolMgDb.dbo.vAllUsers' does not have a primary 
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_ExamMarksTable_ClassSubjectTable">
+    <End Role="ClassSubjectTable" Type="Self.ClassSubjectTable" Multiplicity="1" />
+    <End Role="ExamMarksTable" Type="Self.ExamMarksTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ClassSubjectTable">
+        <PropertyRef Name="ClassSubjectID" />
+      </Principal>
+      <Dependent Role="ExamMarksTable">
+        <PropertyRef Name="ClassSubjectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_ExamMarksTable_ExamTable">
     <End Role="ExamTable" Type="Self.ExamTable" Multiplicity="1" />
     <End Role="ExamMarksTable" Type="Self.ExamMarksTable" Multiplicity="*" />
@@ -1183,6 +1195,10 @@ warning 6002: The table/view 'SchoolMgDb.dbo.vAllUsers' does not have a primary 
     <AssociationSet Name="FK_EventTable_UserTable" Association="Self.FK_EventTable_UserTable">
       <End Role="UserTable" EntitySet="UserTable" />
       <End Role="EventTable" EntitySet="EventTable" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ExamMarksTable_ClassSubjectTable" Association="Self.FK_ExamMarksTable_ClassSubjectTable">
+      <End Role="ClassSubjectTable" EntitySet="ClassSubjectTable" />
+      <End Role="ExamMarksTable" EntitySet="ExamMarksTable" />
     </AssociationSet>
     <AssociationSet Name="FK_ExamMarksTable_ExamTable" Association="Self.FK_ExamMarksTable_ExamTable">
       <End Role="ExamTable" EntitySet="ExamTable" />

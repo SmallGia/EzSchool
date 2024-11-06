@@ -35,15 +35,8 @@
         <AssociationConnector Association="SchoolMgDbModel.FK_StudentPromotTable_ClassTable" />
         <AssociationConnector Association="SchoolMgDbModel.FK_SubmissionFeeTable_ClassTable" />
         <AssociationConnector Association="SchoolMgDbModel.FK_StudentPromotTable_ProgrameSessionTable" />
-        <EntityTypeShape EntityType="SchoolMgDbModel.ClassSubjectTable" Width="1.875" PointX="13.375" PointY="29.875" />
-        <EntityTypeShape EntityType="SchoolMgDbModel.ExamMarksTable" Width="1.5" PointX="12.75" PointY="18.5" />
-        <AssociationConnector Association="SchoolMgDbModel.FK_ClassSubjectTable_ClassTable" />
-        <AssociationConnector Association="SchoolMgDbModel.FK_ExamMarksTable_ExamTable" />
-        <AssociationConnector Association="SchoolMgDbModel.FK_ExamMarksTable_UserTable" />
         <EntityTypeShape EntityType="SchoolMgDbModel.SubjectTable" Width="1.5" PointX="11.125" PointY="32.875" />
         <EntityTypeShape EntityType="SchoolMgDbModel.TimeTblTable" Width="1.5" PointX="18" PointY="24" />
-        <AssociationConnector Association="SchoolMgDbModel.FK_ClassSubjectTable_SubjectTable" />
-        <AssociationConnector Association="SchoolMgDbModel.FK_TimeTblTable_ClassSubjectTable" />
         <AssociationConnector Association="SchoolMgDbModel.FK_SubjectTable_UserTable" />
         <AssociationConnector Association="SchoolMgDbModel.FK_TimeTblTable_UserTable" />
         <EntityTypeShape EntityType="SchoolMgDbModel.EmployeeCertificationTable" Width="1.5" PointX="17.625" PointY="11.375" />
@@ -84,13 +77,21 @@
         <EntityTypeShape EntityType="SchoolMgDbModel.StudentTable" Width="1.5" PointX="21" PointY="22.125" />
         <AssociationConnector Association="SchoolMgDbModel.FK_AttendanceTable_StudentTable" />
         <AssociationConnector Association="SchoolMgDbModel.FK_StudentTable_ClassTable" />
-        <AssociationConnector Association="SchoolMgDbModel.FK_ExamMarksTable_StudentTable" />
         <AssociationConnector Association="SchoolMgDbModel.FK_StudentTable_ProgrameTable" />
         <AssociationConnector Association="SchoolMgDbModel.FK_SchoolLeavingTable_StudentTable" />
         <AssociationConnector Association="SchoolMgDbModel.FK_StudentTable_SessionTable" />
         <AssociationConnector Association="SchoolMgDbModel.FK_StudentPromotTable_StudentTable" />
         <AssociationConnector Association="SchoolMgDbModel.FK_StudentTable_UserTable" />
         <AssociationConnector Association="SchoolMgDbModel.FK_SubmissionFeeTable_StudentTable" />
+        <EntityTypeShape EntityType="SchoolMgDbModel.ClassSubjectTable" Width="1.5" PointX="14" PointY="29.625" />
+        <EntityTypeShape EntityType="SchoolMgDbModel.ExamMarksTable" Width="1.5" PointX="23.25" PointY="22" />
+        <AssociationConnector Association="SchoolMgDbModel.FK_ClassSubjectTable_ClassTable" />
+        <AssociationConnector Association="SchoolMgDbModel.FK_ClassSubjectTable_SubjectTable" />
+        <AssociationConnector Association="SchoolMgDbModel.FK_ExamMarksTable_ClassSubjectTable" />
+        <AssociationConnector Association="SchoolMgDbModel.FK_TimeTblTable_ClassSubjectTable" />
+        <AssociationConnector Association="SchoolMgDbModel.FK_ExamMarksTable_ExamTable" />
+        <AssociationConnector Association="SchoolMgDbModel.FK_ExamMarksTable_StudentTable" />
+        <AssociationConnector Association="SchoolMgDbModel.FK_ExamMarksTable_UserTable" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

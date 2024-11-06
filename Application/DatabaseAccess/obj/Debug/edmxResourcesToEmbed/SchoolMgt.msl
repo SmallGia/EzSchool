@@ -167,30 +167,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="ClassSubjectTables">
-      <EntityTypeMapping TypeName="SchoolMgDbModel.ClassSubjectTable">
-        <MappingFragment StoreEntitySet="ClassSubjectTable">
-          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="SubjectID" ColumnName="SubjectID" />
-          <ScalarProperty Name="ClassID" ColumnName="ClassID" />
-          <ScalarProperty Name="ClassSubjectID" ColumnName="ClassSubjectID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="ExamMarksTables">
-      <EntityTypeMapping TypeName="SchoolMgDbModel.ExamMarksTable">
-        <MappingFragment StoreEntitySet="ExamMarksTable">
-          <ScalarProperty Name="ObtainMarks" ColumnName="ObtainMarks" />
-          <ScalarProperty Name="TotalMarks" ColumnName="TotalMarks" />
-          <ScalarProperty Name="UserID" ColumnName="UserID" />
-          <ScalarProperty Name="StudentID" ColumnName="StudentID" />
-          <ScalarProperty Name="ClassSubjectID" ColumnName="ClassSubjectID" />
-          <ScalarProperty Name="ExamID" ColumnName="ExamID" />
-          <ScalarProperty Name="MarksID" ColumnName="MarksID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="SubjectTables">
       <EntityTypeMapping TypeName="SchoolMgDbModel.SubjectTable">
         <MappingFragment StoreEntitySet="SubjectTable">
@@ -427,6 +403,30 @@
           <ScalarProperty Name="ProgrameID" ColumnName="ProgrameID" />
           <ScalarProperty Name="SessionID" ColumnName="SessionID" />
           <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClassSubjectTables">
+      <EntityTypeMapping TypeName="SchoolMgDbModel.ClassSubjectTable">
+        <MappingFragment StoreEntitySet="ClassSubjectTable">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="SubjectID" ColumnName="SubjectID" />
+          <ScalarProperty Name="ClassID" ColumnName="ClassID" />
+          <ScalarProperty Name="ClassSubjectID" ColumnName="ClassSubjectID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExamMarksTables">
+      <EntityTypeMapping TypeName="SchoolMgDbModel.ExamMarksTable">
+        <MappingFragment StoreEntitySet="ExamMarksTable">
+          <ScalarProperty Name="ObtainMarks" ColumnName="ObtainMarks" />
+          <ScalarProperty Name="TotalMarks" ColumnName="TotalMarks" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+          <ScalarProperty Name="ClassSubjectID" ColumnName="ClassSubjectID" />
+          <ScalarProperty Name="ExamID" ColumnName="ExamID" />
+          <ScalarProperty Name="MarksID" ColumnName="MarksID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

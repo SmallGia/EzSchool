@@ -28,6 +28,7 @@ namespace DatabaseAccess
         public System.DateTime StartDate { get; set; }
         [DataType(DataType.Date)]
         public System.DateTime EndDate { get; set; }
+        [DataType(DataType.MultilineText)]
         public string Descrption { get; set; }
     
         public virtual UserTable UserTable { get; set; }

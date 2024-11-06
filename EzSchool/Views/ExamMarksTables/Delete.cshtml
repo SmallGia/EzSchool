@@ -12,14 +12,6 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.ClassSubjectID)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ClassSubjectID)
-        </dd>
-
-        <dt>
             @Html.DisplayNameFor(model => model.TotalMarks)
         </dt>
 
@@ -33,6 +25,14 @@
 
         <dd>
             @Html.DisplayFor(model => model.ObtainMarks)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClassSubjectTable.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClassSubjectTable.Name)
         </dd>
 
         <dt>

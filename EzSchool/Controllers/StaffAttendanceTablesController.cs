@@ -73,7 +73,7 @@ namespace EzSchool.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.StaffID = new SelectList(db.StaffTables, "StaffID", "Name", staffAttendanceTable.StaffID);
+            ViewBag.StaffID = new SelectList(db.StaffTables.Where(s=>s.IsActive == true), "StaffID", "Name", staffAttendanceTable.StaffID);
             return View(staffAttendanceTable);
         }
 

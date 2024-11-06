@@ -154,7 +154,6 @@
     <NavigationProperty Name="SessionTables" Relationship="Self.FK_SessionTable_UserTable" FromRole="UserTable" ToRole="SessionTable" />
     <NavigationProperty Name="SubmissionFeeTables" Relationship="Self.FK_SubmissionFeeTable_UserTable" FromRole="UserTable" ToRole="SubmissionFeeTable" />
     <NavigationProperty Name="UserTypeTable" Relationship="Self.FK_UserTable_UserTypeTable" FromRole="UserTable" ToRole="UserTypeTable" />
-    <NavigationProperty Name="ExamMarksTables" Relationship="SchoolMgDbModel.FK_ExamMarksTable_UserTable" FromRole="UserTable" ToRole="ExamMarksTable" />
     <NavigationProperty Name="SubjectTables" Relationship="SchoolMgDbModel.FK_SubjectTable_UserTable" FromRole="UserTable" ToRole="SubjectTable" />
     <NavigationProperty Name="TimeTblTables" Relationship="SchoolMgDbModel.FK_TimeTblTable_UserTable" FromRole="UserTable" ToRole="TimeTblTable" />
     <NavigationProperty Name="EmployeeCertificationTables" Relationship="SchoolMgDbModel.FK_EmployeeCertificationTable_UserTable" FromRole="UserTable" ToRole="EmployeeCertificationTable" />
@@ -169,6 +168,7 @@
     <NavigationProperty Name="SectionTables" Relationship="SchoolMgDbModel.FK_SectionTable_UserTable" FromRole="UserTable" ToRole="SectionTable" />
     <NavigationProperty Name="StaffTables" Relationship="SchoolMgDbModel.FK_StaffTable_UserTable" FromRole="UserTable" ToRole="StaffTable" />
     <NavigationProperty Name="StudentTables" Relationship="SchoolMgDbModel.FK_StudentTable_UserTable" FromRole="UserTable" ToRole="StudentTable" />
+    <NavigationProperty Name="ExamMarksTables" Relationship="SchoolMgDbModel.FK_ExamMarksTable_UserTable" FromRole="UserTable" ToRole="ExamMarksTable" />
   </EntityType>
   <EntityType Name="UserTypeTable">
     <Key>
@@ -402,30 +402,8 @@
       <End Role="ProgrameSessionTable" EntitySet="ProgrameSessionTables" />
       <End Role="StudentPromotTable" EntitySet="StudentPromotTables" />
     </AssociationSet>
-    <EntitySet Name="ClassSubjectTables" EntityType="SchoolMgDbModel.ClassSubjectTable" />
-    <EntitySet Name="ExamMarksTables" EntityType="SchoolMgDbModel.ExamMarksTable" />
-    <AssociationSet Name="FK_ClassSubjectTable_ClassTable" Association="SchoolMgDbModel.FK_ClassSubjectTable_ClassTable">
-      <End Role="ClassTable" EntitySet="ClassTables" />
-      <End Role="ClassSubjectTable" EntitySet="ClassSubjectTables" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ExamMarksTable_ExamTable" Association="SchoolMgDbModel.FK_ExamMarksTable_ExamTable">
-      <End Role="ExamTable" EntitySet="ExamTables" />
-      <End Role="ExamMarksTable" EntitySet="ExamMarksTables" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ExamMarksTable_UserTable" Association="SchoolMgDbModel.FK_ExamMarksTable_UserTable">
-      <End Role="UserTable" EntitySet="UserTables" />
-      <End Role="ExamMarksTable" EntitySet="ExamMarksTables" />
-    </AssociationSet>
     <EntitySet Name="SubjectTables" EntityType="SchoolMgDbModel.SubjectTable" />
     <EntitySet Name="TimeTblTables" EntityType="SchoolMgDbModel.TimeTblTable" />
-    <AssociationSet Name="FK_ClassSubjectTable_SubjectTable" Association="SchoolMgDbModel.FK_ClassSubjectTable_SubjectTable">
-      <End Role="SubjectTable" EntitySet="SubjectTables" />
-      <End Role="ClassSubjectTable" EntitySet="ClassSubjectTables" />
-    </AssociationSet>
-    <AssociationSet Name="FK_TimeTblTable_ClassSubjectTable" Association="SchoolMgDbModel.FK_TimeTblTable_ClassSubjectTable">
-      <End Role="ClassSubjectTable" EntitySet="ClassSubjectTables" />
-      <End Role="TimeTblTable" EntitySet="TimeTblTables" />
-    </AssociationSet>
     <AssociationSet Name="FK_SubjectTable_UserTable" Association="SchoolMgDbModel.FK_SubjectTable_UserTable">
       <End Role="UserTable" EntitySet="UserTables" />
       <End Role="SubjectTable" EntitySet="SubjectTables" />
@@ -544,10 +522,6 @@
       <End Role="ClassTable" EntitySet="ClassTables" />
       <End Role="StudentTable" EntitySet="StudentTables" />
     </AssociationSet>
-    <AssociationSet Name="FK_ExamMarksTable_StudentTable" Association="SchoolMgDbModel.FK_ExamMarksTable_StudentTable">
-      <End Role="StudentTable" EntitySet="StudentTables" />
-      <End Role="ExamMarksTable" EntitySet="ExamMarksTables" />
-    </AssociationSet>
     <AssociationSet Name="FK_StudentTable_ProgrameTable" Association="SchoolMgDbModel.FK_StudentTable_ProgrameTable">
       <End Role="ProgrameTable" EntitySet="ProgrameTables" />
       <End Role="StudentTable" EntitySet="StudentTables" />
@@ -572,6 +546,36 @@
       <End Role="StudentTable" EntitySet="StudentTables" />
       <End Role="SubmissionFeeTable" EntitySet="SubmissionFeeTables" />
     </AssociationSet>
+    <EntitySet Name="ClassSubjectTables" EntityType="SchoolMgDbModel.ClassSubjectTable" />
+    <EntitySet Name="ExamMarksTables" EntityType="SchoolMgDbModel.ExamMarksTable" />
+    <AssociationSet Name="FK_ClassSubjectTable_ClassTable" Association="SchoolMgDbModel.FK_ClassSubjectTable_ClassTable">
+      <End Role="ClassTable" EntitySet="ClassTables" />
+      <End Role="ClassSubjectTable" EntitySet="ClassSubjectTables" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClassSubjectTable_SubjectTable" Association="SchoolMgDbModel.FK_ClassSubjectTable_SubjectTable">
+      <End Role="SubjectTable" EntitySet="SubjectTables" />
+      <End Role="ClassSubjectTable" EntitySet="ClassSubjectTables" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ExamMarksTable_ClassSubjectTable" Association="SchoolMgDbModel.FK_ExamMarksTable_ClassSubjectTable">
+      <End Role="ClassSubjectTable" EntitySet="ClassSubjectTables" />
+      <End Role="ExamMarksTable" EntitySet="ExamMarksTables" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TimeTblTable_ClassSubjectTable" Association="SchoolMgDbModel.FK_TimeTblTable_ClassSubjectTable">
+      <End Role="ClassSubjectTable" EntitySet="ClassSubjectTables" />
+      <End Role="TimeTblTable" EntitySet="TimeTblTables" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ExamMarksTable_ExamTable" Association="SchoolMgDbModel.FK_ExamMarksTable_ExamTable">
+      <End Role="ExamTable" EntitySet="ExamTables" />
+      <End Role="ExamMarksTable" EntitySet="ExamMarksTables" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ExamMarksTable_StudentTable" Association="SchoolMgDbModel.FK_ExamMarksTable_StudentTable">
+      <End Role="StudentTable" EntitySet="StudentTables" />
+      <End Role="ExamMarksTable" EntitySet="ExamMarksTables" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ExamMarksTable_UserTable" Association="SchoolMgDbModel.FK_ExamMarksTable_UserTable">
+      <End Role="UserTable" EntitySet="UserTables" />
+      <End Role="ExamMarksTable" EntitySet="ExamMarksTables" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="ClassTable">
     <Key>
@@ -583,8 +587,8 @@
     <NavigationProperty Name="AttendanceTables" Relationship="SchoolMgDbModel.FK_AttendanceTable_ClassTable" FromRole="ClassTable" ToRole="AttendanceTable" />
     <NavigationProperty Name="StudentPromotTables" Relationship="SchoolMgDbModel.FK_StudentPromotTable_ClassTable" FromRole="ClassTable" ToRole="StudentPromotTable" />
     <NavigationProperty Name="SubmissionFeeTables" Relationship="SchoolMgDbModel.FK_SubmissionFeeTable_ClassTable" FromRole="ClassTable" ToRole="SubmissionFeeTable" />
-    <NavigationProperty Name="ClassSubjectTables" Relationship="SchoolMgDbModel.FK_ClassSubjectTable_ClassTable" FromRole="ClassTable" ToRole="ClassSubjectTable" />
     <NavigationProperty Name="StudentTables" Relationship="SchoolMgDbModel.FK_StudentTable_ClassTable" FromRole="ClassTable" ToRole="StudentTable" />
+    <NavigationProperty Name="ClassSubjectTables" Relationship="SchoolMgDbModel.FK_ClassSubjectTable_ClassTable" FromRole="ClassTable" ToRole="ClassSubjectTable" />
   </EntityType>
   <EntityType Name="StudentPromotTable">
     <Key>
@@ -652,70 +656,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityType Name="ClassSubjectTable">
-    <Key>
-      <PropertyRef Name="ClassSubjectID" />
-    </Key>
-    <Property Name="ClassSubjectID" Type="Int32" Nullable="false" />
-    <Property Name="ClassID" Type="Int32" Nullable="false" />
-    <Property Name="SubjectID" Type="Int32" Nullable="false" />
-    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="IsActive" Type="Boolean" />
-    <NavigationProperty Name="ClassTable" Relationship="SchoolMgDbModel.FK_ClassSubjectTable_ClassTable" FromRole="ClassSubjectTable" ToRole="ClassTable" />
-    <NavigationProperty Name="SubjectTable" Relationship="SchoolMgDbModel.FK_ClassSubjectTable_SubjectTable" FromRole="ClassSubjectTable" ToRole="SubjectTable" />
-    <NavigationProperty Name="TimeTblTables" Relationship="SchoolMgDbModel.FK_TimeTblTable_ClassSubjectTable" FromRole="ClassSubjectTable" ToRole="TimeTblTable" />
-  </EntityType>
-  <EntityType Name="ExamMarksTable">
-    <Key>
-      <PropertyRef Name="MarksID" />
-    </Key>
-    <Property Name="MarksID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="ExamID" Type="Int32" Nullable="false" />
-    <Property Name="ClassSubjectID" Type="Int32" Nullable="false" />
-    <Property Name="StudentID" Type="Int32" Nullable="false" />
-    <Property Name="UserID" Type="Int32" Nullable="false" />
-    <Property Name="TotalMarks" Type="Int32" Nullable="false" />
-    <Property Name="ObtainMarks" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="ExamTable" Relationship="SchoolMgDbModel.FK_ExamMarksTable_ExamTable" FromRole="ExamMarksTable" ToRole="ExamTable" />
-    <NavigationProperty Name="UserTable" Relationship="SchoolMgDbModel.FK_ExamMarksTable_UserTable" FromRole="ExamMarksTable" ToRole="UserTable" />
-    <NavigationProperty Name="StudentTable" Relationship="SchoolMgDbModel.FK_ExamMarksTable_StudentTable" FromRole="ExamMarksTable" ToRole="StudentTable" />
-  </EntityType>
-  <Association Name="FK_ClassSubjectTable_ClassTable">
-    <End Type="SchoolMgDbModel.ClassTable" Role="ClassTable" Multiplicity="1" />
-    <End Type="SchoolMgDbModel.ClassSubjectTable" Role="ClassSubjectTable" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ClassTable">
-        <PropertyRef Name="ClassID" />
-      </Principal>
-      <Dependent Role="ClassSubjectTable">
-        <PropertyRef Name="ClassID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_ExamMarksTable_ExamTable">
-    <End Type="SchoolMgDbModel.ExamTable" Role="ExamTable" Multiplicity="1" />
-    <End Type="SchoolMgDbModel.ExamMarksTable" Role="ExamMarksTable" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ExamTable">
-        <PropertyRef Name="ExamID" />
-      </Principal>
-      <Dependent Role="ExamMarksTable">
-        <PropertyRef Name="ExamID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_ExamMarksTable_UserTable">
-    <End Type="SchoolMgDbModel.UserTable" Role="UserTable" Multiplicity="1" />
-    <End Type="SchoolMgDbModel.ExamMarksTable" Role="ExamMarksTable" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="UserTable">
-        <PropertyRef Name="UserID" />
-      </Principal>
-      <Dependent Role="ExamMarksTable">
-        <PropertyRef Name="UserID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <EntityType Name="SubjectTable">
     <Key>
       <PropertyRef Name="SubjectID" />
@@ -726,8 +666,8 @@
     <Property Name="RegDate" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="Description" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
     <Property Name="TotalMarks" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="ClassSubjectTables" Relationship="SchoolMgDbModel.FK_ClassSubjectTable_SubjectTable" FromRole="SubjectTable" ToRole="ClassSubjectTable" />
     <NavigationProperty Name="UserTable" Relationship="SchoolMgDbModel.FK_SubjectTable_UserTable" FromRole="SubjectTable" ToRole="UserTable" />
+    <NavigationProperty Name="ClassSubjectTables" Relationship="SchoolMgDbModel.FK_ClassSubjectTable_SubjectTable" FromRole="SubjectTable" ToRole="ClassSubjectTable" />
   </EntityType>
   <EntityType Name="TimeTblTable">
     <Key>
@@ -741,34 +681,10 @@
     <Property Name="Day" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="ClassSubjectID" Type="Int32" Nullable="false" />
     <Property Name="IsActive" Type="Boolean" Nullable="false" />
-    <NavigationProperty Name="ClassSubjectTable" Relationship="SchoolMgDbModel.FK_TimeTblTable_ClassSubjectTable" FromRole="TimeTblTable" ToRole="ClassSubjectTable" />
     <NavigationProperty Name="UserTable" Relationship="SchoolMgDbModel.FK_TimeTblTable_UserTable" FromRole="TimeTblTable" ToRole="UserTable" />
     <NavigationProperty Name="StaffTable" Relationship="SchoolMgDbModel.FK_TimeTblTable_StaffTable" FromRole="TimeTblTable" ToRole="StaffTable" />
+    <NavigationProperty Name="ClassSubjectTable" Relationship="SchoolMgDbModel.FK_TimeTblTable_ClassSubjectTable" FromRole="TimeTblTable" ToRole="ClassSubjectTable" />
   </EntityType>
-  <Association Name="FK_ClassSubjectTable_SubjectTable">
-    <End Type="SchoolMgDbModel.SubjectTable" Role="SubjectTable" Multiplicity="1" />
-    <End Type="SchoolMgDbModel.ClassSubjectTable" Role="ClassSubjectTable" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="SubjectTable">
-        <PropertyRef Name="SubjectID" />
-      </Principal>
-      <Dependent Role="ClassSubjectTable">
-        <PropertyRef Name="SubjectID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_TimeTblTable_ClassSubjectTable">
-    <End Type="SchoolMgDbModel.ClassSubjectTable" Role="ClassSubjectTable" Multiplicity="1" />
-    <End Type="SchoolMgDbModel.TimeTblTable" Role="TimeTblTable" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ClassSubjectTable">
-        <PropertyRef Name="ClassSubjectID" />
-      </Principal>
-      <Dependent Role="TimeTblTable">
-        <PropertyRef Name="ClassSubjectID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_SubjectTable_UserTable">
     <End Type="SchoolMgDbModel.UserTable" Role="UserTable" Multiplicity="1" />
     <End Type="SchoolMgDbModel.SubjectTable" Role="SubjectTable" Multiplicity="*" />
@@ -1292,13 +1208,13 @@
     <Property Name="Nationality" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="AttendanceTables" Relationship="SchoolMgDbModel.FK_AttendanceTable_StudentTable" FromRole="StudentTable" ToRole="AttendanceTable" />
     <NavigationProperty Name="ClassTable" Relationship="SchoolMgDbModel.FK_StudentTable_ClassTable" FromRole="StudentTable" ToRole="ClassTable" />
-    <NavigationProperty Name="ExamMarksTables" Relationship="SchoolMgDbModel.FK_ExamMarksTable_StudentTable" FromRole="StudentTable" ToRole="ExamMarksTable" />
     <NavigationProperty Name="ProgrameTable" Relationship="SchoolMgDbModel.FK_StudentTable_ProgrameTable" FromRole="StudentTable" ToRole="ProgrameTable" />
     <NavigationProperty Name="SchoolLeavingTables" Relationship="SchoolMgDbModel.FK_SchoolLeavingTable_StudentTable" FromRole="StudentTable" ToRole="SchoolLeavingTable" />
     <NavigationProperty Name="SessionTable" Relationship="SchoolMgDbModel.FK_StudentTable_SessionTable" FromRole="StudentTable" ToRole="SessionTable" />
     <NavigationProperty Name="StudentPromotTables" Relationship="SchoolMgDbModel.FK_StudentPromotTable_StudentTable" FromRole="StudentTable" ToRole="StudentPromotTable" />
     <NavigationProperty Name="UserTable" Relationship="SchoolMgDbModel.FK_StudentTable_UserTable" FromRole="StudentTable" ToRole="UserTable" />
     <NavigationProperty Name="SubmissionFeeTables" Relationship="SchoolMgDbModel.FK_SubmissionFeeTable_StudentTable" FromRole="StudentTable" ToRole="SubmissionFeeTable" />
+    <NavigationProperty Name="ExamMarksTables" Relationship="SchoolMgDbModel.FK_ExamMarksTable_StudentTable" FromRole="StudentTable" ToRole="ExamMarksTable" />
   </EntityType>
   <Association Name="FK_AttendanceTable_StudentTable">
     <End Type="SchoolMgDbModel.StudentTable" Role="StudentTable" Multiplicity="1" />
@@ -1321,18 +1237,6 @@
       </Principal>
       <Dependent Role="StudentTable">
         <PropertyRef Name="ClassID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_ExamMarksTable_StudentTable">
-    <End Type="SchoolMgDbModel.StudentTable" Role="StudentTable" Multiplicity="1" />
-    <End Type="SchoolMgDbModel.ExamMarksTable" Role="ExamMarksTable" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="StudentTable">
-        <PropertyRef Name="StudentID" />
-      </Principal>
-      <Dependent Role="ExamMarksTable">
-        <PropertyRef Name="StudentID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -1405,6 +1309,120 @@
       </Principal>
       <Dependent Role="SubmissionFeeTable">
         <PropertyRef Name="StudentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="ClassSubjectTable">
+    <Key>
+      <PropertyRef Name="ClassSubjectID" />
+    </Key>
+    <Property Name="ClassSubjectID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ClassID" Type="Int32" Nullable="false" />
+    <Property Name="SubjectID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" />
+    <NavigationProperty Name="ClassTable" Relationship="SchoolMgDbModel.FK_ClassSubjectTable_ClassTable" FromRole="ClassSubjectTable" ToRole="ClassTable" />
+    <NavigationProperty Name="SubjectTable" Relationship="SchoolMgDbModel.FK_ClassSubjectTable_SubjectTable" FromRole="ClassSubjectTable" ToRole="SubjectTable" />
+    <NavigationProperty Name="ExamMarksTables" Relationship="SchoolMgDbModel.FK_ExamMarksTable_ClassSubjectTable" FromRole="ClassSubjectTable" ToRole="ExamMarksTable" />
+    <NavigationProperty Name="TimeTblTables" Relationship="SchoolMgDbModel.FK_TimeTblTable_ClassSubjectTable" FromRole="ClassSubjectTable" ToRole="TimeTblTable" />
+  </EntityType>
+  <EntityType Name="ExamMarksTable">
+    <Key>
+      <PropertyRef Name="MarksID" />
+    </Key>
+    <Property Name="MarksID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ExamID" Type="Int32" Nullable="false" />
+    <Property Name="ClassSubjectID" Type="Int32" Nullable="false" />
+    <Property Name="StudentID" Type="Int32" Nullable="false" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="TotalMarks" Type="Int32" Nullable="false" />
+    <Property Name="ObtainMarks" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ClassSubjectTable" Relationship="SchoolMgDbModel.FK_ExamMarksTable_ClassSubjectTable" FromRole="ExamMarksTable" ToRole="ClassSubjectTable" />
+    <NavigationProperty Name="ExamTable" Relationship="SchoolMgDbModel.FK_ExamMarksTable_ExamTable" FromRole="ExamMarksTable" ToRole="ExamTable" />
+    <NavigationProperty Name="StudentTable" Relationship="SchoolMgDbModel.FK_ExamMarksTable_StudentTable" FromRole="ExamMarksTable" ToRole="StudentTable" />
+    <NavigationProperty Name="UserTable" Relationship="SchoolMgDbModel.FK_ExamMarksTable_UserTable" FromRole="ExamMarksTable" ToRole="UserTable" />
+  </EntityType>
+  <Association Name="FK_ClassSubjectTable_ClassTable">
+    <End Type="SchoolMgDbModel.ClassTable" Role="ClassTable" Multiplicity="1" />
+    <End Type="SchoolMgDbModel.ClassSubjectTable" Role="ClassSubjectTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ClassTable">
+        <PropertyRef Name="ClassID" />
+      </Principal>
+      <Dependent Role="ClassSubjectTable">
+        <PropertyRef Name="ClassID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClassSubjectTable_SubjectTable">
+    <End Type="SchoolMgDbModel.SubjectTable" Role="SubjectTable" Multiplicity="1" />
+    <End Type="SchoolMgDbModel.ClassSubjectTable" Role="ClassSubjectTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubjectTable">
+        <PropertyRef Name="SubjectID" />
+      </Principal>
+      <Dependent Role="ClassSubjectTable">
+        <PropertyRef Name="SubjectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ExamMarksTable_ClassSubjectTable">
+    <End Type="SchoolMgDbModel.ClassSubjectTable" Role="ClassSubjectTable" Multiplicity="1" />
+    <End Type="SchoolMgDbModel.ExamMarksTable" Role="ExamMarksTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ClassSubjectTable">
+        <PropertyRef Name="ClassSubjectID" />
+      </Principal>
+      <Dependent Role="ExamMarksTable">
+        <PropertyRef Name="ClassSubjectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TimeTblTable_ClassSubjectTable">
+    <End Type="SchoolMgDbModel.ClassSubjectTable" Role="ClassSubjectTable" Multiplicity="1" />
+    <End Type="SchoolMgDbModel.TimeTblTable" Role="TimeTblTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ClassSubjectTable">
+        <PropertyRef Name="ClassSubjectID" />
+      </Principal>
+      <Dependent Role="TimeTblTable">
+        <PropertyRef Name="ClassSubjectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ExamMarksTable_ExamTable">
+    <End Type="SchoolMgDbModel.ExamTable" Role="ExamTable" Multiplicity="1" />
+    <End Type="SchoolMgDbModel.ExamMarksTable" Role="ExamMarksTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ExamTable">
+        <PropertyRef Name="ExamID" />
+      </Principal>
+      <Dependent Role="ExamMarksTable">
+        <PropertyRef Name="ExamID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ExamMarksTable_StudentTable">
+    <End Type="SchoolMgDbModel.StudentTable" Role="StudentTable" Multiplicity="1" />
+    <End Type="SchoolMgDbModel.ExamMarksTable" Role="ExamMarksTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StudentTable">
+        <PropertyRef Name="StudentID" />
+      </Principal>
+      <Dependent Role="ExamMarksTable">
+        <PropertyRef Name="StudentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ExamMarksTable_UserTable">
+    <End Type="SchoolMgDbModel.UserTable" Role="UserTable" Multiplicity="1" />
+    <End Type="SchoolMgDbModel.ExamMarksTable" Role="ExamMarksTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserTable">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="ExamMarksTable">
+        <PropertyRef Name="UserID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
