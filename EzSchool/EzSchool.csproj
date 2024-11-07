@@ -172,6 +172,7 @@
     <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AnnualTablesController.cs" />
+    <Compile Include="Controllers\AttendanceReportsController.cs" />
     <Compile Include="Controllers\AttendanceTablesController.cs" />
     <Compile Include="Controllers\ClassSubjectTablesController.cs" />
     <Compile Include="Controllers\ClassTablesController.cs" />
@@ -180,6 +181,9 @@
     <Compile Include="Controllers\EventTablesController.cs" />
     <Compile Include="Controllers\ExamMarksTablesController.cs" />
     <Compile Include="Controllers\ExamTablesController.cs" />
+    <Compile Include="Controllers\ExpensesReportController.cs" />
+    <Compile Include="Controllers\ExpensesTablesController.cs" />
+    <Compile Include="Controllers\ExpenseTypeTablesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProgrameSessionTablesController.cs" />
     <Compile Include="Controllers\ProgrameTablesController.cs" />
@@ -191,6 +195,7 @@
     <Compile Include="Controllers\StudentTablesController.cs" />
     <Compile Include="Controllers\SubjectTablesController.cs" />
     <Compile Include="Controllers\SubmissionFeeTablesController.cs" />
+    <Compile Include="Controllers\TimeTableReportsController.cs" />
     <Compile Include="Controllers\TimeTblTablesController.cs" />
     <Compile Include="Controllers\UserTablesController.cs" />
     <Compile Include="Controllers\UserTypeTablesController.cs" />
@@ -2160,6 +2165,26 @@
     <Content Include="Views\EventTables\Details.cshtml" />
     <Content Include="Views\EventTables\Edit.cshtml" />
     <Content Include="Views\EventTables\Index.cshtml" />
+    <Content Include="Views\ExpensesTables\Create.cshtml" />
+    <Content Include="Views\ExpensesTables\Delete.cshtml" />
+    <Content Include="Views\ExpensesTables\Details.cshtml" />
+    <Content Include="Views\ExpensesTables\Edit.cshtml" />
+    <Content Include="Views\ExpensesTables\Index.cshtml" />
+    <Content Include="Views\ExpenseTypeTables\Create.cshtml" />
+    <Content Include="Views\ExpenseTypeTables\Delete.cshtml" />
+    <Content Include="Views\ExpenseTypeTables\Details.cshtml" />
+    <Content Include="Views\ExpenseTypeTables\Edit.cshtml" />
+    <Content Include="Views\ExpenseTypeTables\Index.cshtml" />
+    <Content Include="Views\TimeTableReports\TeacherReport.cshtml" />
+    <Content Include="Views\TimeTableReports\TeacherWiseReport.cshtml" />
+    <Content Include="Views\TimeTableReports\StudentReport.cshtml" />
+    <Content Include="Views\AttendanceReports\StudentAttendance.cshtml" />
+    <Content Include="Views\AttendanceReports\StudentAttendanceWise.cshtml" />
+    <Content Include="Views\AttendanceReports\StaffAttendanceWise.cshtml" />
+    <Content Include="Views\AttendanceReports\StaffAttendance.cshtml" />
+    <Content Include="Views\ExpensesReport\ExpensesWise.cshtml" />
+    <Content Include="Views\ExpensesReport\CustomExpenses.cshtml" />
+    <Content Include="Views\Home\ChangePassword.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

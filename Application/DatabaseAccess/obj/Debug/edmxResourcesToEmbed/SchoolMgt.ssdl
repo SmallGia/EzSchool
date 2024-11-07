@@ -190,6 +190,25 @@
     <Property Name="EndDate" Type="date" Nullable="false" />
     <Property Name="Descrption" Type="nvarchar" MaxLength="200" />
   </EntityType>
+  <EntityType Name="ExpensesTable">
+    <Key>
+      <PropertyRef Name="ExpensesID" />
+    </Key>
+    <Property Name="ExpensesID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ExpensesTypeID" Type="int" Nullable="false" />
+    <Property Name="ExpensesDate" Type="date" Nullable="false" />
+    <Property Name="Amount" Type="float" Nullable="false" />
+    <Property Name="Reason" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ExpenseTypeTable">
+    <Key>
+      <PropertyRef Name="ExpensesTypeID" />
+    </Key>
+    <Property Name="ExpensesTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
   <EntityType Name="ProgrameSessionTable">
     <Key>
       <PropertyRef Name="ProgrameSessionID" />
@@ -728,6 +747,30 @@ warning 6002: The table/view 'SchoolMgDb.dbo.vAllUsers' does not have a primary 
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_ExpensesTable_ExpenseTypeTable">
+    <End Role="ExpenseTypeTable" Type="Self.ExpenseTypeTable" Multiplicity="1" />
+    <End Role="ExpensesTable" Type="Self.ExpensesTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ExpenseTypeTable">
+        <PropertyRef Name="ExpensesTypeID" />
+      </Principal>
+      <Dependent Role="ExpensesTable">
+        <PropertyRef Name="ExpensesTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ExpensesTable_UserTable">
+    <End Role="UserTable" Type="Self.UserTable" Multiplicity="1" />
+    <End Role="ExpensesTable" Type="Self.ExpensesTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserTable">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="ExpensesTable">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_ProgrameSessionTable_ProgrameTable">
     <End Role="ProgrameTable" Type="Self.ProgrameTable" Multiplicity="1" />
     <End Role="ProgrameSessionTable" Type="Self.ProgrameSessionTable" Multiplicity="*" />
@@ -1081,6 +1124,8 @@ warning 6002: The table/view 'SchoolMgDb.dbo.vAllUsers' does not have a primary 
     <EntitySet Name="EventTable" EntityType="Self.EventTable" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ExamMarksTable" EntityType="Self.ExamMarksTable" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ExamTable" EntityType="Self.ExamTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ExpensesTable" EntityType="Self.ExpensesTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ExpenseTypeTable" EntityType="Self.ExpenseTypeTable" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ProgrameSessionTable" EntityType="Self.ProgrameSessionTable" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ProgrameTable" EntityType="Self.ProgrameTable" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SchoolLeavingTable" EntityType="Self.SchoolLeavingTable" Schema="dbo" store:Type="Tables" />
@@ -1215,6 +1260,14 @@ warning 6002: The table/view 'SchoolMgDb.dbo.vAllUsers' does not have a primary 
     <AssociationSet Name="FK_ExamTable_UserTable" Association="Self.FK_ExamTable_UserTable">
       <End Role="UserTable" EntitySet="UserTable" />
       <End Role="ExamTable" EntitySet="ExamTable" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ExpensesTable_ExpenseTypeTable" Association="Self.FK_ExpensesTable_ExpenseTypeTable">
+      <End Role="ExpenseTypeTable" EntitySet="ExpenseTypeTable" />
+      <End Role="ExpensesTable" EntitySet="ExpensesTable" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ExpensesTable_UserTable" Association="Self.FK_ExpensesTable_UserTable">
+      <End Role="UserTable" EntitySet="UserTable" />
+      <End Role="ExpensesTable" EntitySet="ExpensesTable" />
     </AssociationSet>
     <AssociationSet Name="FK_ProgrameSessionTable_ProgrameTable" Association="Self.FK_ProgrameSessionTable_ProgrameTable">
       <End Role="ProgrameTable" EntitySet="ProgrameTable" />

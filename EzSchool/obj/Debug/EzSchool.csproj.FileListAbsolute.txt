@@ -1,5 +1,3 @@
-C:\Users\Thai Ho Phu Gia\Desktop\HOCKI4\laptrinhwebvaungdung\SchoolMgt\src2\EzSchool\EzSchool\obj\Debug\EzSchool.csproj.AssemblyReference.cache
-C:\Users\Thai Ho Phu Gia\Desktop\HOCKI4\laptrinhwebvaungdung\SchoolMgt\src2\EzSchool\EzSchool\obj\Debug\EzSchool.csproj.CoreCompileInputs.cache
 C:\Users\Thai Ho Phu Gia\Desktop\HOCKI4\laptrinhwebvaungdung\SchoolMgt\src2\EzSchool\EzSchool\bin\EzSchool.dll.config
 C:\Users\Thai Ho Phu Gia\Desktop\HOCKI4\laptrinhwebvaungdung\SchoolMgt\src2\EzSchool\EzSchool\bin\EzSchool.dll
 C:\Users\Thai Ho Phu Gia\Desktop\HOCKI4\laptrinhwebvaungdung\SchoolMgt\src2\EzSchool\EzSchool\bin\EzSchool.pdb
@@ -105,6 +103,8 @@ C:\Users\Thai Ho Phu Gia\Desktop\HOCKI4\laptrinhwebvaungdung\SchoolMgt\src2\EzSc
 C:\Users\Thai Ho Phu Gia\Desktop\HOCKI4\laptrinhwebvaungdung\SchoolMgt\src2\EzSchool\EzSchool\bin\System.Web.Http.xml
 C:\Users\Thai Ho Phu Gia\Desktop\HOCKI4\laptrinhwebvaungdung\SchoolMgt\src2\EzSchool\EzSchool\bin\System.Web.Http.WebHost.xml
 C:\Users\Thai Ho Phu Gia\Desktop\HOCKI4\laptrinhwebvaungdung\SchoolMgt\src2\EzSchool\EzSchool\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Thai Ho Phu Gia\Desktop\HOCKI4\laptrinhwebvaungdung\SchoolMgt\src2\EzSchool\EzSchool\obj\Debug\EzSchool.csproj.AssemblyReference.cache
+C:\Users\Thai Ho Phu Gia\Desktop\HOCKI4\laptrinhwebvaungdung\SchoolMgt\src2\EzSchool\EzSchool\obj\Debug\EzSchool.csproj.CoreCompileInputs.cache
 C:\Users\Thai Ho Phu Gia\Desktop\HOCKI4\laptrinhwebvaungdung\SchoolMgt\src2\EzSchool\EzSchool\obj\Debug\EzSchool.csproj.Up2Date
 C:\Users\Thai Ho Phu Gia\Desktop\HOCKI4\laptrinhwebvaungdung\SchoolMgt\src2\EzSchool\EzSchool\obj\Debug\EzSchool.dll
 C:\Users\Thai Ho Phu Gia\Desktop\HOCKI4\laptrinhwebvaungdung\SchoolMgt\src2\EzSchool\EzSchool\obj\Debug\EzSchool.pdb

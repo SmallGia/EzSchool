@@ -1,0 +1,76 @@
+﻿@model IEnumerable<DatabaseAccess.ExpensesTable>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <style>
+        h3 {
+            text-align: center
+        }
+    </style>
+    <script>
+function printPage() {
+            window.print();
+        }</script>
+</head>
+
+<body>
+
+    <div class="container body-content">
+        <h3> Expenses Report </h3>
+        <button onclick="printPage()" class="btn btn-default">Print Report</button>
+        <table class="table table-bordered">
+            <tr>
+                <th>
+                    Expenses Type
+                </th>
+                <th>
+                    Expenses Date
+                </th>
+                <th>
+                    Amount
+                </th>
+                <th>
+                    Reason
+                </th>
+                <th>
+                    User
+                </th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ExpenseTypeTable.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ExpensesDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Amount)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Reason)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UserTable.FullName)
+                    </td>
+                    @*<td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.ExpensesID }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.ExpensesID }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.ExpensesID })
+                    </td>*@
+                </tr>
+            }
+
+        </table>
+</body>
+</html>

@@ -18,20 +18,20 @@ namespace EzSchool.FileHelper
             }
             try
             {
-                string path = string.Empty;
-                if (file != null)
+                string path = Path.Combine(HttpContext.Current.Server.MapPath(folder), name);
+                if (File.Exists(path))
                 {
-                    path = Path.Combine(HttpContext.Current.Server.MapPath(folder), name);
-                    file.SaveAs(path);
-                    using (MemoryStream ms = new MemoryStream())
-                    {
-                        file.InputStream.CopyTo(ms);
-                        byte[] array = ms.GetBuffer();
-                    }
+                    File.Delete(path);
+                }
+                file.SaveAs(path);
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    file.InputStream.CopyTo(ms);
+                    byte[] array = ms.ToArray();
                 }
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
