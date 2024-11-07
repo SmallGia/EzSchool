@@ -12,7 +12,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Login</title>
+    <title>Ezschool - Login</title>
 
     <!-- Custom fonts for this template-->
     <link href="~/content/AdminTemp/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -33,28 +33,68 @@
                         <div class="p-5">
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+                                <img src="~/content/AdminTemp/img/logo-no-back.png" alt="Login Image" class="img-fluid mb-4" />
                             </div>
-                            <h3 class="alert-danger text-center">@ViewBag.message</h3>
-                        @using (Html.BeginForm("LoginUser", "Home", FormMethod.Post,new {@class = "form-horizontal user", role = "form", enctype = "multipart/form-data" }))
-                        {
-                            @Html.AntiForgeryToken()
-                            <form class="user">
-                                <div class="form-group">
-                                    <input type="email" class="form-control form-control-user" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter Email Address...">
-                                </div>
-                                <div class="form-group">
-                                    <input type="password" class="form-control form-control-user" id="password" name="password" placeholder="Password">
-                                </div>
-                                <div class="form-group">
-                                    <div class="custom-control custom-checkbox small">
-                                        <input type="checkbox" class="custom-control-input" id="customCheck">
-                                        <label class="custom-control-label" for="customCheck">Remember Me</label>
+                            @if (!string.IsNullOrEmpty(ViewBag.message))
+                            {
+                                <h3 class="alert alert-danger text-center" style="font-family: 'Pacifico', cursive; font-size: 18px; color: red; border: none;">
+                                    @ViewBag.message
+                                </h3>
+                            }
+
+                            @using (Html.BeginForm("LoginUser", "Home", FormMethod.Post, new { @class = "form-horizontal user", role = "form", enctype = "multipart/form-data" }))
+                            {
+                                @Html.AntiForgeryToken()
+                                <form class="user">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control form-control-user" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter Email Address...">
                                     </div>
-                                </div>
-                                <input type="submit" value="Login" class="btn btn-primary btn-user btn-block" />
-                                <hr>
-                            </form>
-                        }
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <input type="password" class="form-control form-control-user" id="password" name="password" placeholder="Password">
+                                            <div class="input-group-append">
+                                                <button class="btn btn-outline-primary" type="button" id="togglePassword">
+                                                    <i class="fa fa-eye"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <script>
+                                        document.getElementById('togglePassword').addEventListener('click', function (e) {
+                                            const passwordInput = document.getElementById('password');
+                                            const icon = this.querySelector('i');
+                                            if (passwordInput.type === 'password') {
+                                                passwordInput.type = 'text';
+                                                icon.classList.remove('fa-eye');
+                                                icon.classList.add('fa-eye-slash');
+                                            } else {
+                                                passwordInput.type = 'password';
+                                                icon.classList.remove('fa-eye-slash');
+                                                icon.classList.add('fa-eye');
+                                            }
+                                        });
+                                    </script>
+                                    <div class="form-group">
+                                        <div class="custom-control custom-checkbox small">
+                                            <input type="checkbox" class="custom-control-input" id="customCheck">
+                                            <label class="custom-control-label" for="customCheck">Remember Me</label>
+                                        </div>
+                                    </div>
+                                    <input type="submit" value="Login" class="btn btn-primary btn-user btn-block btn-animated" style="background: linear-gradient(45deg, #1de9b6, #1dc4e9); border: none; transition: transform 0.2s ease-in-out; color: white; font-family: 'Pacifico', cursive; font-size: 16px;" onmouseover="this.style.transform='scale(1.05)'; this.style.background='linear-gradient(45deg, #1dc4e9, #1de9b6)'" onmouseout="this.style.transform='scale(1)'; this.style.background='linear-gradient(45deg, #1de9b6, #1dc4e9)'" />
+
+                                    <style>
+                                        .btn-animated {
+                                            transition: background-color 0.3s ease, transform 0.3s ease;
+                                        }
+
+                                            .btn-animated:hover {
+                                                background-color: #0056b3;
+                                                transform: scale(1.05);
+                                            }
+                                    </style>
+                                </form>
+                            }
                         </div>
                     </div>
                 </div>

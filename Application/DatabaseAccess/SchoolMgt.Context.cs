@@ -33,17 +33,31 @@ namespace DatabaseAccess
         public virtual DbSet<ProgrameTable> ProgrameTables { get; set; }
         public virtual DbSet<SessionTable> SessionTables { get; set; }
         public virtual DbSet<StaffAttendanceTable> StaffAttendanceTables { get; set; }
-        public virtual DbSet<StaffTable> StaffTables { get; set; }
-        public virtual DbSet<StudentTable> StudentTables { get; set; }
         public virtual DbSet<SubmissionFeeTable> SubmissionFeeTables { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
-        public virtual DbSet<UserTable> UserTables { get; set; }
         public virtual DbSet<UserTypeTable> UserTypeTables { get; set; }
         public virtual DbSet<ClassTable> ClassTables { get; set; }
         public virtual DbSet<StudentPromotTable> StudentPromotTables { get; set; }
-        public virtual DbSet<ClassSubjectTable> ClassSubjectTables { get; set; }
-        public virtual DbSet<ExamMarksTable> ExamMarksTables { get; set; }
         public virtual DbSet<SubjectTable> SubjectTables { get; set; }
         public virtual DbSet<TimeTblTable> TimeTblTables { get; set; }
+        public virtual DbSet<EmployeeCertificationTable> EmployeeCertificationTables { get; set; }
+        public virtual DbSet<EmployeeEducationTable> EmployeeEducationTables { get; set; }
+        public virtual DbSet<EmployeeLanguageTable> EmployeeLanguageTables { get; set; }
+        public virtual DbSet<EmployeeLeavingTable> EmployeeLeavingTables { get; set; }
+        public virtual DbSet<EmployeeResumeTable> EmployeeResumeTables { get; set; }
+        public virtual DbSet<EmployeeSalaryTable> EmployeeSalaryTables { get; set; }
+        public virtual DbSet<EmployeeSkillTable> EmployeeSkillTables { get; set; }
+        public virtual DbSet<EmployeeWorkExperienceTable> EmployeeWorkExperienceTables { get; set; }
+        public virtual DbSet<EventTable> EventTables { get; set; }
+        public virtual DbSet<SchoolLeavingTable> SchoolLeavingTables { get; set; }
+        public virtual DbSet<SectionTable> SectionTables { get; set; }
+        public virtual DbSet<vAllUser> vAllUsers { get; set; }
+        public virtual DbSet<StaffTable> StaffTables { get; set; }
+        public virtual DbSet<StudentTable> StudentTables { get; set; }
+        public virtual DbSet<ClassSubjectTable> ClassSubjectTables { get; set; }
+        public virtual DbSet<ExamMarksTable> ExamMarksTables { get; set; }
+        public virtual DbSet<ExpensesTable> ExpensesTables { get; set; }
+        public virtual DbSet<ExpenseTypeTable> ExpenseTypeTables { get; set; }
+        public virtual DbSet<UserTable> UserTables { get; set; }
     }
 }

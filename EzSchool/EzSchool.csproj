@@ -46,6 +46,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=8.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.8.1.1\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonServiceLocator, Version=2.0.7.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.2.0.7\lib\net47\CommonServiceLocator.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -56,6 +62,13 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.2\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -109,6 +122,21 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Abstractions, Version=5.11.1.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Abstractions.5.11.1\lib\net47\Unity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Container, Version=5.11.1.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Container.5.11.1\lib\net47\Unity.Container.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Interception, Version=5.11.1.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Interception.5.11.1\lib\net47\Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mvc, Version=5.11.1.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Mvc.5.11.1\lib\net47\Unity.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
@@ -136,34 +164,60 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\Bootstrapper.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\UnityConfig.cs" />
+    <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AnnualTablesController.cs" />
+    <Compile Include="Controllers\AttendanceReportsController.cs" />
     <Compile Include="Controllers\AttendanceTablesController.cs" />
     <Compile Include="Controllers\ClassSubjectTablesController.cs" />
     <Compile Include="Controllers\ClassTablesController.cs" />
     <Compile Include="Controllers\DesignationTablesController.cs" />
+    <Compile Include="Controllers\EmployeeSalaryTablesController.cs" />
+    <Compile Include="Controllers\EventTablesController.cs" />
     <Compile Include="Controllers\ExamMarksTablesController.cs" />
     <Compile Include="Controllers\ExamTablesController.cs" />
+    <Compile Include="Controllers\ExpensesReportController.cs" />
+    <Compile Include="Controllers\ExpensesTablesController.cs" />
+    <Compile Include="Controllers\ExpenseTypeTablesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProgrameSessionTablesController.cs" />
     <Compile Include="Controllers\ProgrameTablesController.cs" />
+    <Compile Include="Controllers\ResumeController.cs" />
     <Compile Include="Controllers\SessionTablesController.cs" />
     <Compile Include="Controllers\StaffAttendanceTablesController.cs" />
     <Compile Include="Controllers\StaffTablesController.cs" />
+    <Compile Include="Controllers\StudentPromotTablesController.cs" />
     <Compile Include="Controllers\StudentTablesController.cs" />
     <Compile Include="Controllers\SubjectTablesController.cs" />
     <Compile Include="Controllers\SubmissionFeeTablesController.cs" />
+    <Compile Include="Controllers\TimeTableReportsController.cs" />
     <Compile Include="Controllers\TimeTblTablesController.cs" />
     <Compile Include="Controllers\UserTablesController.cs" />
     <Compile Include="Controllers\UserTypeTablesController.cs" />
+    <Compile Include="FileHelper\UploadFile.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Certification.cs" />
+    <Compile Include="Models\Education.cs" />
+    <Compile Include="Models\Language.cs" />
+    <Compile Include="Models\Person.cs" />
+    <Compile Include="Models\Skill.cs" />
+    <Compile Include="Models\WorkExperience.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Controllers\StudentPromotTablesController.cs" />
+    <Compile Include="Repository\IResumeRepository.cs" />
+    <Compile Include="Repository\ResumeRepository.cs" />
+    <Compile Include="ViewModels\EmployeeCertificationVM.cs" />
+    <Compile Include="ViewModels\EmployeeEducationTableMV.cs" />
+    <Compile Include="ViewModels\EmployeeLanguageVM.cs" />
+    <Compile Include="ViewModels\EmployeeResumeTableMV.cs" />
+    <Compile Include="ViewModels\EmployeeSkillsVM.cs" />
+    <Compile Include="ViewModels\EmployeeWorkExperienceVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\AdminTemp\css\sb-admin-2.css" />
@@ -1785,7 +1839,10 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\EmployeePhoto\default.png" />
+    <Content Include="Content\StudentPhoto\default.png" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -1961,6 +2018,10 @@
     <Content Include="Content\AdminTemp\vendor\fontawesome-free\webfonts\fa-solid-900.woff2" />
     <Content Include="Content\AdminTemp\vendor\jquery\jquery.min.map" />
     <Content Include="Content\AdminTemp\vendor\jquery\jquery.slim.min.map" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
@@ -2042,26 +2103,11 @@
     <Content Include="Views\ExamTables\Details.cshtml" />
     <Content Include="Views\ExamTables\Edit.cshtml" />
     <Content Include="Views\ExamTables\Index.cshtml" />
-    <Content Include="Views\ExamMarksTables\Create.cshtml" />
-    <Content Include="Views\ExamMarksTables\Delete.cshtml" />
-    <Content Include="Views\ExamMarksTables\Details.cshtml" />
-    <Content Include="Views\ExamMarksTables\Edit.cshtml" />
-    <Content Include="Views\ExamMarksTables\Index.cshtml" />
     <Content Include="Views\TimeTblTables\Create.cshtml" />
     <Content Include="Views\TimeTblTables\Delete.cshtml" />
     <Content Include="Views\TimeTblTables\Details.cshtml" />
     <Content Include="Views\TimeTblTables\Edit.cshtml" />
     <Content Include="Views\TimeTblTables\Index.cshtml" />
-    <Content Include="Views\StudentPromotTables\Create.cshtml" />
-    <Content Include="Views\StudentPromotTables\Delete.cshtml" />
-    <Content Include="Views\StudentPromotTables\Details.cshtml" />
-    <Content Include="Views\StudentPromotTables\Edit.cshtml" />
-    <Content Include="Views\StudentPromotTables\Index.cshtml" />
-    <Content Include="Views\StudentTables\Create.cshtml" />
-    <Content Include="Views\StudentTables\Delete.cshtml" />
-    <Content Include="Views\StudentTables\Details.cshtml" />
-    <Content Include="Views\StudentTables\Edit.cshtml" />
-    <Content Include="Views\StudentTables\Index.cshtml" />
     <Content Include="Views\AttendanceTables\Create.cshtml" />
     <Content Include="Views\AttendanceTables\Delete.cshtml" />
     <Content Include="Views\AttendanceTables\Details.cshtml" />
@@ -2072,20 +2118,77 @@
     <Content Include="Views\StaffAttendanceTables\Details.cshtml" />
     <Content Include="Views\StaffAttendanceTables\Edit.cshtml" />
     <Content Include="Views\StaffAttendanceTables\Index.cshtml" />
-    <Content Include="Views\StaffTables\Create.cshtml" />
-    <Content Include="Views\StaffTables\Delete.cshtml" />
-    <Content Include="Views\StaffTables\Details.cshtml" />
-    <Content Include="Views\StaffTables\Edit.cshtml" />
-    <Content Include="Views\StaffTables\Index.cshtml" />
     <Content Include="Views\SubmissionFeeTables\Create.cshtml" />
     <Content Include="Views\SubmissionFeeTables\Delete.cshtml" />
     <Content Include="Views\SubmissionFeeTables\Details.cshtml" />
     <Content Include="Views\SubmissionFeeTables\Edit.cshtml" />
     <Content Include="Views\SubmissionFeeTables\Index.cshtml" />
+    <Content Include="Views\StaffTables\Create.cshtml" />
+    <Content Include="Views\StaffTables\Delete.cshtml" />
+    <Content Include="Views\StaffTables\Details.cshtml" />
+    <Content Include="Views\StaffTables\Edit.cshtml" />
+    <Content Include="Views\StaffTables\Index.cshtml" />
+    <Content Include="Views\Shared\_MyCertificationCV.cshtml" />
+    <Content Include="Views\Shared\_MyCertifications.cshtml" />
+    <Content Include="Views\Shared\_MyEducation.cshtml" />
+    <Content Include="Views\Shared\_MyEducationCV.cshtml" />
+    <Content Include="Views\Shared\_MyLanguage.cshtml" />
+    <Content Include="Views\Shared\_MyLanguageCV.cshtml" />
+    <Content Include="Views\Shared\_MyPersonnalInfo.cshtml" />
+    <Content Include="Views\Shared\_MySkills.cshtml" />
+    <Content Include="Views\Shared\_MySkillsCV.cshtml" />
+    <Content Include="Views\Shared\_MyWorkExperience.cshtml" />
+    <Content Include="Views\Shared\_ResumeLayoutPage.cshtml" />
+    <Content Include="Views\Shared\_WorkExperienceCV.cshtml" />
+    <Content Include="Views\StudentTables\Create.cshtml" />
+    <Content Include="Views\StudentTables\Delete.cshtml" />
+    <Content Include="Views\StudentTables\Details.cshtml" />
+    <Content Include="Views\StudentTables\Edit.cshtml" />
+    <Content Include="Views\StudentTables\Index.cshtml" />
+    <Content Include="Views\StudentPromotTables\Create.cshtml" />
+    <Content Include="Views\StudentPromotTables\Delete.cshtml" />
+    <Content Include="Views\StudentPromotTables\Details.cshtml" />
+    <Content Include="Views\StudentPromotTables\Edit.cshtml" />
+    <Content Include="Views\StudentPromotTables\Index.cshtml" />
+    <Content Include="Views\EmployeeSalaryTables\Create.cshtml" />
+    <Content Include="Views\EmployeeSalaryTables\Delete.cshtml" />
+    <Content Include="Views\EmployeeSalaryTables\Details.cshtml" />
+    <Content Include="Views\EmployeeSalaryTables\Edit.cshtml" />
+    <Content Include="Views\EmployeeSalaryTables\Index.cshtml" />
+    <Content Include="Views\ExamMarksTables\Create.cshtml" />
+    <Content Include="Views\ExamMarksTables\Delete.cshtml" />
+    <Content Include="Views\ExamMarksTables\Details.cshtml" />
+    <Content Include="Views\ExamMarksTables\Edit.cshtml" />
+    <Content Include="Views\ExamMarksTables\Index.cshtml" />
+    <Content Include="Views\EventTables\Create.cshtml" />
+    <Content Include="Views\EventTables\Delete.cshtml" />
+    <Content Include="Views\EventTables\Details.cshtml" />
+    <Content Include="Views\EventTables\Edit.cshtml" />
+    <Content Include="Views\EventTables\Index.cshtml" />
+    <Content Include="Views\ExpensesTables\Create.cshtml" />
+    <Content Include="Views\ExpensesTables\Delete.cshtml" />
+    <Content Include="Views\ExpensesTables\Details.cshtml" />
+    <Content Include="Views\ExpensesTables\Edit.cshtml" />
+    <Content Include="Views\ExpensesTables\Index.cshtml" />
+    <Content Include="Views\ExpenseTypeTables\Create.cshtml" />
+    <Content Include="Views\ExpenseTypeTables\Delete.cshtml" />
+    <Content Include="Views\ExpenseTypeTables\Details.cshtml" />
+    <Content Include="Views\ExpenseTypeTables\Edit.cshtml" />
+    <Content Include="Views\ExpenseTypeTables\Index.cshtml" />
+    <Content Include="Views\TimeTableReports\TeacherReport.cshtml" />
+    <Content Include="Views\TimeTableReports\TeacherWiseReport.cshtml" />
+    <Content Include="Views\TimeTableReports\StudentReport.cshtml" />
+    <Content Include="Views\AttendanceReports\StudentAttendance.cshtml" />
+    <Content Include="Views\AttendanceReports\StudentAttendanceWise.cshtml" />
+    <Content Include="Views\AttendanceReports\StaffAttendanceWise.cshtml" />
+    <Content Include="Views\AttendanceReports\StaffAttendance.cshtml" />
+    <Content Include="Views\ExpensesReport\ExpensesWise.cshtml" />
+    <Content Include="Views\ExpensesReport\CustomExpenses.cshtml" />
+    <Content Include="Views\Home\ChangePassword.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+    <Folder Include="Views\Resume\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -61,19 +62,32 @@ namespace EzSchool.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(StaffTable staffTable)
+        public ActionResult Create( StaffTable staffTable)
         {
-
             if (string.IsNullOrEmpty(Convert.ToString(Session["UserName"])))
             {
                 return RedirectToAction("Login", "Home");
             }
             int userid = Convert.ToInt32(Convert.ToString(Session["UserID"]));
             staffTable.UserID = userid;
+            staffTable.Photo = "/Content/EmployeePhoto/default.png";
             if (ModelState.IsValid)
             {
                 db.StaffTables.Add(staffTable);
                 db.SaveChanges();
+                if (staffTable.PhotoFile != null)
+                {
+                    var folder = "/Content/EmployeePhoto";
+                    var file = string.Format("{0}.jpg", staffTable.StaffID);
+                    var response = FileHelper.UploadFile.UploadPhoto(staffTable.PhotoFile, folder, file);
+                    if (response)
+                    {
+                        var pic = string.Format("{0}/{1}", folder, file);
+                        staffTable.Photo = pic;
+                        db.Entry(staffTable).State = EntityState.Modified;
+                        db.SaveChanges();
+                    }
+                }
                 return RedirectToAction("Index");
             }
 
@@ -108,7 +122,7 @@ namespace EzSchool.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(StaffTable staffTable)
+        public ActionResult Edit(StaffTable staffTable, HttpPostedFileBase image)
         {
             if (string.IsNullOrEmpty(Convert.ToString(Session["UserName"])))
             {
@@ -118,6 +132,25 @@ namespace EzSchool.Controllers
             staffTable.UserID = userid;
             if (ModelState.IsValid)
             {
+
+                var folder = "/Content/EmployeePhoto";
+                var file = string.Format("{0}.jpg", staffTable.StaffID);
+                var response = FileHelper.UploadFile.UploadPhoto(staffTable.PhotoFile, folder, file);
+                if (response)
+                {
+                    var pic = string.Format("{0}/{1}", folder, file);
+                    staffTable.Photo = pic;
+                    //db.Entry(staffTable).State = EntityState.Modified;
+                    //db.SaveChanges();
+                }
+                //if (image != null)
+                //{
+                //    string fileName = image.FileName;
+                //    string _path = Path.Combine(Server.MapPath("/Content/StaffPhoto"), fileName);
+                //    image.SaveAs(_path);
+                //    staffTable.Photo = "/Content/StaffPhoto/" + fileName;
+                //}
+
                 db.Entry(staffTable).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

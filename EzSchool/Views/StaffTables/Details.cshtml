@@ -63,7 +63,10 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Photo)
+            @{
+                string imagepath = Model.Photo;
+                <img src="@Url.Content(imagepath)" alt="Photo" style="width:100px;heigt:150px;max-width:100%;height:auto" />
+            }
         </dd>
 
         <dt>
@@ -80,6 +83,78 @@
 
         <dd>
             @Html.DisplayFor(model => model.IsActive)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HomePhone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HomePhone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Doyouhaveanydisability)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Doyouhaveanydisability)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ifdisabilityyesthengiveusdetail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ifdisabilityyesthengiveusdetail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Areyoutakinganymedication)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Areyoutakinganymedication)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ifedicationyesthengiveusdetail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ifedicationyesthengiveusdetail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AnyCriminaloffcenceagainstyou)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AnyCriminaloffcenceagainstyou)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ifcriminaloffcenceyesthengiveusdetail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ifcriminaloffcenceyesthengiveusdetail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RegistrationDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RegistrationDate)
         </dd>
 
         <dt>

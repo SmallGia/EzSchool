@@ -20,6 +20,7 @@
     <!-- Custom styles for this template-->
     <link href="~/Content/AdminTemp/css/sb-admin-2.min.css" rel="stylesheet">
     <link href="~/Content/AdminTemp/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
 </head>
 <body id="page-top">
     <!-- Page Wrapper -->
@@ -31,7 +32,7 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
                 <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                    <img src="~/Content/AdminTemp/img/ezschool-no-back.png" alt="Logo" style="width: 50px; height: 50px;">
                 </div>
                 <div class="sidebar-brand-text mx-3">EzSchool<sup>2024</sup></div>
             </a>
@@ -41,7 +42,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="~/Home/About">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span>
                 </a>
@@ -63,22 +64,26 @@
                 <div id="collapseStudent" class="collapse" aria-labelledby="headingStudent data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Student Registration:</h6>
-                        @Html.ActionLink("Students", "Index", "StudentTables", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("New Registration", "Create", "StudentTables", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Student List", "Index", "StudentTables", null, new { @class = "collapse-item" })
 
 
                         <div class="collapse-divider"></div>
                         <h6 class="collapse-header">Promotion:</h6>
-                        @Html.ActionLink("Student Promote", "Index", "StudentPromotTables", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Student Promote", "Create", "StudentPromotTables", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Promote List", "Index", "StudentPromotTables", null, new { @class = "collapse-item" })
 
 
                         <div class="collapse-divider"></div>
                         <h6 class="collapse-header">Fee's:</h6>
-                        @Html.ActionLink("Tution Fee", "Index", "SubmissionFeeTables", null, new { @class = "collapse-item" })
-                        @Html.ActionLink("Annual Fee", "Index", "StudentPromotTables", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Submit Tution Fee", "Create", "SubmissionFeeTables", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Tution Fee Records", "Index", "SubmissionFeeTables", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Annual Fee", "Index", "AnnualTables", null, new { @class = "collapse-item" })
 
                         <div class="collapse-divider"></div>
                         <h6 class="collapse-header">Attendance Reports:</h6>
-                        @Html.ActionLink("Student Attendance", "Index", "AttendanceTables", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Submit Attendance", "Create", "AttendanceTables", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Attendance Record", "Index", "AttendanceTables", null, new { @class = "collapse-item" })
 
                     </div>
                 </div>
@@ -101,13 +106,21 @@
                 <div id="collapseStaff" class="collapse" aria-labelledby="headingStaff data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Staff Registration:</h6>
-                        @Html.ActionLink("Staff", "Index", "StaffTables", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Staff Registeration", "Create", "StaffTables", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("All Staff", "Index", "StaffTables", null, new { @class = "collapse-item" })
+
 
                         <div class="collapse-divider"></div>
                         <h6 class="collapse-header">Attendance:</h6>
-                        @Html.ActionLink("Staff Attendance", "Index", "StaffAttendanceTables", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Staff Attendance", "Create", "StaffAttendanceTables", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Staff Attendance Record", "Index", "StaffAttendanceTables", null, new { @class = "collapse-item" })
 
-                </div>
+                        <div class="collapse-divider"></div>
+                        <h6 class="collapse-header">Salary:</h6>
+                        @Html.ActionLink("Employee Salary", "Create", "EmployeeSalaryTables", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Salaries Record", "Index", "EmployeeSalaryTables", null, new { @class = "collapse-item" })
+
+                    </div>
             </li>
 
 
@@ -196,14 +209,46 @@
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Exam Setting:</h6>
+                        @Html.ActionLink("New Exam Types", "Create", "ExamTables", null, new { @class = "collapse-item" })
                         @Html.ActionLink("Exam Types", "Index", "ExamTables", null, new { @class = "collapse-item" })
 
                         <div class="collapse-divider"></div>
                         <h6 class="collapse-header">Examination:</h6>
-                        @Html.ActionLink("Add Marks Sheet", "Index", "ExamMarksTables", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Add Marks Sheet", "Create", "ExamMarksTables", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Exam Marks Sheet", "Index", "ExamMarksTables", null, new { @class = "collapse-item" })
                     </div>
                 </div>
             </li>
+
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                School Event
+            </div>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseEvent" aria-expanded="true" aria-controls="collapseEvent">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Event Setting</span>
+                </a>
+                <div id="collapseEvent" class="collapse" aria-labelledby="headingEvent" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Exam Setting:</h6>
+                        @Html.ActionLink("New Event", "Create", "EventTables", null, new { @class = "collapse-item" })
+
+                        <div class="collapse-divider"></div>
+                        <h6 class="collapse-header">Events:</h6>
+                        @Html.ActionLink("ALl Events", "Create", "EventTables", null, new { @class = "collapse-item" })
+                    </div>
+                </div>
+            </li>
+
+
+
 
             <!-- Divider -->
             <hr class="sidebar-divider">
@@ -222,7 +267,7 @@
                 <div id="collapseTimeTable" class="collapse" aria-labelledby="headingTimeTable data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Setting:</h6>
-                        @Html.ActionLink("Set Time Table", "Index", "TimeTblTables", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Set Time Table", "Create", "TimeTblTables", null, new { @class = "collapse-item" })
 
                         <div class="collapse-divider"></div>
                         <h6 class="collapse-header">Class Wise:</h6>
@@ -230,6 +275,36 @@
                     </div>
                 </div>
             </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Expenses
+            </div>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseExpenses" aria-expanded="true" aria-controls="collapseExpenses">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Expenses</span>
+                </a>
+                <div id="collapseExpenses" class="collapse" aria-labelledby="headingExpenses data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Expenses Types:</h6>
+                        @Html.ActionLink("New Expenses Type", "Create", "ExpenseTypeTables", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Expenses Type List", "Index", "ExpenseTypeTables", null, new { @class = "collapse-item" })
+                        <div class="collapse-divider"></div>
+                        <h6 class="collapse-header">Class Wise:</h6>
+                        @Html.ActionLink("Add Expenses", "Create", "ExpensesTables", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Expenses List", "Index", "ExpensesTables", null, new { @class = "collapse-item" })
+                    </div>
+                </div>
+            </li>
+
+
+
 
             <!-- Nav Item - Charts -->
             <!-- Divider -->
@@ -250,10 +325,13 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Genaral Reports:</h6>
                         @Html.ActionLink("Student Reports", "#", "#", null, new { @class = "collapse-item" })
+                        <h6 class="collapse-header">Teacher Reports:</h6>
+                        @Html.ActionLink("Teacher Wise Time Table", "TeacherWiseReport", "TimeTableReports", null, new { @class = "collapse-item" })
 
                         <div class="collapse-divider"></div>
                         <h6 class="collapse-header">Administration Reports:</h6>
-                        @Html.ActionLink("Apply Student List", "#", "#", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("All Expenses", "ExpensesWise", "ExpensesReport", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Custome Expenses", "CustomExpenses", "ExpensesReport", null, new { @class = "collapse-item" })
 
 
                         <div class="collapse-divider"></div>
@@ -262,8 +340,8 @@
 
                         <div class="collapse-divider"></div>
                         <h6 class="collapse-header">Attendance Reports:</h6>
-                        @Html.ActionLink("Student Attendance", "#", "#", null, new { @class = "collapse-item" })
-                        @Html.ActionLink("Teacher Attendance", "#", "#", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("All Student Attendance", "StudentAttendanceWise", "AttendanceReports", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("All Staff Attendance", "StaffAttendanceWise", "AttendanceReports", null, new { @class = "collapse-item" })
 
                         <div class="collapse-divider"></div>
                         <h6 class="collapse-header">Fee's' Reports:</h6>
@@ -283,6 +361,7 @@
             <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div>
+
         </ul>
         <!-- End of Sidebar -->
         <!-- Content Wrapper -->
@@ -291,6 +370,10 @@
             <div id="content">
                 <!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                    <marquee behavior="scroll" direction="left" class="text-center" style="font-family: 'Pacifico', sans-serif; font-size: 1.2rem; color: cadetblue; border: none; background: none; width: 100%;">
+                        Welcome to EzSchool! Stay updated with the latest news and events.
+                    </marquee>
+
                     <!-- Sidebar Toggle (Topbar) -->
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                         <i class="fa fa-bars"></i>
@@ -305,15 +388,10 @@
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> Profile
+                                <a class="dropdown-item" href="~/Home/ChangePassword">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> Change Password
                                 </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i> Settings
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i> Activity Log
-                                </a>
+
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> Logout

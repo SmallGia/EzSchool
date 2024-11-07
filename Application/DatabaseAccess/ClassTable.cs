@@ -21,6 +21,7 @@ namespace DatabaseAccess
             this.StudentPromotTables = new HashSet<StudentPromotTable>();
             this.SubmissionFeeTables = new HashSet<SubmissionFeeTable>();
             this.ClassSubjectTables = new HashSet<ClassSubjectTable>();
+            this.StudentTables = new HashSet<StudentTable>();
         }
     
         public int ClassID { get; set; }
@@ -35,5 +36,7 @@ namespace DatabaseAccess
         public virtual ICollection<SubmissionFeeTable> SubmissionFeeTables { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ClassSubjectTable> ClassSubjectTables { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<StudentTable> StudentTables { get; set; }
     }
 }

@@ -21,7 +21,7 @@ namespace EzSchool.Controllers
             {
                 return RedirectToAction("Login", "Home");
             }
-            var attendanceTables = db.AttendanceTables.Include(a => a.StudentTable).Include(a => a.ClassTable);
+            var attendanceTables = db.AttendanceTables.Include(a => a.StudentTable).Include(a => a.ClassTable).OrderByDescending( a => a.AttendanceID);
             return View(attendanceTables.ToList());
         }
 
@@ -53,6 +53,7 @@ namespace EzSchool.Controllers
             }
             ViewBag.StudentID = new SelectList(db.StudentTables, "StudentID", "Name");
             ViewBag.ClassID = new SelectList(db.ClassTables, "ClassID", "Name");
+            ViewBag.SessionID = new SelectList(db.SessionTables, "SessionID", "Name");
             return View();
         }
 

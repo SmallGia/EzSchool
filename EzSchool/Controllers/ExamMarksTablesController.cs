@@ -21,7 +21,7 @@ namespace EzSchool.Controllers
             {
                 return RedirectToAction("Login", "Home");
             }
-            var examMarksTables = db.ExamMarksTables.Include(e => e.ExamTable).Include(e => e.StudentTable).Include(e => e.UserTable);
+            var examMarksTables = db.ExamMarksTables.Include(e => e.ClassSubjectTable).Include(e => e.ExamTable).Include(e => e.StudentTable).Include(e => e.UserTable).OrderByDescending(e => e.MarksID);
             return View(examMarksTables.ToList());
         }
 
@@ -51,8 +51,8 @@ namespace EzSchool.Controllers
             {
                 return RedirectToAction("Login", "Home");
             }
-            ViewBag.ExamID = new SelectList(db.ExamTables, "ExamID", "Title");
             ViewBag.ClassSubjectID = new SelectList(db.ClassSubjectTables, "ClassSubjectID", "Name");
+            ViewBag.ExamID = new SelectList(db.ExamTables, "ExamID", "Title");
             ViewBag.StudentID = new SelectList(db.StudentTables, "StudentID", "Name");
             ViewBag.UserID = new SelectList(db.UserTables, "UserID", "FullName");
             return View();
@@ -69,8 +69,8 @@ namespace EzSchool.Controllers
             {
                 return RedirectToAction("Login", "Home");
             }
-            int userid = Convert.ToInt32(Convert.ToString(Session["UserID"]));
-            examMarksTable.UserID = userid;
+            int userId = Convert.ToInt32(Convert.ToString(Session["UserID"]));
+            examMarksTable.UserID = userId;
             if (ModelState.IsValid)
             {
                 db.ExamMarksTables.Add(examMarksTable);
@@ -78,8 +78,8 @@ namespace EzSchool.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.ExamID = new SelectList(db.ExamTables, "ExamID", "Title", examMarksTable.ExamID);
             ViewBag.ClassSubjectID = new SelectList(db.ClassSubjectTables, "ClassSubjectID", "Name", examMarksTable.ClassSubjectID);
+            ViewBag.ExamID = new SelectList(db.ExamTables, "ExamID", "Title", examMarksTable.ExamID);
             ViewBag.StudentID = new SelectList(db.StudentTables, "StudentID", "Name", examMarksTable.StudentID);
             ViewBag.UserID = new SelectList(db.UserTables, "UserID", "FullName", examMarksTable.UserID);
             return View(examMarksTable);
@@ -101,8 +101,8 @@ namespace EzSchool.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.ExamID = new SelectList(db.ExamTables, "ExamID", "Title", examMarksTable.ExamID);
             ViewBag.ClassSubjectID = new SelectList(db.ClassSubjectTables, "ClassSubjectID", "Name", examMarksTable.ClassSubjectID);
+            ViewBag.ExamID = new SelectList(db.ExamTables, "ExamID", "Title", examMarksTable.ExamID);
             ViewBag.StudentID = new SelectList(db.StudentTables, "StudentID", "Name", examMarksTable.StudentID);
             ViewBag.UserID = new SelectList(db.UserTables, "UserID", "FullName", examMarksTable.UserID);
             return View(examMarksTable);
@@ -119,16 +119,17 @@ namespace EzSchool.Controllers
             {
                 return RedirectToAction("Login", "Home");
             }
-            int userid = Convert.ToInt32(Convert.ToString(Session["UserID"]));
-            examMarksTable.UserID = userid;
+
+            int userId = Convert.ToInt32(Convert.ToString(Session["UserID"]));
+            examMarksTable.UserID = userId;
             if (ModelState.IsValid)
             {
                 db.Entry(examMarksTable).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.ExamID = new SelectList(db.ExamTables, "ExamID", "Title", examMarksTable.ExamID);
             ViewBag.ClassSubjectID = new SelectList(db.ClassSubjectTables, "ClassSubjectID", "Name", examMarksTable.ClassSubjectID);
+            ViewBag.ExamID = new SelectList(db.ExamTables, "ExamID", "Title", examMarksTable.ExamID);
             ViewBag.StudentID = new SelectList(db.StudentTables, "StudentID", "Name", examMarksTable.StudentID);
             ViewBag.UserID = new SelectList(db.UserTables, "UserID", "FullName", examMarksTable.UserID);
             return View(examMarksTable);
@@ -175,6 +176,31 @@ namespace EzSchool.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+        public ActionResult GetByPromoteID(string sid)
+        {
+            int promoteid = Convert.ToInt32(sid);
+            var promoterecord = db.StudentPromotTables.Find(promoteid);
+            List<StudentTable> stdlist = new List<StudentTable>();
+
+            stdlist.Add(new StudentTable { StudentID = (int)promoterecord.StudentID, Name = promoterecord.StudentTable.Name });
+
+
+            List<ClassSubjectTable> listsubjects = new List<ClassSubjectTable>();
+            var classsubject = db.ClassSubjectTables.Where(cls => cls.ClassID == promoterecord.ClassID && cls.IsActive == true);
+            foreach (var subj in classsubject)
+            {
+                listsubjects.Add(new ClassSubjectTable { ClassSubjectID = subj.ClassSubjectID , Name = subj.Name});
+            }
+
+            return Json(new { student = stdlist, subject = listsubjects }, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult GetTotalMarks(string sid)
+        {
+            int classsubjectid = Convert.ToInt32(sid);
+            var totalmark = db.ClassSubjectTables.Find(classsubjectid).SubjectTable.TotalMarks;
+            return Json(new { data = totalmark }, JsonRequestBehavior.AllowGet);
         }
     }
 }

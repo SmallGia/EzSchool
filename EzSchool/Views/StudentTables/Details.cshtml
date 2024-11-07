@@ -51,59 +51,24 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.CNIC)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CNIC)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.FNIC)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FNIC)
-        </dd>
-
-        <dt>
             @Html.DisplayNameFor(model => model.Photo)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Photo)
+            @*@Url.Content(Model.Photo)*@
+            @if (!string.IsNullOrEmpty(Model.Photo))
+            {
+                <img class="img-profile rounded-circle"
+                     src="@Url.Content(Model.Photo)" height="80" width="80">
+            }
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.IsEnrolled)
+            @Html.DisplayNameFor(model => model.AddmissionDate)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.IsEnrolled)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ApplyDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ApplyDate)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.IsShortList)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.IsShortList)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.IsApply)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.IsApply)
+            @Html.DisplayFor(model => model.AddmissionDate)
         </dd>
 
         <dt>
@@ -136,6 +101,22 @@
 
         <dd>
             @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nationality)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nationality)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClassTable.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClassTable.Name)
         </dd>
 
         <dt>

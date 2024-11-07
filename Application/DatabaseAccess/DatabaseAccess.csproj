@@ -42,6 +42,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -65,10 +66,43 @@
     <Compile Include="DesignationTable.cs">
       <DependentUpon>SchoolMgt.tt</DependentUpon>
     </Compile>
+    <Compile Include="EmployeeCertificationTable.cs">
+      <DependentUpon>SchoolMgt.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeEducationTable.cs">
+      <DependentUpon>SchoolMgt.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeLanguageTable.cs">
+      <DependentUpon>SchoolMgt.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeLeavingTable.cs">
+      <DependentUpon>SchoolMgt.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeResumeTable.cs">
+      <DependentUpon>SchoolMgt.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeSalaryTable.cs">
+      <DependentUpon>SchoolMgt.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeSkillTable.cs">
+      <DependentUpon>SchoolMgt.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeWorkExperienceTable.cs">
+      <DependentUpon>SchoolMgt.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EventTable.cs">
+      <DependentUpon>SchoolMgt.tt</DependentUpon>
+    </Compile>
     <Compile Include="ExamMarksTable.cs">
       <DependentUpon>SchoolMgt.tt</DependentUpon>
     </Compile>
     <Compile Include="ExamTable.cs">
+      <DependentUpon>SchoolMgt.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExpensesTable.cs">
+      <DependentUpon>SchoolMgt.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExpenseTypeTable.cs">
       <DependentUpon>SchoolMgt.tt</DependentUpon>
     </Compile>
     <Compile Include="ProgrameSessionTable.cs">
@@ -78,6 +112,9 @@
       <DependentUpon>SchoolMgt.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SchoolLeavingTable.cs">
+      <DependentUpon>SchoolMgt.tt</DependentUpon>
+    </Compile>
     <Compile Include="SchoolMgt.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -92,6 +129,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SchoolMgt.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="SectionTable.cs">
+      <DependentUpon>SchoolMgt.tt</DependentUpon>
     </Compile>
     <Compile Include="SessionTable.cs">
       <DependentUpon>SchoolMgt.tt</DependentUpon>
@@ -124,6 +164,9 @@
       <DependentUpon>SchoolMgt.tt</DependentUpon>
     </Compile>
     <Compile Include="UserTypeTable.cs">
+      <DependentUpon>SchoolMgt.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vAllUser.cs">
       <DependentUpon>SchoolMgt.tt</DependentUpon>
     </Compile>
   </ItemGroup>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Web.Mvc;
+using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using DatabaseAccess;
 
@@ -105,7 +106,34 @@ public class HomeController : Controller
         ViewData["Message"] = "Welcome to EzSchool";
         return View();
     }
+    public ActionResult ChangePassword()
+    {
 
+        return View();
+    }
+    public ActionResult ChangePasswordU(string oldpass, string newpass,string confirm)
+    {
+        if (newpass != confirm)
+        {
+            ViewBag.Message = "New Password and Confirm Password does not match!";
+            return View("ChangePassword");
+        }
+        int userid = Convert.ToInt32(Convert.ToString(Session["UserID"]));
+        var getuser = db.UserTables.Find(userid);
+        if (getuser.Password == oldpass.Trim())
+        {
+            getuser.Password = newpass.Trim();
+        }
+        else
+        {
+            ViewBag.Message = "Old Password is not correct!";
+            return View("ChangePassword");
+        }
+        db.Entry(getuser).State = System.Data.Entity.EntityState.Modified;
+        db.SaveChanges();
+        ViewBag.Message = "Password Changed Successfully!";
+        return RedirectToAction("Logout");
+    }
     public ActionResult Logout()
     {
         Session["UserID"] = string.Empty;
