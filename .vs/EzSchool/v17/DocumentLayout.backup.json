@@ -3,20 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4D0FBEAB-92AA-4724-AED4-2CA5766F83A0}|EzSchool\\EzSchool.csproj|c:\\users\\thai ho phu gia\\desktop\\hocki4\\laptrinhwebvaungdung\\schoolmgt\\src2\\ezschool\\ezschool\\views\\studenttables\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{4D0FBEAB-92AA-4724-AED4-2CA5766F83A0}|EzSchool\\EzSchool.csproj|solutionrelative:ezschool\\views\\studenttables\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{4D0FBEAB-92AA-4724-AED4-2CA5766F83A0}|EzSchool\\EzSchool.csproj|c:\\users\\thai ho phu gia\\desktop\\hocki4\\laptrinhwebvaungdung\\schoolmgt\\src2\\ezschool\\ezschool\\views\\studentpromottables\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4D0FBEAB-92AA-4724-AED4-2CA5766F83A0}|EzSchool\\EzSchool.csproj|solutionrelative:ezschool\\views\\studentpromottables\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D0FBEAB-92AA-4724-AED4-2CA5766F83A0}|EzSchool\\EzSchool.csproj|C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\ezschool\\controllers\\studenttablescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D0FBEAB-92AA-4724-AED4-2CA5766F83A0}|EzSchool\\EzSchool.csproj|solutionrelative:ezschool\\controllers\\studenttablescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4D0FBEAB-92AA-4724-AED4-2CA5766F83A0}|EzSchool\\EzSchool.csproj|C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\ezschool\\controllers\\studentpromottablescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D0FBEAB-92AA-4724-AED4-2CA5766F83A0}|EzSchool\\EzSchool.csproj|solutionrelative:ezschool\\controllers\\studentpromottablescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D0FBEAB-92AA-4724-AED4-2CA5766F83A0}|EzSchool\\EzSchool.csproj|c:\\users\\thai ho phu gia\\desktop\\hocki4\\laptrinhwebvaungdung\\schoolmgt\\src2\\ezschool\\ezschool\\controllers\\attendancereportscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D0FBEAB-92AA-4724-AED4-2CA5766F83A0}|EzSchool\\EzSchool.csproj|solutionrelative:ezschool\\controllers\\attendancereportscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4D0FBEAB-92AA-4724-AED4-2CA5766F83A0}|EzSchool\\EzSchool.csproj|C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\ezschool\\controllers\\attendancetablescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D0FBEAB-92AA-4724-AED4-2CA5766F83A0}|EzSchool\\EzSchool.csproj|solutionrelative:ezschool\\controllers\\attendancetablescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4D0FBEAB-92AA-4724-AED4-2CA5766F83A0}|EzSchool\\EzSchool.csproj|C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\ezschool\\views\\stafftables\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4D0FBEAB-92AA-4724-AED4-2CA5766F83A0}|EzSchool\\EzSchool.csproj|solutionrelative:ezschool\\views\\stafftables\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4D0FBEAB-92AA-4724-AED4-2CA5766F83A0}|EzSchool\\EzSchool.csproj|C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\ezschool\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -25,10 +21,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{4D0FBEAB-92AA-4724-AED4-2CA5766F83A0}|EzSchool\\EzSchool.csproj|C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\ezschool\\views\\home\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{4D0FBEAB-92AA-4724-AED4-2CA5766F83A0}|EzSchool\\EzSchool.csproj|solutionrelative:ezschool\\views\\home\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4D0FBEAB-92AA-4724-AED4-2CA5766F83A0}|EzSchool\\EzSchool.csproj|C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\ezschool\\views\\stafftables\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{4D0FBEAB-92AA-4724-AED4-2CA5766F83A0}|EzSchool\\EzSchool.csproj|solutionrelative:ezschool\\views\\stafftables\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4D0FBEAB-92AA-4724-AED4-2CA5766F83A0}|EzSchool\\EzSchool.csproj|C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\ezschool\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -46,8 +38,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\EzSchool\\Views\\StaffTables\\Index.cshtml",
+              "RelativeDocumentMoniker": "EzSchool\\Views\\StaffTables\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\EzSchool\\Views\\StaffTables\\Index.cshtml",
+              "RelativeToolTip": "EzSchool\\Views\\StaffTables\\Index.cshtml",
+              "ViewState": "AgIAADwAAAAAAAAAAAAAAE4AAABSAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-22T15:40:54.228Z",
+              "IsPinned": true
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
@@ -56,68 +61,31 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\EzSchool\\Views\\StudentTables\\Create.cshtml",
-              "RelativeDocumentMoniker": "EzSchool\\Views\\StudentTables\\Create.cshtml",
-              "ToolTip": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\EzSchool\\Views\\StudentTables\\Create.cshtml",
-              "RelativeToolTip": "EzSchool\\Views\\StudentTables\\Create.cshtml",
-              "ViewState": "AgIAAFoAAAAAAAAAAAAAAGsAAAA/AAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\EzSchool\\Views\\StudentPromotTables\\Create.cshtml",
+              "RelativeDocumentMoniker": "EzSchool\\Views\\StudentPromotTables\\Create.cshtml",
+              "ToolTip": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\EzSchool\\Views\\StudentPromotTables\\Create.cshtml",
+              "RelativeToolTip": "EzSchool\\Views\\StudentPromotTables\\Create.cshtml",
+              "ViewState": "AgIAAGAAAAAAAAAAAAAAAHEAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-23T15:48:49.686Z",
+              "WhenOpened": "2024-11-23T16:57:08.423Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "StudentTablesController.cs",
-              "DocumentMoniker": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\EzSchool\\Controllers\\StudentTablesController.cs",
-              "RelativeDocumentMoniker": "EzSchool\\Controllers\\StudentTablesController.cs",
-              "ToolTip": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\EzSchool\\Controllers\\StudentTablesController.cs",
-              "RelativeToolTip": "EzSchool\\Controllers\\StudentTablesController.cs",
-              "ViewState": "AgIAAEEAAAAAAAAAAAAgwEgAAAArAAAAAAAAAA==",
+              "Title": "StudentPromotTablesController.cs",
+              "DocumentMoniker": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\EzSchool\\Controllers\\StudentPromotTablesController.cs",
+              "RelativeDocumentMoniker": "EzSchool\\Controllers\\StudentPromotTablesController.cs",
+              "ToolTip": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\EzSchool\\Controllers\\StudentPromotTablesController.cs",
+              "RelativeToolTip": "EzSchool\\Controllers\\StudentPromotTablesController.cs",
+              "ViewState": "AgIAALEAAAAAAAAAAAAIwLIAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-22T16:01:07.841Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AttendanceReportsController.cs",
-              "DocumentMoniker": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\EzSchool\\Controllers\\AttendanceReportsController.cs",
-              "RelativeDocumentMoniker": "EzSchool\\Controllers\\AttendanceReportsController.cs",
-              "ToolTip": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\EzSchool\\Controllers\\AttendanceReportsController.cs",
-              "RelativeToolTip": "EzSchool\\Controllers\\AttendanceReportsController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-22T15:57:57.287Z",
+              "WhenOpened": "2024-11-23T16:56:57.421Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "AttendanceTablesController.cs",
-              "DocumentMoniker": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\EzSchool\\Controllers\\AttendanceTablesController.cs",
-              "RelativeDocumentMoniker": "EzSchool\\Controllers\\AttendanceTablesController.cs",
-              "ToolTip": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\EzSchool\\Controllers\\AttendanceTablesController.cs",
-              "RelativeToolTip": "EzSchool\\Controllers\\AttendanceTablesController.cs",
-              "ViewState": "AgIAAHcAAAAAAAAAAAAswBwAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-22T15:57:36.523Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\EzSchool\\Views\\StaffTables\\Index.cshtml",
-              "RelativeDocumentMoniker": "EzSchool\\Views\\StaffTables\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\EzSchool\\Views\\StaffTables\\Index.cshtml",
-              "RelativeToolTip": "EzSchool\\Views\\StaffTables\\Index.cshtml",
-              "ViewState": "AgIAADwAAAAAAAAAAAAAAE4AAABSAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-22T15:40:54.228Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\EzSchool\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "EzSchool\\Views\\Shared\\_Layout.cshtml",
@@ -129,7 +97,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "About.cshtml",
               "DocumentMoniker": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\EzSchool\\Views\\Home\\About.cshtml",
               "RelativeDocumentMoniker": "EzSchool\\Views\\Home\\About.cshtml",
@@ -141,7 +109,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 5,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\EzSchool\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "EzSchool\\Views\\Home\\Index.cshtml",
@@ -153,7 +121,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 6,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\Thai Ho Phu Gia\\Desktop\\HOCKI4\\laptrinhwebvaungdung\\SchoolMgt\\src2\\EzSchool\\EzSchool\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "EzSchool\\Controllers\\HomeController.cs",
