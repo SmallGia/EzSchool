@@ -70,7 +70,7 @@ namespace EzSchool.Controllers
                 return RedirectToAction("Login", "Home");
             }
             int userid = Convert.ToInt32(Convert.ToString(Session["UserID"]));
-            studentTable.UserID = userid;
+            //studentTable.UserID = userid;
             studentTable.Photo = "/Content/StudentPhoto/default.png";
             if (ModelState.IsValid)
             {

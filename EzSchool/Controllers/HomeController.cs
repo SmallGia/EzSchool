@@ -37,9 +37,9 @@ public class HomeController : Controller
                     Session["Address"] = finduser[0].Address;
 
                     // 1.Admin 
-                    // 2.Operator
-                    // 3.Teacher
-                    // 4.Student
+                    // 4.Operator
+                    // 5.Teacher
+                    // 6.Student
                     string url = string.Empty;
                     if (finduser[0].UserTypeID == 2)
                     {
@@ -56,6 +56,8 @@ public class HomeController : Controller
                     else if (finduser[0].UserTypeID == 1)
                     {
                         url = "About";
+                           
+                     //   return RedirectToAction("About");
                     }
                     return RedirectToAction(url);
 
@@ -133,6 +135,7 @@ public class HomeController : Controller
         db.SaveChanges();
         ViewBag.Message = "Password Changed Successfully!";
         return RedirectToAction("Logout");
+
     }
     public ActionResult Logout()
     {
