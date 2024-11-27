@@ -4,178 +4,66 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<div class="container mt-4">
+    <div class="card shadow">
+        <div class="card-header text-white bg-gradient-primary">
+            <h3 class="m-0">Staff Details</h3>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <!-- Photo -->
+                <div class="col-md-4 text-center">
+                    @if (!string.IsNullOrEmpty(Model.Photo))
+                    {
+                        <img class="img-thumbnail rounded-circle mb-3" src="@Url.Content(Model.Photo)" alt="Staff Photo" style="width: 150px; height: 150px;">
+                    }
+                    else
+                    {
+                        <img class="img-thumbnail rounded-circle mb-3" src="default-avatar.png" alt="Default Photo" style="width: 150px; height: 150px;">
+                    }
+                    <h4>@Model.Name</h4>
+                </div>
 
-<div>
-    <h4>StaffTable</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
+                <!-- Personal Information -->
+                <div class="col-md-8">
+                    <h5 class="text-secondary">Personal Information</h5>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p><strong>Gender:</strong> @Model.Gender</p>
+                            <p><strong>Contact No:</strong> @Model.ContactNo</p>
+                            <p><strong>Home Phone:</strong> @Model.HomePhone</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p><strong>Email:</strong> @Model.EmailAddress</p>
+                            <p><strong>Address:</strong> @Model.Address</p>
+                            <p><strong>Qualification:</strong> @Model.Qualification</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
+            <!-- Additional Information -->
+            <div class="mt-4">
+                <h5 class="text-secondary">Additional Information</h5>
+                <div class="row">
+                    <div class="col-md-6">
+                        <p><strong>Basic Salary:</strong> @Model.BasicSalary</p>
+                        <p><strong>Registration Date:</strong> @Model.RegistrationDate.ToString("dd/MM/yyyy")</p>
+                        <p><strong>Designation:</strong> @Model.DesignationTable.Title</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p><strong>Description:</strong> @Model.Description</p>
+                        <p><strong>Is Active:</strong> @Model.IsActive</p>
+                        @*<p><strong>Full Name:</strong> @Model.UserTable.FullName</p>*@
+                    </div>
+                </div>
+            </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ContactNo)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ContactNo)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.BasicSalary)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.BasicSalary)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.EmailAddress)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.EmailAddress)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Address)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Address)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Qualification)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Qualification)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Photo)
-        </dt>
-
-        <dd>
-            @{
-                string imagepath = Model.Photo;
-                <img src="@Url.Content(imagepath)" alt="Photo" style="width:100px;heigt:150px;max-width:100%;height:auto" />
-            }
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.IsActive)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.IsActive)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Gender)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Gender)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.HomePhone)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.HomePhone)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Doyouhaveanydisability)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Doyouhaveanydisability)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Ifdisabilityyesthengiveusdetail)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Ifdisabilityyesthengiveusdetail)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Areyoutakinganymedication)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Areyoutakinganymedication)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Ifedicationyesthengiveusdetail)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Ifedicationyesthengiveusdetail)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.AnyCriminaloffcenceagainstyou)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AnyCriminaloffcenceagainstyou)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Ifcriminaloffcenceyesthengiveusdetail)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Ifcriminaloffcenceyesthengiveusdetail)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.RegistrationDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.RegistrationDate)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DesignationTable.Title)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DesignationTable.Title)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.UserTable.FullName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.UserTable.FullName)
-        </dd>
-
-    </dl>
+            <!-- Action Buttons -->
+            <div class="d-flex justify-content-end mt-4">
+                <a href="/StaffTables/Edit?id=@Model.StaffID" class="btn btn-primary me-2">Edit</a>
+                <a href="/StaffTables/Index" class="btn btn-secondary">Back to List</a>
+            </div>
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.StaffID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

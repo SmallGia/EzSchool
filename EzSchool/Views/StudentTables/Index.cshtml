@@ -4,9 +4,16 @@
     ViewBag.Title = "Index";
 }
 
-<p>
-    @Html.ActionLink("New Regisieration", "Create", null, new { @class = "btn btn-success" })
-</p>
+@{
+    int usertypeid = Convert.ToInt32(Convert.ToString(Session["UserTypeID"]));
+    if (usertypeid == 1)
+    {
+        <p>
+            @Html.ActionLink("New Regisieration", "Create", null, new { @class = "btn btn-success" })
+        </p>
+    }
+}
+
 <div class="card shadow mb-4">
     <div class="card-header py-3">
         <h6 class="m-0 font-weight-bold text-primary">All Students</h6>
@@ -85,12 +92,18 @@
                                 @Html.DisplayFor(modelItem => item.ClassTable.Name)
                             </td>
 
-                            <td class="btn-group">
+                            <td class="btn btn-group-vertical">
                                 @Html.ActionLink("Timetable", "StudentReport", "TimeTableReports", new { id = item.StudentID }, new { @class = "btn btn-info" })
                                 @Html.ActionLink("Attendance", "StudentAttendance", "AttendanceReports", new { id = item.StudentID }, new { @class = "btn btn-info" })
-                                @Html.ActionLink("Edit", "Edit", new { id = item.StudentID }, new { @class = "btn btn-primary" })
-                                @Html.ActionLink("Details", "Details", new { id = item.StudentID }, new { @class = "btn btn-info" })
-                                @Html.ActionLink("Delete", "Delete", new { id = item.StudentID }, new { @class = "btn btn-danger" })
+                                @{
+                                    if (usertypeid == 1)
+                                    {
+                                        @Html.ActionLink("Edit", "Edit", new { id = item.StudentID }, new { @class = "btn btn-primary" })
+                                        @Html.ActionLink("Details", "Details", new { id = item.StudentID }, new { @class = "btn btn-info" })
+                                        @Html.ActionLink("Delete", "Delete", new { id = item.StudentID }, new { @class = "btn btn-danger" })
+                                    }
+                                }
+
                             </td>
                         </tr>
                     }

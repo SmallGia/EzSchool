@@ -3,16 +3,22 @@
 @{
     ViewBag.Title = "Index";
 }
-<p>
-    @Html.ActionLink("Submit Attendance", "Create", null, new { @class = "btn btn-success" })
-</p>
+@{ 
+    int usertypeid = Convert.ToInt32(Convert.ToString(Session["UserTypeID"]));
+    if (usertypeid == 1) { 
+    <p>
+        @Html.ActionLink("Submit Attendance", "Create", null, new { @class = "btn btn-success" })
+    </p>
+    }
+}
+
 <div class="card shadow mb-4">
     <div class="card-header py-3">
         <h6 class="m-0 font-weight-bold text-primary">Attandance Record</h6>
     </div>
     <div class="card-body">
         <div class="table-responsive">
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <table class="table table-bordered text-center" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
                         <th>
@@ -58,9 +64,19 @@
         
 
                             <td class="btn-group">
-                                @Html.ActionLink("Edit", "Edit", new { id = item.AttendanceID }, new { @class = "btn btn-primary" })
-                                @Html.ActionLink("Details", "Details", new { id = item.AttendanceID }, new { @class = "btn btn-info" })
-                                @Html.ActionLink("Delete", "Delete", new { id = item.AttendanceID }, new { @class = "btn btn-danger" })
+                                @{
+                                    if (usertypeid == 1)
+                                    {
+                                        @Html.ActionLink("Edit", "Edit", new { id = item.AttendanceID }, new { @class = "btn btn-primary" })
+                                        @Html.ActionLink("Details", "Details", new { id = item.AttendanceID }, new { @class = "btn btn-info" })
+                                        @Html.ActionLink("Delete", "Delete", new { id = item.AttendanceID }, new { @class = "btn btn-danger" })
+                                    }
+                                    else
+                                    {
+                                        @Html.ActionLink("Details", "Details", new { id = item.AttendanceID }, new { @class = "btn btn-info" })
+                                    }
+                                }
+
                             </td>
                         </tr>
                     }

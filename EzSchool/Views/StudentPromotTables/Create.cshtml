@@ -90,38 +90,37 @@
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
                         <input type="submit" value="Submit" class="btn btn-success" />
+                        @Html.ActionLink("Back", "Index", null, new {@class = "btn btn-secondary"})
                     </div>
                 </div>
             </div>
         }
         </div>
     </div>
-        <div>
-            @Html.ActionLink("Back", "Index")
-        </div>
-<script type="text/javascript">
-    $(document).ready(function () {
-        $('#StudentID').change(function () {
-            $('#ClassID').html('');
-            $.ajax({
-                url: '@Url.Action("GetPromotClsList", "StudentPromoteTables")',
-                type: 'GET',
-                data: { sid: $(this).val() },
-                dataType: 'Json',
-                success: function (response) {
-                    for (var i = 0; i < response.data.length; i++) {
-                        $('#ClassID').append("<option value=" + response.data[i].ClassID + ">" + response.data[i].Name + "</option>");
-                    }
-                },
-                error: function () {
-
+        <script type="text/javascript">
+$(document).ready(function () {
+    $('#StudentID').change(function () {
+        $('#ClassID').html('');
+        $.ajax({
+            url: '@Url.Action("GetPromotClsList", "StudentPromotTables")',
+            type: 'GET',
+            data: { sid: $(this).val() },
+            dataType: 'json',
+            success: function (response) {
+                for (var i = 0; i < response.data.length; i++) {
+                    $('#ClassID').append("<option value=" + response.data[i].ClassID + ">" + response.data[i].Name + "</option>");
                 }
-            });
+            },
+            error: function () {
+                // Xử lý lỗi nếu có
+            }
         });
+    });
+
 
         $('#ProgrameSessionID').change(function () {
             $.ajax({
-                url: '@Url.Action("GetAnnualFee", "StudentPromoteTables")',
+                url: '@Url.Action("GetAnnualFee", "StudentPromotTables")',
                 type: 'GET',
                 data: { sid: $(this).val() },
                 dataType: 'Json',
@@ -134,5 +133,5 @@
             });
         });
     });
-</script>
+        </script>
 @Scripts.Render("~/bundles/jqueryval")

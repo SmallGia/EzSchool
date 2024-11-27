@@ -21,8 +21,21 @@ namespace EzSchool.Controllers
             {
                 return RedirectToAction("Login", "Home");
             }
-            var submissionFeeTables = db.SubmissionFeeTables.Include(s => s.ProgrameTable).Include(s => s.StudentTable).Include(s => s.UserTable).Include(s => s.ClassTable).OrderByDescending(s => s.SubmissionFeeID);
-            return View(submissionFeeTables.ToList());
+            int userid = Convert.ToInt32(Convert.ToString(Session["UserID"]));
+            int usertypeid = Convert.ToInt32(Convert.ToString(Session["UserTypeID"]));
+            var student = db.StudentTables.FirstOrDefault(s => s.UserID == userid);
+            if (usertypeid == 1)
+            {
+                var submissionFeeTables = db.SubmissionFeeTables.Include(s => s.ProgrameTable).Include(s => s.StudentTable).Include(s => s.UserTable).Include(s => s.ClassTable).OrderByDescending(s => s.SubmissionFeeID);
+                return View(submissionFeeTables.ToList());
+            }
+            else
+            {
+                var submissionFeeTables = db.SubmissionFeeTables.Include(s => s.ProgrameTable).Include(s => s.StudentTable).Include(s => s.UserTable).Include(s => s.ClassTable).Where(s=>s.StudentID == student.StudentID).OrderByDescending(s => s.SubmissionFeeID);
+                return View(submissionFeeTables.ToList());
+
+            }
+
         }
 
         // GET: SubmissionFeeTables/Details/5
@@ -51,9 +64,20 @@ namespace EzSchool.Controllers
             {
                 return RedirectToAction("Login", "Home");
             }
+            int userid = Convert.ToInt32(Convert.ToString(Session["UserID"]));
+            var promoteRecords = db.StudentPromotTables.Include(s => s.StudentTable).ToList();
+            var promoteList = promoteRecords.Select(p => new
+            {
+                StudentPromotID = p.StudentPromotID,
+                StudentName = p.StudentTable.Name
+            }).ToList();
+
+            ViewBag.PromoteIDs = new SelectList(promoteList, "StudentPromotID", "StudentName");
+            //ViewBag.PromoteIDs = new SelectList(db.StudentPromotTables, "StudentPromotID", "StudentPromotID");
             ViewBag.ProgrameID = new SelectList(db.ProgrameTables, "ProgrameID", "Name");
             ViewBag.StudentID = new SelectList(db.StudentTables, "StudentID", "Name");
-            ViewBag.UserID = new SelectList(db.UserTables, "UserID", "FullName");
+            var filteruserid = db.UserTables.Where(s => s.UserTypeID == 6);
+            ViewBag.UserID = new SelectList(filteruserid, "UserID", "FullName");
             ViewBag.ClassID = new SelectList(db.ClassTables, "ClassID", "Name");
             return View();
         }
@@ -70,7 +94,7 @@ namespace EzSchool.Controllers
                 return RedirectToAction("Login", "Home");
             }
             int userid = Convert.ToInt32(Convert.ToString(Session["UserID"]));
-            submissionFeeTable.UserID = userid;
+            //submissionFeeTable.UserID = userid;
             if (ModelState.IsValid)
             {
                 db.SubmissionFeeTables.Add(submissionFeeTable);

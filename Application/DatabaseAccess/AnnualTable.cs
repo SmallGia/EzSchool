@@ -23,7 +23,7 @@ namespace DatabaseAccess
         public string Title { get; set; }
         public string Description { get; set; }
         [Required(ErrorMessage = "Please Enter Annual Fee")]
-        [DataType(DataType.Currency)]
+        [DisplayFormat(DataFormatString = "{0:#,##0 VND}", ApplyFormatInEditMode = true)]
         public Nullable<double> Fees { get; set; }
         [Display(Name = "Status")]
         public bool IsActive { get; set; }

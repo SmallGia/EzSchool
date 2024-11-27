@@ -72,18 +72,18 @@
                                 @Html.DisplayFor(modelItem => item.IsActive)
                             </td>
 
-                            <td class="btn-group">
-                                @{
+                            <td class="btn btn-group-vertical">
+                                @*@{
                                     if (item.DesignationID == 1 || item.DesignationID == 4 || item.DesignationID == 5)
                                     {
                                         @Html.ActionLink("Class Time Table", "TeacherReport", "TimeTableReports", new { id = item.StaffID }, new { @class = "btn btn-primary" })
                                     }
-                                }
-                                @Html.ActionLink("Attendance", "StaffAttendance", "AttendanceReports", new { id = item.StaffID }, new { @class = "btn btn-info" })
+                                }*@
+                                @*@Html.ActionLink("Attendance", "StaffAttendance", "AttendanceReports", new { id = item.StaffID }, new { @class = "btn btn-info" })*@
                                 @Html.ActionLink("Edit", "Edit", new { id = item.StaffID }, new { @class = "btn btn-primary" })
                                 @Html.ActionLink("Details", "Details", new { id = item.StaffID }, new { @class = "btn btn-info" })
-                                @Html.ActionLink("Add Resume", "CheckCV", "Resume", new { id = item.StaffID }, new { @class = "btn btn-success" })
-                                @*@Html.ActionLink("Delete", "Delete", new { id=item.StaffID }, new {@class = "btn btn-danger"})*@
+                                @Html.ActionLink("Delete","Delete",new { id = item.StaffID}, new {@class = "btn btn-danger"})
+                                @*@Html.ActionLink("Add Resume", "CheckCV", "Resume", new { id = item.StaffID }, new { @class = "btn btn-success" })*@
                             </td>
                         </tr>
                     }

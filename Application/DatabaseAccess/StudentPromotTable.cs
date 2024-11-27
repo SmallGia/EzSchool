@@ -26,6 +26,7 @@ namespace DatabaseAccess
         [DataType(DataType.Date)]
         public System.DateTime PromoteDate { get; set; }
         [Required(ErrorMessage = "Please Enter Annual Fee")]
+        [DisplayFormat(DataFormatString = "{0:#,##0 VND}", ApplyFormatInEditMode = true)]
         public int AnnualFee { get; set; }
         [Display(Name = "Promote Status")]
         public Nullable<bool> IsActive { get; set; }

@@ -11,7 +11,8 @@ namespace DatabaseAccess
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class ClassSubjectTable
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -20,10 +21,13 @@ namespace DatabaseAccess
             this.ExamMarksTables = new HashSet<ExamMarksTable>();
             this.TimeTblTables = new HashSet<TimeTblTable>();
         }
-    
+
+        [Required]
         public int ClassSubjectID { get; set; }
         public int ClassID { get; set; }
+        [Required]
         public int SubjectID { get; set; }
+        [Required]
         public string Name { get; set; }
         public Nullable<bool> IsActive { get; set; }
     

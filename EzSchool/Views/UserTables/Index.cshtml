@@ -65,10 +65,10 @@
                             <td>
                                 @Html.DisplayFor(modelItem => item.UserTypeTable.TypeName)
                             </td>
-                            <td>
-                                @Html.ActionLink("Edit", "Edit", new { id = item.UserTypeID }, new { @class = "btn btn-primary" })
-                                @Html.ActionLink("Details", "Details", new { id = item.UserTypeID }, new { @class = "btn btn-info" })
-                                @Html.ActionLink("Delete", "Delete", new { id = item.UserTypeID }, new { @class = "btn btn-danger" })
+                            <td class="btn btn-group-vertical">
+                                @Html.ActionLink("Edit", "Edit", new { id = item.UserID }, new { @class = "btn btn-primary" })
+                                @Html.ActionLink("Details", "Details", new { id = item.UserID }, new { @class = "btn btn-info" })
+                                @Html.ActionLink("Delete", "Delete", new { id = item.UserID }, new { @class = "btn btn-danger" })
                             </td>
                         </tr>
                     }

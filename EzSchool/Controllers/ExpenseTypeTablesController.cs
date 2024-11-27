@@ -17,12 +17,20 @@ namespace EzSchool.Controllers
         // GET: ExpenseTypeTables
         public ActionResult Index()
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["UserName"])))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             return View(db.ExpenseTypeTables.ToList());
         }
 
         // GET: ExpenseTypeTables/Details/5
         public ActionResult Details(int? id)
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["UserName"])))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -38,6 +46,10 @@ namespace EzSchool.Controllers
         // GET: ExpenseTypeTables/Create
         public ActionResult Create()
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["UserName"])))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             return View();
         }
 
@@ -46,8 +58,12 @@ namespace EzSchool.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ExpensesTypeID,Name,IsActive")] ExpenseTypeTable expenseTypeTable)
+        public ActionResult Create(ExpenseTypeTable expenseTypeTable)
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["UserName"])))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             if (ModelState.IsValid)
             {
                 db.ExpenseTypeTables.Add(expenseTypeTable);
@@ -61,6 +77,10 @@ namespace EzSchool.Controllers
         // GET: ExpenseTypeTables/Edit/5
         public ActionResult Edit(int? id)
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["UserName"])))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -78,8 +98,12 @@ namespace EzSchool.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ExpensesTypeID,Name,IsActive")] ExpenseTypeTable expenseTypeTable)
+        public ActionResult Edit(ExpenseTypeTable expenseTypeTable)
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["UserName"])))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             if (ModelState.IsValid)
             {
                 db.Entry(expenseTypeTable).State = EntityState.Modified;
@@ -92,6 +116,10 @@ namespace EzSchool.Controllers
         // GET: ExpenseTypeTables/Delete/5
         public ActionResult Delete(int? id)
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["UserName"])))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -109,6 +137,10 @@ namespace EzSchool.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["UserName"])))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             ExpenseTypeTable expenseTypeTable = db.ExpenseTypeTables.Find(id);
             db.ExpenseTypeTables.Remove(expenseTypeTable);
             db.SaveChanges();

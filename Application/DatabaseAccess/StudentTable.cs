@@ -43,6 +43,8 @@ namespace DatabaseAccess
         public System.DateTime AddmissionDate { get; set; }
         public string PreviousSchool { get; set; }
         public Nullable<double> PreviousPercentage { get; set; }
+
+        [EmailAddress(ErrorMessage = "Invalid Email Address")]
         public string EmailAddress { get; set; }
         public string Address { get; set; }
         public string Nationality { get; set; }

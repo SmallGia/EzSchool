@@ -19,6 +19,7 @@ namespace DatabaseAccess
         public int ExpensesTypeID { get; set; }
         [DataType(DataType.Date)]
         public System.DateTime ExpensesDate { get; set; }
+        [DisplayFormat(DataFormatString = "{0:#,##0 VND}", ApplyFormatInEditMode = true)]
         public double Amount { get; set; }
         public string Reason { get; set; }
         public int UserID { get; set; }

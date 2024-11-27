@@ -1,66 +1,45 @@
 ﻿@model DatabaseAccess.ExamMarksTable
 
 @{
-    ViewBag.Title = "Details";
+    ViewData["Title"] = "Exam Marks Details";
 }
 
-<h2>Details</h2>
-
-<div>
-    <h4>ExamMarksTable</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.TotalMarks)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TotalMarks)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ObtainMarks)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ObtainMarks)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ClassSubjectTable.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ClassSubjectTable.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ExamTable.Title)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ExamTable.Title)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.StudentTable.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.StudentTable.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.UserTable.FullName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.UserTable.FullName)
-        </dd>
-
-    </dl>
+<div class="card shadow-lg">
+    <div class="card-header bg-gradient-primary text-white">
+        <h4 class="card-title">Exam Marks Details</h4>
+    </div>
+    <div class="card-body">
+        <table class="table table-bordered table-hover text-center">
+            <tbody>
+                <tr>
+                    <th class="bg-light">Total Marks</th>
+                    <td>@Html.DisplayFor(model => model.TotalMarks)</td>
+                </tr>
+                <tr>
+                    <th class="bg-light">Obtain Marks</th>
+                    <td>@Html.DisplayFor(model => model.ObtainMarks)</td>
+                </tr>
+                <tr>
+                    <th class="bg-light">Class Subject</th>
+                    <td>@Html.DisplayFor(model => model.ClassSubjectTable.Name)</td>
+                </tr>
+                <tr>
+                    <th class="bg-light">Exam Title</th>
+                    <td>@Html.DisplayFor(model => model.ExamTable.Title)</td>
+                </tr>
+                <tr>
+                    <th class="bg-light">Student Name</th>
+                    <td>@Html.DisplayFor(model => model.StudentTable.Name)</td>
+                </tr>
+                @*<tr>
+                    <th class="bg-light">User</th>
+                    <td>@Html.DisplayFor(model => model.UserTable.FullName)</td>
+                </tr>*@
+            </tbody>
+        </table>
+    </div>
+    <div class="card-footer text-center">
+        @Html.ActionLink("Edit", "Edit", new { id = Model.MarksID }, new { @class = "btn btn-primary mx-2" })
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-secondary mx-2" })
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.MarksID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

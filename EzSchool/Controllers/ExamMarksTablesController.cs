@@ -13,6 +13,11 @@ namespace EzSchool.Controllers
     public class ExamMarksTablesController : Controller
     {
         private SchoolMgDbEntities db = new SchoolMgDbEntities();
+        private StudentTable GetStudentByUserId(int userId)
+        {
+            var student = db.StudentTables.FirstOrDefault(s => s.UserID == userId);
+            return student;
+        }
 
         // GET: ExamMarksTables
         public ActionResult Index()
@@ -21,8 +26,26 @@ namespace EzSchool.Controllers
             {
                 return RedirectToAction("Login", "Home");
             }
-            var examMarksTables = db.ExamMarksTables.Include(e => e.ClassSubjectTable).Include(e => e.ExamTable).Include(e => e.StudentTable).Include(e => e.UserTable).OrderByDescending(e => e.MarksID);
-            return View(examMarksTables.ToList());
+            int userId = Convert.ToInt32(Convert.ToString(Session["UserID"]));
+            int usertypeID = Convert.ToInt32(Convert.ToString(Session["UserTypeID"]));
+            var student = GetStudentByUserId(userId);
+            if (usertypeID == 1)
+            {
+                var examMarksTables = db.ExamMarksTables.Include(e => e.ClassSubjectTable).Include(e => e.ExamTable).Include(e => e.StudentTable).Include(e => e.UserTable).OrderByDescending(e => e.MarksID);
+                return View(examMarksTables.ToList());
+            }
+            else
+            {
+                var examMarksTables = db.ExamMarksTables
+                .Include(e => e.ClassSubjectTable)
+                .Include(e => e.ExamTable)
+                .Include(e => e.StudentTable)
+                .Include(e => e.UserTable)
+                .Where(e => e.StudentID == student.StudentID)
+                .OrderByDescending(e => e.MarksID);
+                return View(examMarksTables.ToList());
+            }
+
         }
 
         // GET: ExamMarksTables/Details/5
@@ -51,6 +74,15 @@ namespace EzSchool.Controllers
             {
                 return RedirectToAction("Login", "Home");
             }
+            var promoteRecords = db.StudentPromotTables.Include(s => s.StudentTable).ToList();
+            var promoteList = promoteRecords.Select(p => new
+            {
+                StudentPromotID = p.StudentPromotID,
+                StudentName = p.StudentTable.Name
+            }).ToList();
+
+            ViewBag.PromoteIDs = new SelectList(promoteList, "StudentPromotID", "StudentName");
+            //ViewBag.PromoteIDs = new SelectList(db.StudentPromotTables, "StudentPromotID", "StudentID");
             ViewBag.ClassSubjectID = new SelectList(db.ClassSubjectTables, "ClassSubjectID", "Name");
             ViewBag.ExamID = new SelectList(db.ExamTables, "ExamID", "Title");
             ViewBag.StudentID = new SelectList(db.StudentTables, "StudentID", "Name");
@@ -177,24 +209,30 @@ namespace EzSchool.Controllers
             }
             base.Dispose(disposing);
         }
+        [HttpGet]
         public ActionResult GetByPromoteID(string sid)
         {
             int promoteid = Convert.ToInt32(sid);
             var promoterecord = db.StudentPromotTables.Find(promoteid);
+
+            if (promoterecord == null)
+            {
+                return HttpNotFound();
+            }
+
             List<StudentTable> stdlist = new List<StudentTable>();
-
             stdlist.Add(new StudentTable { StudentID = (int)promoterecord.StudentID, Name = promoterecord.StudentTable.Name });
-
 
             List<ClassSubjectTable> listsubjects = new List<ClassSubjectTable>();
             var classsubject = db.ClassSubjectTables.Where(cls => cls.ClassID == promoterecord.ClassID && cls.IsActive == true);
             foreach (var subj in classsubject)
             {
-                listsubjects.Add(new ClassSubjectTable { ClassSubjectID = subj.ClassSubjectID , Name = subj.Name});
+                listsubjects.Add(new ClassSubjectTable { ClassSubjectID = subj.ClassSubjectID, Name = subj.Name });
             }
 
             return Json(new { student = stdlist, subject = listsubjects }, JsonRequestBehavior.AllowGet);
         }
+
 
         public ActionResult GetTotalMarks(string sid)
         {

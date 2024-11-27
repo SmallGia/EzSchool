@@ -18,6 +18,7 @@ namespace DatabaseAccess
         public int EmployeeSalaryID { get; set; }
         public int UserID { get; set; }
         public int StaffID { get; set; }
+        [DisplayFormat(DataFormatString = "{0:#,##0 VND}", ApplyFormatInEditMode = true)]
         public double Amount { get; set; }
         public string SalaryMonth { get; set; }
         public string SalaryYear { get; set; }

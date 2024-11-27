@@ -44,7 +44,7 @@ function printPage() {
                     Status
                 </th>
                 <th>
-                    User
+                    Teacher
                 </th>
             </tr>
 
@@ -68,7 +68,7 @@ function printPage() {
                         @Html.DisplayFor(modelItem => item.IsActive)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.UserTable.FullName)
+                        @Html.DisplayFor(modelItem => item.StaffTable.Name)
                     </td>
                     @*<td>
                         @Html.ActionLink("Edit", "Edit", new { id=item.TimeTableID }) |

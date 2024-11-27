@@ -52,7 +52,8 @@ namespace EzSchool.Controllers
             {
                 return RedirectToAction("Login", "Home");
             }
-            ViewBag.DesignationID = new SelectList(db.DesignationTables, "DesignationID", "Title");
+            var fillter = db.DesignationTables.Where(s => s.IsActive == true);
+            ViewBag.DesignationID = new SelectList(fillter, "DesignationID", "Title");
             ViewBag.UserID = new SelectList(db.UserTables, "UserID", "FullName");
             return View();
         }
@@ -112,7 +113,8 @@ namespace EzSchool.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.DesignationID = new SelectList(db.DesignationTables, "DesignationID", "Title", staffTable.DesignationID);
+            var fillter = db.DesignationTables.Where(s => s.IsActive == true);
+            ViewBag.DesignationID = new SelectList(fillter, "DesignationID", "Title", staffTable.DesignationID);
             ViewBag.UserID = new SelectList(db.UserTables, "UserID", "FullName", staffTable.UserID);
             return View(staffTable);
         }

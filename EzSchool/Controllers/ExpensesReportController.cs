@@ -13,8 +13,19 @@ namespace SchoolManagementSystem.Controllers
         // GET: ExpensesReport
         public ActionResult ExpensesWise()
         {
-            var expenses = db.ExpensesTables.ToList().OrderByDescending(e => e.ExpensesID);
-            return View(expenses);
+            int usertypeid = Convert.ToInt32(Convert.ToString(Session["UserTypeID"]));
+            if (usertypeid == 1)
+            {
+                var expenses = db.ExpensesTables.ToList().OrderByDescending(e => e.ExpensesID);
+                return View(expenses);
+            }
+            else
+            {
+                int userid = Convert.ToInt32(Convert.ToString(Session["UserID"]));
+                var expenses = db.ExpensesTables.ToList().Where(s => s.UserID == userid).OrderByDescending(e => e.ExpensesID);
+                return View(expenses);
+            }
+
         }
 
         public ActionResult CustomExpenses()
