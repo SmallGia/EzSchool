@@ -25,6 +25,44 @@ namespace EzSchool.Controllers
             
             int userid = Convert.ToInt32(Convert.ToString(Session["UserID"]));
             int usertypeid = Convert.ToInt32(Convert.ToString(Session["UserTypeID"]));
+            var filteredUsers = db.UserTables.Where(u => u.UserTypeID != 1).ToList();
+            ViewBag.UserID = new SelectList(filteredUsers, "UserID", "FullName");
+            if (usertypeid != 1)
+            {
+                var timeTblTables = db.TimeTblTables.Include(t => t.ClassSubjectTable).Include(t => t.StaffTable).Include(t => t.UserTable).Where(s => s.UserID == userid).OrderByDescending(e => e.TimeTableID);
+                return View(timeTblTables.ToList());
+            }
+            else
+            {
+                var timeTblTables = db.TimeTblTables.Include(t => t.ClassSubjectTable).Include(t => t.StaffTable).Include(t => t.UserTable).OrderByDescending(e => e.TimeTableID);
+                return RedirectToAction("Index2");
+            }
+
+        }
+        public ActionResult GetScheduleByUser(int userId)
+        {
+            var schedules = db.TimeTblTables.Include(t => t.StaffTable)
+                                            .Include(t => t.ClassSubjectTable)
+                                            .Include(t => t.UserTable)
+                                            .Where(t => t.UserID == userId)
+                                            .ToList();
+
+            var daysOfWeek = new List<string> { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" };
+            var eventsByDay = schedules.GroupBy(item => item.Day)
+                                       .OrderBy(g => daysOfWeek.IndexOf(g.Key));
+
+            return PartialView("_ScheduleEventsPartial", eventsByDay);
+        }
+
+
+        public ActionResult Index2()
+        {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["UserName"])))
+            {
+                return RedirectToAction("Login", "Home");
+            }
+            int userid = Convert.ToInt32(Convert.ToString(Session["UserID"]));
+            int usertypeid = Convert.ToInt32(Convert.ToString(Session["UserTypeID"]));
             if (usertypeid != 1)
             {
                 var timeTblTables = db.TimeTblTables.Include(t => t.ClassSubjectTable).Include(t => t.StaffTable).Include(t => t.UserTable).Where(s => s.UserID == userid).OrderByDescending(e => e.TimeTableID);
@@ -35,8 +73,8 @@ namespace EzSchool.Controllers
                 var timeTblTables = db.TimeTblTables.Include(t => t.ClassSubjectTable).Include(t => t.StaffTable).Include(t => t.UserTable).OrderByDescending(e => e.TimeTableID);
                 return View(timeTblTables.ToList());
             }
-
         }
+
 
         // GET: TimeTblTables/Details/5
         public ActionResult Details(int? id)

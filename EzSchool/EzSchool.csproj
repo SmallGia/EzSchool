@@ -2190,6 +2190,8 @@
     <Content Include="Views\ExpensesReport\ExpensesWise.cshtml" />
     <Content Include="Views\ExpensesReport\CustomExpenses.cshtml" />
     <Content Include="Views\Home\ChangePassword.cshtml" />
+    <Content Include="Views\TimeTblTables\Index2.cshtml" />
+    <Content Include="Views\TimeTblTables\_ScheduleEventsPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

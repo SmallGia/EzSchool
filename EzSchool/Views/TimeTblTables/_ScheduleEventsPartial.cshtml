@@ -1,0 +1,43 @@
+﻿@model IEnumerable<IGrouping<string, DatabaseAccess.TimeTblTable>>
+
+@{
+    var daysOfWeek = new List<string> { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" };
+}
+
+<div class="cd-schedule__events">
+    <ul id="scheduleEvents">
+        @foreach (var day in daysOfWeek)
+        {
+            var dayGroup = Model.FirstOrDefault(g => g.Key == day);
+            if (dayGroup != null)
+            {
+                <li class="cd-schedule__group">
+                    <div class="cd-schedule__top-info"><span>@day</span></div>
+
+                    <ul>
+                        @foreach (var item in dayGroup)
+                        {
+                            <li class="cd-schedule__event">
+                                <a data-start="@item.StartTime.ToString("hh\\:mm")"
+                                   data-end="@item.EndTime.ToString("hh\\:mm")"
+                                   data-content="event-@item.TimeTableID"
+                                   data-event="event-@item.ClassSubjectTable.SubjectID"
+                                   href="#0">
+                                    <em class="cd-schedule__name">@item.ClassSubjectTable.Name</em>
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                </li>
+            }
+            else
+            {
+                <!-- Output days without events -->
+                <li class="cd-schedule__group">
+                    <div class="cd-schedule__top-info"><span>@day</span></div>
+                    <ul></ul>
+                </li>
+            }
+        }
+    </ul>
+</div>

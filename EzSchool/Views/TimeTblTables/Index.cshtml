@@ -1,4 +1,4 @@
-﻿@model IEnumerable<DatabaseAccess.TimeTblTable>
+﻿@*@model IEnumerable<DatabaseAccess.TimeTblTable>
 
 @{
     ViewBag.Title = "Index";
@@ -100,4 +100,166 @@
             </table>
         </div>
     </div>
-</div>
+</div>*@
+@model IEnumerable<DatabaseAccess.TimeTblTable>
+
+@{
+    ViewBag.Title = "Schedule";
+
+    // Map your days to the template's days
+    var daysOfWeek = new List<string> { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" };
+
+    // Group events by day
+    var eventsByDay = Model.GroupBy(item => item.Day)
+                           .OrderBy(g => daysOfWeek.IndexOf(g.Key));
+}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Include the head content from your template -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>document.getElementsByTagName("html")[0].className += " js";</script>
+    <link rel="stylesheet" href="~/assets/css/style.css">
+    <title>Schedule</title>
+</head>
+<body>
+
+    <header class="cd-main-header text-center flex flex-column flex-center">
+        <h1 class="text-xl">Schedule</h1>
+
+        <p style="margin-top: 20px;">
+            @Html.ActionLink("More Details", "Index2", null, new { @class = "btn btn-primary" })
+        </p>
+        @{
+            int usertypeid = Convert.ToInt32(Convert.ToString(Session["UserTypeID"]));
+            if (false) { 
+                            <p style="margin-top: 20px;">
+                @Html.DropDownList("UserID", new SelectList(ViewBag.UserID, "Value", "Text"), null, new { @class = "form-control custom-select", style = "width: 300px; height: 50px;" })
+            </p>
+            }
+
+        }
+
+
+
+
+    </header>
+
+    <div class="cd-schedule cd-schedule--loading margin-top-lg margin-bottom-lg js-cd-schedule">
+        <div class="cd-schedule__timeline">
+            <ul>
+                <li><span>06:00</span></li>
+                <li><span>06:30</span></li>
+                <li><span>07:00</span></li>
+                <li><span>07:30</span></li>
+                <li><span>08:00</span></li>
+                <li><span>08:30</span></li>
+                <li><span>09:00</span></li>
+                <li><span>09:30</span></li>
+                <li><span>10:00</span></li>
+                <li><span>10:30</span></li>
+                <li><span>11:00</span></li>
+                <li><span>11:30</span></li>
+                <li><span>12:00</span></li>
+                <li><span>12:30</span></li>
+                <li><span>13:00</span></li>
+                <li><span>13:30</span></li>
+                <li><span>14:00</span></li>
+                <li><span>14:30</span></li>
+                <li><span>15:00</span></li>
+                <li><span>15:30</span></li>
+                <li><span>16:00</span></li>
+                <li><span>16:30</span></li>
+                <li><span>17:00</span></li>
+                <li><span>17:30</span></li>
+                <li><span>18:00</span></li>
+
+            </ul>
+        </div> <!-- .cd-schedule__timeline -->
+
+        <div class="cd-schedule__events">
+            <ul>
+                @foreach (var day in daysOfWeek)
+                {
+                    var dayGroup = eventsByDay.FirstOrDefault(g => g.Key == day);
+                    if (dayGroup != null)
+                    {
+                        <li class="cd-schedule__group">
+                            <div class="cd-schedule__top-info"><span>@day</span></div>
+
+                            <ul>
+                                @foreach (var item in dayGroup)
+                                {
+                                    <li class="cd-schedule__event">
+                                        <a data-start="@item.StartTime.ToString("hh\\:mm")"
+                                           data-end="@item.EndTime.ToString("hh\\:mm")"
+                                           data-content="event-@item.TimeTableID"
+                                           data-event="event-@item.ClassSubjectTable.SubjectID"
+                                           href="#0">
+                                            <em class="cd-schedule__name">@item.ClassSubjectTable.Name</em>
+                                        </a>
+                                    </li>
+                                }
+                            </ul>
+                        </li>
+                    }
+                    else
+                    {
+                        <!-- Output days without events -->
+                        <li class="cd-schedule__group">
+                            <div class="cd-schedule__top-info"><span>@day</span></div>
+                            <ul></ul>
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
+
+        <!-- Modal content for events (if needed) -->
+        <div class="cd-schedule-modal">
+            <header class="cd-schedule-modal__header">
+                <div class="cd-schedule-modal__content">
+                    <span class="cd-schedule-modal__date"></span>
+                    <h3 class="cd-schedule-modal__name"></h3>
+                </div>
+                <div class="cd-schedule-modal__header-bg"></div>
+            </header>
+
+            <div class="cd-schedule-modal__body">
+                <div class="cd-schedule-modal__event-info">
+                    <!-- You can include more details about the event here -->
+                    @* Example content for each event *@
+                    @foreach (var item in Model)
+                    {
+                        <div class="event-info" id="event-@item.TimeTableID" style="display: none;">
+                            <div class="card mb-3">
+                                <div class="card-header bg-primary text-white">
+                                    <h5 class="mb-0">Teacher: @item.StaffTable.Name</h5>
+                                </div>
+                                <div class="card-body">
+                                    <p><strong>Subject:</strong> @item.ClassSubjectTable.Name</p>
+                                    <p><strong>Time:</strong> @item.StartTime.ToString(@"hh\:mm") - @item.EndTime.ToString(@"hh\:mm")</p>
+                                    <p><strong>Status:</strong> <span class="badge @(item.IsActive ? "badge-success" : "badge-secondary")">@((item.IsActive ? "Active" : "Inactive"))</span></p>
+                                    <p><strong>User:</strong> @item.UserTable.FullName</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    }
+                </div>
+                <div class="cd-schedule-modal__body-bg"></div>
+            </div>
+
+            <a href="#0" class="cd-schedule-modal__close text-replace">Close</a>
+        </div>
+
+        <div class="cd-schedule__cover-layer"></div>
+    </div> <!-- .cd-schedule -->
+
+    <script src="~/assets/js/util.js"></script>
+    <script src="~/assets/js/main.js"></script>
+</body>
+</html>
+

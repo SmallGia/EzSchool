@@ -1,4 +1,4 @@
-(function() {
+﻿(function() {
 	// Schedule Template - by CodyHouse.co
 	function ScheduleTemplate( element ) {
 		this.element = element;
@@ -82,23 +82,23 @@
 	};
 
 	ScheduleTemplate.prototype.initEvents = function() {
-		var self = this;
-		for(var i = 0; i < this.singleEvents.length; i++) {
-			// open modal when user selects an event
-			this.singleEvents[i].addEventListener('click', function(event){
-				event.preventDefault();
-				if(!self.animating) self.openModal(this.getElementsByTagName('a')[0]);
-			});
-		}
-		//close modal window
-		this.modalClose.addEventListener('click', function(event){
-			event.preventDefault();
-			if( !self.animating ) self.closeModal();
-		});
-		this.coverLayer.addEventListener('click', function(event){
-			event.preventDefault();
-			if( !self.animating ) self.closeModal();
-		});
+		//var self = this;
+		//for(var i = 0; i < this.singleEvents.length; i++) {
+		//	// open modal when user selects an event
+		//	this.singleEvents[i].addEventListener('click', function(event){
+		//		event.preventDefault();
+		//		if(!self.animating) self.openModal(this.getElementsByTagName('a')[0]);
+		//	});
+		//}
+		////close modal window
+		//this.modalClose.addEventListener('click', function(event){
+		//	event.preventDefault();
+		//	if( !self.animating ) self.closeModal();
+		//});
+		//this.coverLayer.addEventListener('click', function(event){
+		//	event.preventDefault();
+		//	if( !self.animating ) self.closeModal();
+		//});
 	};
 
 	ScheduleTemplate.prototype.openModal = function(target) {
@@ -288,22 +288,21 @@
 		}
 	};
 
-	ScheduleTemplate.prototype.loadEventContent = function(content) {
-		// load the content of an event when user selects it
+	ScheduleTemplate.prototype.loadEventContent = function (contentId) {
 		var self = this;
 
-		httpRequest = new XMLHttpRequest();
-		httpRequest.onreadystatechange = function() {
-			if (httpRequest.readyState === XMLHttpRequest.DONE) {
-	      if (httpRequest.status === 200) {
-	      	self.modal.getElementsByClassName('cd-schedule-modal__event-info')[0].innerHTML = self.getEventContent(httpRequest.responseText); 
-	      	Util.addClass(self.modal, 'cd-schedule-modal--content-loaded');
-	      }
-	    }
-		};
-		httpRequest.open('GET', content+'.html');
-    httpRequest.send();
+		var eventContentElement = document.getElementById(contentId);
+		console.log(eventContentElement,contentId,document,this);
+		if (eventContentElement) {
+			var eventContentHTML = eventContentElement.innerHTML;
+			self.modal.getElementsByClassName('cd-schedule-modal__event-info')[0].innerHTML = eventContentHTML;
+			Util.addClass(self.modal, 'cd-schedule-modal--content-loaded');
+		} else {
+			self.modal.getElementsByClassName('cd-schedule-modal__event-info')[0].innerHTML = "<p>Event details not found.</p>";
+			Util.addClass(self.modal, 'cd-schedule-modal--content-loaded');
+		}
 	};
+
 
 	ScheduleTemplate.prototype.getEventContent = function(string) {
 		// reset the loaded event content so that it can be inserted in the modal
