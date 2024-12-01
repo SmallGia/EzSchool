@@ -15,88 +15,95 @@
         {
             @Html.AntiForgeryToken()
 
-            <div class="form-horizontal">
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <input type="number" class="form-control" placeholder="Enter Promote ID" id="promoteid" />
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <input type="button" class="btn btn-primary" value="Find" id="FindPromoteRecord" />
-                        </div>
+        <div class="form-horizontal">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        @Html.Label("Promote ID", htmlAttributes: new { @class = "control-label" })
+                        @Html.DropDownList("PromoteID", new SelectList(ViewBag.PromoteIDs, "Value", "Text"), null, new { @class = "form-control", @id = "promoteid" })
                     </div>
                 </div>
 
-
-
-                <div class="form-group">
-                    @Html.LabelFor(model => model.StudentID, "Select Student", htmlAttributes: new { @class = "control-label col-md-5" })
-                    <div class="col-md-5">
-                        @Html.DropDownList("StudentID", null, htmlAttributes: new { @class = "form-control", @id = "StudentID" })
-                        @Html.ValidationMessageFor(model => model.StudentID, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-
-
-                <div class="form-group">
-                    @Html.LabelFor(model => model.ProgrameID, "Select Program", htmlAttributes: new { @class = "control-label col-md-5" })
-                    <div class="col-md-5">
-                        @Html.DropDownList("ProgrameID", null, htmlAttributes: new { @class = "form-control", @id = "ProgrameID" })
-                        @Html.ValidationMessageFor(model => model.ProgrameID, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    @Html.LabelFor(model => model.ClassID, "Select Class", htmlAttributes: new { @class = "control-label col-md-5" })
-                    <div class="col-md-5">
-                        @Html.DropDownList("ClassID", null, htmlAttributes: new { @class = "form-control", @id = "ClassID" })
-                        @Html.ValidationMessageFor(model => model.ClassID, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Amount,"Enter Fee Amount", htmlAttributes: new { @class = "control-label col-md-5" })
-                    <div class="col-md-5">
-                        @Html.EditorFor(model => model.Amount, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.Amount, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    @Html.LabelFor(model => model.SubmissionDate,"Select Fee Submisson Date", htmlAttributes: new { @class = "control-label col-md-5" })
-                    <div class="col-md-5">
-                        @Html.EditorFor(model => model.SubmissionDate, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.SubmissionDate, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    @Html.LabelFor(model => model.FeesMonth,"Fee of the Month", htmlAttributes: new { @class = "control-label col-md-5" })
-                    <div class="col-md-5">
-                        @Html.EditorFor(model => model.FeesMonth, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.FeesMonth, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Description,"Enter Description", htmlAttributes: new { @class = "control-label col-md-5" })
-                    <div class="col-md-5">
-                        @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Create" class="btn btn-success" />
-                        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-defaut" })
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="button" class="btn btn-primary" value="Find" id="FindPromoteRecord" />
                     </div>
                 </div>
             </div>
+
+
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.StudentID, "Select Student", htmlAttributes: new { @class = "control-label col-md-5" })
+                <div class="col-md-5">
+                    @Html.DropDownList("StudentID", null, htmlAttributes: new { @class = "form-control", @id = "StudentID", @readonly = "readonly" })
+                    @Html.ValidationMessageFor(model => model.StudentID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.ProgrameID, "Select Program", htmlAttributes: new { @class = "control-label col-md-5" })
+                <div class="col-md-5">
+                    @Html.DropDownList("ProgrameID", null, htmlAttributes: new { @class = "form-control", @id = "ProgrameID", @readonly ="readonly" })
+                    @Html.ValidationMessageFor(model => model.ProgrameID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.ClassID, "Select Class", htmlAttributes: new { @class = "control-label col-md-5" })
+                <div class="col-md-5">
+                    @Html.DropDownList("ClassID", null, htmlAttributes: new { @class = "form-control", @id = "ClassID" })
+                    @Html.ValidationMessageFor(model => model.ClassID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Amount, "Enter Fee Amount", htmlAttributes: new { @class = "control-label col-md-5" })
+                <div class="col-md-5">
+                    @Html.EditorFor(model => model.Amount, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Amount, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.SubmissionDate, "Select Fee Submisson Date", htmlAttributes: new { @class = "control-label col-md-5" })
+                <div class="col-md-5">
+                    @Html.EditorFor(model => model.SubmissionDate, new { htmlAttributes = new { @class = "form-control", @id = "date" } })
+                    @Html.ValidationMessageFor(model => model.SubmissionDate, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.FeesMonth, "Fee of the Month", htmlAttributes: new { @class = "control-label col-md-5" })
+                <div class="col-md-5">
+                    @Html.EditorFor(model => model.FeesMonth, new { htmlAttributes = new { @class = "form-control", @id ="feeofmonth", @readonly = "readonly" } })
+                    @Html.ValidationMessageFor(model => model.FeesMonth, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Description, "Enter Description", htmlAttributes: new { @class = "control-label col-md-5" })
+                <div class="col-md-5">
+                    @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.UserID, "Select User", htmlAttributes: new { @class = "control-label col-md-5" })
+                <div class="col-md-5">
+                    @Html.DropDownList("UserID", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.UserID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-success" />
+                    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-defaut" })
+                </div>
+            </div>
+        </div>
         }
     </div>
 </div>
@@ -123,6 +130,17 @@
                 }
             });
         });
+        $('#date').change(function () {
+            var selectedDate = new Date($(this).val());
+            var month = selectedDate.getMonth() + 1; // getMonth() returns 0-11
+            var year = selectedDate.getFullYear();
 
+            var monthNames = ["January", "February", "March", "April", "May", "June",
+                "July", "August", "September", "October", "November", "December"];
+            var monthName = monthNames[month - 1];
+
+            $('#feeofmonth').val(monthName);
+            //$('#SalaryYear').val(year);
+        });
     });
 </script>

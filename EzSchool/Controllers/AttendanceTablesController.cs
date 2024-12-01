@@ -21,8 +21,21 @@ namespace EzSchool.Controllers
             {
                 return RedirectToAction("Login", "Home");
             }
-            var attendanceTables = db.AttendanceTables.Include(a => a.StudentTable).Include(a => a.ClassTable).OrderByDescending( a => a.AttendanceID);
-            return View(attendanceTables.ToList());
+            int userid = Convert.ToInt32(Convert.ToString(Session["UserID"]));
+            int usertypeid = Convert.ToInt32(Convert.ToString(Session["UserTypeID"]));
+            var student = db.StudentTables.FirstOrDefault(s => s.UserID == userid);
+            if (usertypeid == 1)
+            {
+                var attendanceTables = db.AttendanceTables.Include(a => a.StudentTable).Include(a => a.ClassTable).OrderByDescending(a => a.AttendanceID);
+                return View(attendanceTables.ToList());
+            }
+            else
+            {
+                var attendanceTables = db.AttendanceTables.Include(a => a.StudentTable).Include(a => a.ClassTable).Where(s => s.StudentID == student.StudentID).OrderByDescending(a => a.AttendanceID);
+                return View(attendanceTables.ToList());
+            }
+
+
         }
 
         // GET: AttendanceTables/Details/5
@@ -41,6 +54,9 @@ namespace EzSchool.Controllers
             {
                 return HttpNotFound();
             }
+            var name = db.SessionTables.Where(s => s.SessionID == attendanceTable.SessionID).Select(s => s.Name).FirstOrDefault();
+            ViewBag.SessionName = name;
+
             return View(attendanceTable);
         }
 
@@ -98,6 +114,7 @@ namespace EzSchool.Controllers
             }
             ViewBag.StudentID = new SelectList(db.StudentTables, "StudentID", "Name", attendanceTable.StudentID);
             ViewBag.ClassID = new SelectList(db.ClassTables, "ClassID", "Name", attendanceTable.ClassID);
+            ViewBag.SessionID = new SelectList(db.SessionTables, "SessionID", "Name");
             return View(attendanceTable);
         }
 
@@ -106,7 +123,7 @@ namespace EzSchool.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "AttendanceID,SessionID,StudentID,AttendDate,AttendTime,ClassID")] AttendanceTable attendanceTable)
+        public ActionResult Edit(AttendanceTable attendanceTable)
         {
             if (string.IsNullOrEmpty(Convert.ToString(Session["UserName"])))
             {
@@ -120,6 +137,7 @@ namespace EzSchool.Controllers
             }
             ViewBag.StudentID = new SelectList(db.StudentTables, "StudentID", "Name", attendanceTable.StudentID);
             ViewBag.ClassID = new SelectList(db.ClassTables, "ClassID", "Name", attendanceTable.ClassID);
+            ViewBag.SessionID = new SelectList(db.SessionTables, "SessionID", "Name");
             return View(attendanceTable);
         }
 
@@ -139,6 +157,8 @@ namespace EzSchool.Controllers
             {
                 return HttpNotFound();
             }
+            var name = db.SessionTables.Where(s => s.SessionID == attendanceTable.SessionID).Select(s => s.Name).FirstOrDefault();
+            ViewBag.SessionName = name;
             return View(attendanceTable);
         }
 
@@ -165,5 +185,28 @@ namespace EzSchool.Controllers
             }
             base.Dispose(disposing);
         }
+        public ActionResult GetClassesByStudent(string sid)
+        {
+            int studentid = Convert.ToInt32(sid);
+
+            // Lấy danh sách ClassID từ StudentTables
+            var classIds = db.StudentTables
+                             .Where(c => c.StudentID == studentid)
+                             .Select(c => c.ClassID)
+                             .ToList();
+
+            // Sử dụng ClassID để tìm kiếm trong ClassTables
+            var classes = db.ClassTables
+                            .Where(c => classIds.Contains(c.ClassID))
+                            .Select(c => new
+                            {
+                                ClassID = c.ClassID,
+                                Name = c.Name
+                            }).ToList();
+
+            return Json(new { data = classes }, JsonRequestBehavior.AllowGet);
+        }
+
+
     }
 }

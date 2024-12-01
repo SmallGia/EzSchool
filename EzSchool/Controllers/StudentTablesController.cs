@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using DatabaseAccess;
+using WebGrease.Css.Ast;
 
 namespace EzSchool.Controllers
 {
@@ -21,8 +22,19 @@ namespace EzSchool.Controllers
             {
                 return RedirectToAction("Login", "Home");
             }
-            var studentTables = db.StudentTables.Include(s => s.ClassTable).Include(s => s.ProgrameTable).Include(s => s.SessionTable).Include(s => s.UserTable).OrderByDescending(s => s.StudentID);
-            return View(studentTables.ToList());
+            int userid = Convert.ToInt32(Convert.ToString(Session["UserID"]));
+            int usertypeid = Convert.ToInt32(Convert.ToString(Session["UserTypeID"]));
+            if (usertypeid == 1)
+            {
+                var studentTables = db.StudentTables.Include(s => s.ClassTable).Include(s => s.ProgrameTable).Include(s => s.SessionTable).Include(s => s.UserTable).OrderByDescending(s => s.StudentID);
+                return View(studentTables.ToList());
+            }
+            else
+            {
+                var studentTables = db.StudentTables.Include(s => s.ClassTable).Include(s => s.ProgrameTable).Include(s => s.SessionTable).Include(s => s.UserTable).Where(s => s.UserID == userid).OrderByDescending(s => s.StudentID);
+                return View(studentTables.ToList());
+            }
+
         }
 
         // GET: StudentTables/Details/5
@@ -54,7 +66,8 @@ namespace EzSchool.Controllers
             ViewBag.ClassID = new SelectList(db.ClassTables, "ClassID", "Name");
             ViewBag.ProgrameID = new SelectList(db.ProgrameTables, "ProgrameID", "Name");
             ViewBag.SessionID = new SelectList(db.SessionTables, "SessionID", "Name");
-            ViewBag.UserID = new SelectList(db.UserTables, "UserID", "FullName");
+            var filteredUsers = db.UserTables.Where(u => u.UserTypeID != 1).ToList();
+            ViewBag.UserID = new SelectList(filteredUsers, "UserID", "FullName");
             return View();
         }
 
@@ -70,7 +83,7 @@ namespace EzSchool.Controllers
                 return RedirectToAction("Login", "Home");
             }
             int userid = Convert.ToInt32(Convert.ToString(Session["UserID"]));
-            studentTable.UserID = userid;
+            //studentTable.UserID = userid;
             studentTable.Photo = "/Content/StudentPhoto/default.png";
             if (ModelState.IsValid)
             {
@@ -134,7 +147,7 @@ namespace EzSchool.Controllers
                 return RedirectToAction("Login", "Home");
             }
             int userid = Convert.ToInt32(Convert.ToString(Session["UserID"]));
-            studentTable.UserID = userid;
+            //studentTable.UserID = userid;
             if (ModelState.IsValid)
             {
                 var folder = "/Content/StudentPhoto";

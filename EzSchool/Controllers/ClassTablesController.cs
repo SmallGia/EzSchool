@@ -148,10 +148,21 @@ namespace EzSchool.Controllers
             }
 
             ClassTable classTable = db.ClassTables.Find(id);
-            db.ClassTables.Remove(classTable);
-            db.SaveChanges();
+            try
+            {
+                db.ClassTables.Remove(classTable);
+                db.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                // Log the exception (ex) if needed
+                TempData["ErrorMessage"] = "Cannot delete this class because it is linked to other records.";
+                return RedirectToAction("Delete", new { id = id });
+            }
             return RedirectToAction("Index");
         }
+
+
 
         protected override void Dispose(bool disposing)
         {

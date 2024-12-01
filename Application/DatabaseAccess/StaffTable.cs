@@ -35,6 +35,7 @@ namespace DatabaseAccess
         [Required(ErrorMessage = "{0} Required Field!")]
         public string ContactNo { get; set; }
         [Required(ErrorMessage = "{0} Required Field!")]
+        [DisplayFormat(DataFormatString = "{0:#,##0 VND}", ApplyFormatInEditMode = true)]
         public double BasicSalary { get; set; }
         public string EmailAddress { get; set; }
         [Required(ErrorMessage = "{0} Required Field!")]

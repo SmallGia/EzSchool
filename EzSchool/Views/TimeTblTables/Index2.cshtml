@@ -1,0 +1,124 @@
+﻿@model IEnumerable<DatabaseAccess.TimeTblTable>
+
+@{
+    ViewBag.Title = "Index2";
+}
+
+@{
+    int usertypeid = Convert.ToInt32(Convert.ToString(Session["UserTypeID"]));
+}
+@if (usertypeid == 1)
+{
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Actions</h6>
+        </div>
+        <div class="card-body">
+            <div class="d-flex justify-content-around mb-2">
+                @if (usertypeid == 1)
+                {
+                    <p>
+                        @Html.ActionLink("Assign Subject-Teacher", "Create", null, new { @class = "btn btn-success" })
+                    </p>
+                    <p>
+                        @using (Html.BeginForm("Index3", "TimeTblTables", FormMethod.Get))
+                        {
+                            <div class="d-flex">
+                                @Html.DropDownList("uid", ViewBag.UserID as SelectList, null, new { @class = "form-control", @style = "width: 250px;" })
+                                <button type="submit" class="btn btn-primary" style="margin-left: 180px;">View Schedule</button>
+                            </div>
+                        }
+                    </p>
+                }
+
+            </div>
+        </div>
+    </div>
+}
+
+
+
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Schedule</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered text-center align-middle" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>
+                            Teacher ID
+                        </th>
+                        <th>
+                            Teacher
+                        </th>
+                        <th>
+                            Subject
+                        </th>
+                        <th>
+                            Start Time
+                        </th>
+                        <th>
+                            End Time
+                        </th>
+                        <th>
+                            Day
+                        </th>
+                        <th>
+                            Status
+                        </th>
+                        <th>
+                            User
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <th class="align-middle">
+                                @Html.DisplayFor(modelitem => item.StaffTable.StaffID)
+                            </th>
+                            <td class="align-middle">
+                                @Html.DisplayFor(modelItem => item.StaffTable.Name)
+                            </td>
+                            <td class="align-middle">
+                                @Html.DisplayFor(modelItem => item.ClassSubjectTable.Name)
+                            </td>
+                            <td class="align-middle">
+                                @Html.DisplayFor(modelItem => item.StartTime)
+                            </td>
+                            <td class="align-middle">
+                                @Html.DisplayFor(modelItem => item.EndTime)
+                            </td>
+                            <td class="align-middle">
+                                @Html.DisplayFor(modelItem => item.Day)
+                            </td>
+                            <td class="align-middle">
+                                @Html.DisplayFor(modelItem => item.IsActive)
+                            </td>
+                            <td class="align-middle">
+                                @Html.DisplayFor(modelItem => item.UserTable.FullName)
+                            </td>
+                            <td class="btn btn-group-vertical align-middle">
+                                @if (usertypeid == 1)
+                                {
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.TimeTableID }, new { @class = "btn btn-primary" })
+                                    @Html.ActionLink("Details", "Details", new { id = item.TimeTableID }, new { @class = "btn btn-info" })
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.TimeTableID }, new { @class = "btn btn-danger" })
+                                }
+                                else
+                                {
+                                    @Html.ActionLink("Details", "Details", new { id = item.TimeTableID }, new { @class = "btn btn-info" })
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

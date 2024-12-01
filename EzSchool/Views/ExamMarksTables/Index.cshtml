@@ -4,23 +4,30 @@
     ViewBag.Title = "Marks Sheets";
 }
 
-<p>
-    @Html.ActionLink("Add Marks Sheet", "Create", null, new { @class = "btn btn-success" })
-</p>
+@{ int usertypeid = Convert.ToInt32(Convert.ToString(Session["UserTypeID"]));
+    if (usertypeid == 1)
+    {
+        <p>
+            @Html.ActionLink("Add Marks Sheet", "Create", null, new { @class = "btn btn-success" })
+        </p>
+    }
+
+}
+
 <div class="card shadow mb-4">
     <div class="card-header py-3">
         <h6 class="m-0 font-weight-bold text-primary">Exam Marks Sheets</h6>
     </div>
     <div class="card-body">
         <div class="table-responsive">
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <table class="table table-bordered text-center" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
                         <th>
                             Student ID
                         </th>
                         <th>
-                           Exam 
+                            Exam
                         </th>
                         <th>
                             Student
@@ -34,9 +41,9 @@
                         <th>
                             Obitan Marks
                         </th>
-                        <th>
+                        @*<th>
                             User
-                        </th>
+                        </th>*@
 
                         <th>
                             Action
@@ -65,15 +72,26 @@
                             <td>
                                 @Html.DisplayFor(modelItem => item.ObtainMarks)
                             </td>
-                            <td>
+                            @*<td>
                                 @Html.DisplayFor(modelItem => item.UserTable.FullName)
-                            </td>
+                            </td>*@
 
-                            <td class="btn-group">
-                                @Html.ActionLink("Edit", "Edit", new { id = item.MarksID }, new { @class = "btn btn-primary" })
-                                @Html.ActionLink("Details", "Details", new { id = item.MarksID }, new { @class = "btn btn-info" })
-                                @Html.ActionLink("Delete", "Delete", new { id = item.MarksID }, new { @class = "btn btn-danger" })
-                            </td>
+                        <td class="btn-group">
+                            @{
+                                if (usertypeid == 1)
+                                {
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.MarksID }, new { @class = "btn btn-primary" })
+                                    @Html.ActionLink("Details", "Details", new { id = item.MarksID }, new { @class = "btn btn-info" })
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.MarksID }, new { @class = "btn btn-danger" })
+                                }
+                                else
+                                {
+                                    @Html.ActionLink("Details", "Details", new { id = item.MarksID }, new { @class = "btn btn-info" })
+                                }
+
+                            }
+
+                        </td>
                         </tr>
                     }
                 </tbody>

@@ -23,7 +23,8 @@
                 <div class="row">
                     <div class="col-md-5">
                         <div class="form-group">
-                            <input type="number" class="form-control" placeholder="Enter Promote ID" id="promoteid" />
+                            @Html.Label("Promote ID", htmlAttributes: new { @class = "control-label" })
+                            @Html.DropDownList("PromoteID", new SelectList(ViewBag.PromoteIDs, "Value", "Text"), null, new { @class = "form-control", @id = "promoteid" })
                         </div>
                     </div>
 
@@ -90,15 +91,15 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
-        $('#FindPromoteRecord').click(function () {
 
+        $('#FindPromoteRecord').click(function () {
             $('#ClassSubjectID').html('');
             $('#StudentID').html('');
             $.ajax({
                 url: '@Url.Action("GetByPromoteID", "ExamMarksTables")',
                 type: 'GET',
                 data: { sid: $('#promoteid').val() },
-                dataType: 'Json',
+                dataType: 'json',
                 success: function (response) {
                     $('#StudentID').val(response.student);
                     for (var i = 0; i < response.student.length; i++) {
@@ -109,8 +110,8 @@
                         $('#ClassSubjectID').append("<option value=" + response.subject[i].ClassSubjectID + ">" + response.subject[i].Name + "</option>");
                     }
                 },
-                error: function () {
-
+                error: function (xhr, status, error) {
+                    console.error("Error: " + error);
                 }
             });
         });

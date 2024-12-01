@@ -1,34 +1,29 @@
 ﻿@model DatabaseAccess.ExpenseTypeTable
 
 @{
-    ViewBag.Title = "Details";
+    ViewData["Title"] = "Expense Type Details";
 }
 
-<h2>Details</h2>
-
-<div>
-    <h4>ExpenseTypeTable</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.IsActive)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.IsActive)
-        </dd>
-
-    </dl>
+<div class="card shadow-lg">
+    <div class="card-header bg-gradient-primary text-white">
+        <h4 class="card-title">Expense Type Details</h4>
+    </div>
+    <div class="card-body">
+        <table class="table table-bordered table-hover text-center">
+            <tbody>
+                <tr>
+                    <th class="bg-light">Name</th>
+                    <td>@Html.DisplayFor(model => model.Name)</td>
+                </tr>
+                <tr>
+                    <th class="bg-light">Is Active</th>
+                    <td>@Html.DisplayFor(model => model.IsActive)</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="card-footer text-center">
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ExpensesTypeID }, new { @class = "btn btn-primary mx-2" })
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-secondary mx-2" })
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ExpensesTypeID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

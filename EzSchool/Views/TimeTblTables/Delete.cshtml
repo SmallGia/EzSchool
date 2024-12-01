@@ -1,80 +1,54 @@
 ﻿@model DatabaseAccess.TimeTblTable
 
 @{
-    ViewBag.Title = "Delete";
+    ViewData["Title"] = "Delete";
 }
 
-<h2>Delete</h2>
-
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>TimeTblTable</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.StartTime)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.StartTime)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.EndTime)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.EndTime)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Day)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Day)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.IsActive)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.IsActive)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ClassSubjectTable.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ClassSubjectTable.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.StaffTable.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.StaffTable.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.UserTable.FullName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.UserTable.FullName)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
-        </div>
-    }
+<div class="card shadow-lg">
+    <div class="card-header bg-gradient-primary text-white">
+        <h4 class="card-title">Time Table Details</h4>
+    </div>
+    <div class="card-body">
+        <h3>Are you sure you want to delete this?</h3>
+        <table class="table table-bordered table-hover text-center">
+            <tbody>
+                <tr>
+                    <th class="bg-light">Start Time</th>
+                    <td>@Html.DisplayFor(model => model.StartTime)</td>
+                </tr>
+                <tr>
+                    <th class="bg-light">End Time</th>
+                    <td>@Html.DisplayFor(model => model.EndTime)</td>
+                </tr>
+                <tr>
+                    <th class="bg-light">Day</th>
+                    <td>@Html.DisplayFor(model => model.Day)</td>
+                </tr>
+                <tr>
+                    <th class="bg-light">Is Active</th>
+                    <td>@Html.DisplayFor(model => model.IsActive)</td>
+                </tr>
+                <tr>
+                    <th class="bg-light">Class Subject</th>
+                    <td>@Html.DisplayFor(model => model.ClassSubjectTable.Name)</td>
+                </tr>
+                <tr>
+                    <th class="bg-light">Staff</th>
+                    <td>@Html.DisplayFor(model => model.StaffTable.Name)</td>
+                </tr>
+                <tr>
+                    <th class="bg-light">Student</th>
+                    <td>@Html.DisplayFor(model => model.UserTable.FullName)</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="card-footer text-center">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <input type="submit" value="Delete" class="btn btn-danger mx-2" />
+            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-secondary mx-2" })
+        }
+    </div>
 </div>

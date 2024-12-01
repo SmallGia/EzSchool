@@ -1,74 +1,45 @@
 ﻿@model DatabaseAccess.UserTable
 
 @{
-    ViewData["Title"] = "User";
+    ViewData["Title"] = "Details";
 }
 
-<h2>Details</h2>
-
-<div>
-    <h4>User</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            Full Name
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FullName)
-        </dd>
-
-        <dt>
-            User Name
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.UserName)
-        </dd>
-
-        @*<dt>
-            @Html.DisplayNameFor(model => model.Password)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Password)
-        </dd>*@
-
-        <dt>
-           Contact No
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ContactNo)
-        </dd>
-
-        <dt>
-           Email
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.EmailAddress)
-        </dd>
-
-        <dt>
-            Address
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Address)
-        </dd>
-
-        <dt>
-           Type Name
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.UserTypeTable.TypeName)
-        </dd>
-
-    </dl>
+<div class="card shadow-lg">
+    <div class="card-header bg-gradient-primary text-white">
+        <h4 class="card-title">User Details</h4>
+    </div>
+    <div class="card-body">
+        <table class="table table-bordered table-hover text-center">
+            <tbody>
+                <tr>
+                    <th class="bg-light">Full Name</th>
+                    <td>@Html.DisplayFor(model => model.FullName)</td>
+                </tr>
+                <tr>
+                    <th class="bg-light">User Name</th>
+                    <td>@Html.DisplayFor(model => model.UserName)</td>
+                </tr>
+                <tr>
+                    <th class="bg-light">Contact No</th>
+                    <td>@Html.DisplayFor(model => model.ContactNo)</td>
+                </tr>
+                <tr>
+                    <th class="bg-light">Email</th>
+                    <td>@Html.DisplayFor(model => model.EmailAddress)</td>
+                </tr>
+                <tr>
+                    <th class="bg-light">Address</th>
+                    <td>@Html.DisplayFor(model => model.Address)</td>
+                </tr>
+                <tr>
+                    <th class="bg-light">Type Name</th>
+                    <td>@Html.DisplayFor(model => model.UserTypeTable.TypeName)</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="card-footer text-center">
+        @Html.ActionLink("Edit", "Edit", new { id = Model.UserID }, new { @class = "btn btn-primary mx-2" })
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-secondary mx-2" })
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.UserID }, new {@class = "btn btn-primary"}) 
-    @Html.ActionLink("Back to List", "Index", new {@class = "btn btn-default"})
-</p>

@@ -14,10 +14,10 @@
     </div>
     <div class="card-body">
         <div class="table-responsive">
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <table class="table table-bordered text-center align-middle" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
-                        <th>
+                        <th >
                             Class Subject Title
                         </th>
                         <th>
@@ -36,20 +36,20 @@
                     @foreach (var item in Model)
                     {
                         <tr>
-                            <td>
+                            <td class="align-middle">
                                 @Html.DisplayFor(modelItem => item.Name)
                             </td>
-                            <td>
+                            <td class="align-middle">
                                 @Html.DisplayFor(modelItem => item.ClassTable.Name)
                             </td>
-                            <td>
+                            <td class="align-middle">
                                 @Html.DisplayFor(modelItem => item.SubjectTable.Name)
                             </td>
 
-                            <td>
+                            <td class="align-middle">
                                 @Html.DisplayFor(modelItem => item.IsActive)
                             </td>
-                            <td class="btn-group">
+                            <td class="btn-group align-middle">
                                 @Html.ActionLink("Edit", "Edit", new { id = item.ClassSubjectID }, new { @class = "btn btn-primary" })
                                 @Html.ActionLink("Details", "Details", new { id = item.ClassSubjectID }, new { @class = "btn btn-info" })
                                 @Html.ActionLink("Delete", "Delete", new { id = item.ClassSubjectID }, new { @class = "btn btn-danger" })

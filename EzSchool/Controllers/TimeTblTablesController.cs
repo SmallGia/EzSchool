@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using DatabaseAccess;
+using WebGrease.Css.Ast;
 
 namespace EzSchool.Controllers
 {
@@ -21,9 +22,55 @@ namespace EzSchool.Controllers
             {
                 return RedirectToAction("Login", "Home");
             }
-            var timeTblTables = db.TimeTblTables.Include(t => t.ClassSubjectTable).Include(t => t.StaffTable).Include(t => t.UserTable).OrderByDescending(e=>e.TimeTableID);
-            return View(timeTblTables.ToList());
+            
+            int userid = Convert.ToInt32(Convert.ToString(Session["UserID"]));
+            int usertypeid = Convert.ToInt32(Convert.ToString(Session["UserTypeID"]));
+            var filteredUsers = db.UserTables.Where(u => u.UserTypeID != 1).ToList();
+            ViewBag.UserID = new SelectList(filteredUsers, "UserID", "FullName");
+            if (usertypeid != 1)
+            {
+                var timeTblTables = db.TimeTblTables.Include(t => t.ClassSubjectTable).Include(t => t.StaffTable).Include(t => t.UserTable).Where(s => s.UserID == userid).OrderByDescending(e => e.TimeTableID);
+                return View(timeTblTables.ToList());
+            }
+            else
+            {
+                var timeTblTables = db.TimeTblTables.Include(t => t.ClassSubjectTable).Include(t => t.StaffTable).Include(t => t.UserTable).OrderByDescending(e => e.TimeTableID);
+                return RedirectToAction("Index2");
+            }
+
         }
+        public ActionResult Index3(int? uid)
+        {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["UserName"])))
+            {
+                return RedirectToAction("Login", "Home");
+            }
+            var schedule = db.TimeTblTables.Include(t => t.ClassSubjectTable).Include(t => t.StaffTable).Include(t => t.UserTable).Where(s => s.UserID == uid).OrderByDescending(e => e.TimeTableID);
+            return View(schedule.ToList());
+        }
+
+        public ActionResult Index2()
+        {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["UserName"])))
+            {
+                return RedirectToAction("Login", "Home");
+            }
+            int userid = Convert.ToInt32(Convert.ToString(Session["UserID"]));
+            int usertypeid = Convert.ToInt32(Convert.ToString(Session["UserTypeID"]));
+            var filteredUsers = db.UserTables.Where(u => u.UserTypeID != 1).ToList();
+            ViewBag.UserID = new SelectList(filteredUsers, "UserID", "FullName");
+            if (usertypeid != 1)
+            {
+                var timeTblTables = db.TimeTblTables.Include(t => t.ClassSubjectTable).Include(t => t.StaffTable).Include(t => t.UserTable).Where(s => s.UserID == userid).OrderByDescending(e => e.TimeTableID);
+                return View(timeTblTables.ToList());
+            }
+            else
+            {
+                var timeTblTables = db.TimeTblTables.Include(t => t.ClassSubjectTable).Include(t => t.StaffTable).Include(t => t.UserTable).OrderByDescending(e => e.TimeTableID);
+                return View(timeTblTables.ToList());
+            }
+        }
+
 
         // GET: TimeTblTables/Details/5
         public ActionResult Details(int? id)
@@ -51,9 +98,10 @@ namespace EzSchool.Controllers
             {
                 return RedirectToAction("Login", "Home");
             }
+            var filteredUsers = db.UserTables.Where(u => u.UserTypeID != 1).ToList();
             ViewBag.ClassSubjectID = new SelectList(db.ClassSubjectTables.Where(s => s.IsActive == true), "ClassSubjectID", "Name");
             ViewBag.StaffID = new SelectList(db.StaffTables.Where(s=>s.IsActive == true), "StaffID", "Name");
-            ViewBag.UserID = new SelectList(db.UserTables, "UserID", "FullName");
+            ViewBag.UserID = new SelectList(filteredUsers, "UserID", "FullName");
             return View();
         }
 
@@ -69,7 +117,7 @@ namespace EzSchool.Controllers
                 return RedirectToAction("Login", "Home");
             }
             int userid = Convert.ToInt32(Convert.ToString(Session["UserID"]));
-            timeTblTable.UserID = userid;
+            //timeTblTable.UserID = userid;
             if (ModelState.IsValid)
             {
                 db.TimeTblTables.Add(timeTblTable);
@@ -117,7 +165,7 @@ namespace EzSchool.Controllers
                 return RedirectToAction("Login", "Home");
             }
             int userid = Convert.ToInt32(Convert.ToString(Session["UserID"]));
-            timeTblTable.UserID = userid;
+         //   timeTblTable.UserID = userid;
             if (ModelState.IsValid)
             {
                 db.Entry(timeTblTable).State = EntityState.Modified;

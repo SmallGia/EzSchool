@@ -44,8 +44,20 @@ namespace SchoolManagementSystem.Controllers
         //}
         public ActionResult StudentAttendanceWise()
         {
-            var attendance = db.AttendanceTables.ToList();
-            return View(attendance);
+            int usertypeid = Convert.ToInt32(Convert.ToString(Session["UserTypeID"]));
+            if (usertypeid == 1)
+            {
+                var attendance = db.AttendanceTables.ToList();
+                return View(attendance);
+            }
+            else
+            {
+                int userid = Convert.ToInt32(Convert.ToString(Session["UserID"]));
+                var student = db.StudentTables.Where(s => s.UserID == userid).FirstOrDefault();
+                var attendance = db.AttendanceTables.ToList().Where(s => s.StudentID == student.StudentID);
+                return View(attendance);
+            }
+
         }
 
         //public ActionResult StaffAttendanceWise(int? id)

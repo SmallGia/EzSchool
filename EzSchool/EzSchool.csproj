@@ -212,6 +212,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\IResumeRepository.cs" />
     <Compile Include="Repository\ResumeRepository.cs" />
+    <Compile Include="Services\StudentService.cs" />
     <Compile Include="ViewModels\EmployeeCertificationVM.cs" />
     <Compile Include="ViewModels\EmployeeEducationTableMV.cs" />
     <Compile Include="ViewModels\EmployeeLanguageVM.cs" />
@@ -220,6 +221,9 @@
     <Compile Include="ViewModels\EmployeeWorkExperienceVM.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\css\style.css" />
+    <Content Include="assets\js\main.js" />
+    <Content Include="assets\js\util.js" />
     <Content Include="Content\AdminTemp\css\sb-admin-2.css" />
     <Content Include="Content\AdminTemp\css\sb-admin-2.min.css" />
     <Content Include="Content\AdminTemp\img\undraw_posting_photo.svg" />
@@ -2022,6 +2026,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="assets\css\style.scss" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
@@ -2185,6 +2190,9 @@
     <Content Include="Views\ExpensesReport\ExpensesWise.cshtml" />
     <Content Include="Views\ExpensesReport\CustomExpenses.cshtml" />
     <Content Include="Views\Home\ChangePassword.cshtml" />
+    <Content Include="Views\TimeTblTables\Index2.cshtml" />
+    <Content Include="Views\TimeTblTables\_ScheduleEventsPartial.cshtml" />
+    <Content Include="Views\TimeTblTables\Index3.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -13,7 +14,11 @@ namespace EzSchool.Controllers
     public class StudentPromotTablesController : Controller
     {
         private SchoolMgDbEntities db = new SchoolMgDbEntities();
-
+        private StudentTable GetStudentByUserId(int userId)
+        {
+            var student = db.StudentTables.FirstOrDefault(s => s.UserID == userId);
+            return student;
+        }
         // GET: StudentPromotTables
         public ActionResult Index()
         {
@@ -21,8 +26,20 @@ namespace EzSchool.Controllers
             {
                 return RedirectToAction("Login", "Home");
             }
-            var studentPromotTables = db.StudentPromotTables.Include(s => s.ClassTable).Include(s => s.ProgrameSessionTable).Include(s => s.SectionTable).Include(s => s.StudentTable).OrderByDescending(s => s.StudentPromotID);
-            return View(studentPromotTables.ToList());
+            int userid = Convert.ToInt32(Convert.ToString(Session["UserID"]));
+            int usertypeid = Convert.ToInt32(Convert.ToString(Session["UserTypeID"]));
+            var student = GetStudentByUserId(userid);
+
+            if (usertypeid == 1)
+            {
+                var studentPromotTables = db.StudentPromotTables.Include(s => s.ClassTable).Include(s => s.ProgrameSessionTable).Include(s => s.SectionTable).Include(s => s.StudentTable).OrderByDescending(s => s.StudentPromotID);
+                return View(studentPromotTables.ToList());
+            }
+            else
+            {
+                var studentPromotTables = db.StudentPromotTables.Include(s => s.ClassTable).Include(s => s.ProgrameSessionTable).Include(s => s.SectionTable).Include(s => s.StudentTable).Where(s => s.StudentID == student.StudentID).OrderByDescending(s => s.StudentPromotID);
+                return View(studentPromotTables.ToList());
+            }
         }
 
         // GET: StudentPromotTables/Details/5
@@ -51,6 +68,7 @@ namespace EzSchool.Controllers
             {
                 return RedirectToAction("Login", "Home");
             }
+            //Debug.WriteLine("abc");
             ViewBag.ClassID = new SelectList(db.ClassTables, "ClassID", "Name");
             ViewBag.ProgrameSessionID = new SelectList(db.ProgrameSessionTables, "ProgrameSessionID", "Details");
             ViewBag.SectionID = new SelectList(db.SectionTables, "SectionID", "SectionName");
@@ -69,6 +87,7 @@ namespace EzSchool.Controllers
             {
                 return RedirectToAction("Login", "Home");
             }
+          
             if (ModelState.IsValid)
             {
                 db.StudentPromotTables.Add(studentPromotTable);
@@ -174,6 +193,7 @@ namespace EzSchool.Controllers
         }
         public ActionResult GetPromotClsList(string sid)
         {
+            Debug.WriteLine("Student ID: " + sid);
             int studentid = Convert.ToInt32(sid);
             var student = db.StudentTables.Find(studentid);
             int promoteid = 0;
@@ -191,14 +211,14 @@ namespace EzSchool.Controllers
             if (promoteid > 0)
             {
                 var promotetable = db.StudentPromotTables.Find(promoteid);
-                foreach (var cls in db.ClassTables.Where(cls => cls.ClassID > promotetable.ClassID))
+                foreach (var cls in db.ClassTables.Where(cls => cls.ClassID == promotetable.ClassID))
                 {
                     classTables.Add(new ClassTable { ClassID = cls.ClassID, Name = cls.Name });
                 }
             }
             else
             {
-                foreach (var cls in db.ClassTables.Where(cls => cls.ClassID > student.ClassID))
+                foreach (var cls in db.ClassTables.Where(cls => cls.ClassID == student.ClassID))
                 {
                     classTables.Add(new ClassTable { ClassID = cls.ClassID, Name = cls.Name });
                 }
@@ -211,7 +231,7 @@ namespace EzSchool.Controllers
         {
             int progressid = Convert.ToInt32(sid);
             var ps = db.ProgrameSessionTables.Find(progressid);
-            var annualfee = db.AnnualTables.Where(a => a.AnnualID == ps.ProgrameID).SingleOrDefault();
+            var annualfee = db.AnnualTables.Where(a => a.ProgrameID == ps.ProgrameID).SingleOrDefault();
             double? fee = annualfee.Fees;
             return Json(new { fees = fee }, JsonRequestBehavior.AllowGet);
         }

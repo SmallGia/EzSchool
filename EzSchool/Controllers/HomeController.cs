@@ -37,15 +37,11 @@ public class HomeController : Controller
                     Session["Address"] = finduser[0].Address;
 
                     // 1.Admin 
-                    // 2.Operator
-                    // 3.Teacher
-                    // 4.Student
+                    // 4.Operator
+                    // 5.Teacher
+                    // 6.Student
                     string url = string.Empty;
-                    if (finduser[0].UserTypeID == 2)
-                    {
-                        return RedirectToAction("About");
-                    }
-                    else if (finduser[0].UserTypeID == 3)
+                    if (finduser[0].UserTypeID == 6)
                     {
                         return RedirectToAction("About");
                     }
@@ -53,9 +49,15 @@ public class HomeController : Controller
                     {
                         return RedirectToAction("About");
                     }
+                    else if (finduser[0].UserTypeID == 5)
+                    {
+                        return RedirectToAction("About");
+                    }
                     else if (finduser[0].UserTypeID == 1)
                     {
                         url = "About";
+                           
+                     //   return RedirectToAction("About");
                     }
                     return RedirectToAction(url);
 
@@ -103,8 +105,36 @@ public class HomeController : Controller
 
     public ActionResult About()
     {
-        ViewData["Message"] = "Welcome to EzSchool";
-        return View();
+        int userId = Convert.ToInt32(Session["UserID"]);
+        int usertypeid = Convert.ToInt32(Session["UserTypeID"]);
+        if (usertypeid != 1) {
+            var student = GetStudentByUserId(userId);
+            var sessionName = db.SessionTables
+                        .Where(s => s.SessionID == student.SessionID)
+                        .Select(s => s.Name)
+                        .FirstOrDefault();
+            var className = db.ClassTables
+                      .Where(c => c.ClassID == student.ClassID)
+                      .Select(c => c.Name)
+                      .FirstOrDefault();
+
+            var programName = db.ProgrameTables
+                                .Where(p => p.ProgrameID == student.ProgrameID)
+                                .Select(p => p.Name)
+                                .FirstOrDefault();
+            ViewData["Message"] = "Welcome to EzSchool";
+            ViewBag.Student = student;
+            ViewBag.SessionName = sessionName;
+            ViewBag.ClassName = className;
+            ViewBag.ProgramName = programName;
+            return View();
+        }
+        else
+        {
+            ViewData["Message"] = "Welcome to EzSchool";
+            return View();
+        }
+
     }
     public ActionResult ChangePassword()
     {
@@ -133,6 +163,7 @@ public class HomeController : Controller
         db.SaveChanges();
         ViewBag.Message = "Password Changed Successfully!";
         return RedirectToAction("Logout");
+
     }
     public ActionResult Logout()
     {
@@ -145,5 +176,10 @@ public class HomeController : Controller
         Session["EmailAddress"] = string.Empty;
         Session["Address"] = string.Empty;
         return RedirectToAction("Login");
+    }
+    private StudentTable GetStudentByUserId(int userId)
+    {
+        var student = db.StudentTables.FirstOrDefault(s => s.UserID == userId);
+        return student;
     }
 }

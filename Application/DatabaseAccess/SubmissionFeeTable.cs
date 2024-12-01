@@ -20,6 +20,7 @@ namespace DatabaseAccess
         [Required(ErrorMessage = "Please Select Student")]
         public int StudentID { get; set; }
         [Required(ErrorMessage = "Please Enter Tution Fee")]
+        [DisplayFormat(DataFormatString = "{0:#,##0 VND}", ApplyFormatInEditMode = true)]
         public double Amount { get; set; }
         [Required(ErrorMessage = "Please Select Programe")]
         public int ProgrameID { get; set; }

@@ -27,6 +27,7 @@ namespace DatabaseAccess
         public int ProgrameID { get; set; }
         public string Details { get; set; }
         [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public System.DateTime RegDate { get; set; }
         public string Description { get; set; }
     

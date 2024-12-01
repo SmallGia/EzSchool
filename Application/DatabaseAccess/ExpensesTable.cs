@@ -15,14 +15,23 @@ namespace DatabaseAccess
 
     public partial class ExpensesTable
     {
+        [Required(ErrorMessage = "{0} Required Field!")]
         public int ExpensesID { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         public int ExpensesTypeID { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public System.DateTime ExpensesDate { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
+
+        [DisplayFormat(DataFormatString = "{0:#,##0 VND}", ApplyFormatInEditMode = true)]
         public double Amount { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         public string Reason { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         public int UserID { get; set; }
-    
+
         public virtual ExpenseTypeTable ExpenseTypeTable { get; set; }
         public virtual UserTable UserTable { get; set; }
     }

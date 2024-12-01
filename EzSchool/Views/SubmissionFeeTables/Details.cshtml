@@ -4,79 +4,50 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
-
-<div>
-    <h4>SubmissionFeeTable</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Amount)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Amount)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.SubmissionDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SubmissionDate)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.FeesMonth)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FeesMonth)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ProgrameTable.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ProgrameTable.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.StudentTable.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.StudentTable.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.UserTable.FullName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.UserTable.FullName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ClassTable.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ClassTable.Name)
-        </dd>
-
-    </dl>
+<div class="card shadow-lg">
+    <div class="card-header bg-gradient-primary text-white">
+        <h4 class="card-title">Submission Fee Details</h4>
+    </div>
+    <div class="card-body">
+        <table class="table table-bordered table-hover text-center">
+            <tbody>
+                <tr>
+                    <th class="bg-light">@Html.DisplayNameFor(model => model.Amount)</th>
+                    <td>@Html.DisplayFor(model => model.Amount)</td>
+                </tr>
+                <tr>
+                    <th class="bg-light">@Html.DisplayNameFor(model => model.SubmissionDate)</th>
+                    <td>@Html.DisplayFor(model => model.SubmissionDate)</td>
+                </tr>
+                <tr>
+                    <th class="bg-light">@Html.DisplayNameFor(model => model.FeesMonth)</th>
+                    <td>@Html.DisplayFor(model => model.FeesMonth)</td>
+                </tr>
+                <tr>
+                    <th class="bg-light">@Html.DisplayNameFor(model => model.Description)</th>
+                    <td>@Html.DisplayFor(model => model.Description)</td>
+                </tr>
+                <tr>
+                    <th class="bg-light">@Html.DisplayNameFor(model => model.ProgrameTable.Name)</th>
+                    <td>@Html.DisplayFor(model => model.ProgrameTable.Name)</td>
+                </tr>
+                <tr>
+                    <th class="bg-light">@Html.DisplayNameFor(model => model.StudentTable.Name)</th>
+                    <td>@Html.DisplayFor(model => model.StudentTable.Name)</td>
+                </tr>
+                <tr>
+                    <th class="bg-light">@Html.DisplayNameFor(model => model.UserTable.FullName)</th>
+                    <td>@Html.DisplayFor(model => model.UserTable.FullName)</td>
+                </tr>
+                <tr>
+                    <th class="bg-light">@Html.DisplayNameFor(model => model.ClassTable.Name)</th>
+                    <td>@Html.DisplayFor(model => model.ClassTable.Name)</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="card-footer text-center">
+        @Html.ActionLink("Edit", "Edit", new { id = Model.SubmissionFeeID }, new { @class = "btn btn-primary mx-2" })
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-secondary mx-2" })
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.SubmissionFeeID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

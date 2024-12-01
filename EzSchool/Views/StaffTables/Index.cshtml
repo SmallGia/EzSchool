@@ -12,7 +12,7 @@
     </div>
     <div class="card-body">
         <div class="table-responsive">
-            <table class="table table-bordered text-center" id="dataTable" width="100%" cellspacing="0">
+            <table class="table table-bordered text-center align-middle" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
                         <th>
@@ -44,46 +44,46 @@
                     @foreach (var item in Model)
                     {
                         <tr>
-                            <td>
+                            <td class="align-middle">
                                 @Html.DisplayFor(modelItem=>item.StaffID)
                             </td>
-                            <td>
+                            <td class="align-middle">
                                 @Html.DisplayFor(modelItem => item.Name)
                             </td>
-                            <td>
+                            <td class="align-middle">
                                 @Html.DisplayFor(modelItem => item.ContactNo)
                             </td>
-                            <td>
+                            <td class="align-middle">
                                 @Html.DisplayFor(modelItem => item.BasicSalary)
                             </td>
-                            <td>
+                            <td class="align-middle">
                                 @Html.DisplayFor(modelItem => item.Address)
                             </td>
-                            <td>
+                            <td class="align-middle">
                                 @*@Url.Content(item.Photo)*@
                                 @if (!string.IsNullOrEmpty(item.Photo))
                                 {
-                                    <img class="img-profile rounded-circle"
-                                         src="@Url.Content(item.Photo)" height="100" width="100">
+                                    <img class="img-profile rounded"
+                                         src="@Url.Content(item.Photo)" height="112" width="97">
                                 }
 
                             </td>
-                            <td>
+                            <td class="align-middle">
                                 @Html.DisplayFor(modelItem => item.IsActive)
                             </td>
 
-                            <td class="btn-group">
-                                @{
+                            <td class="btn btn-group-vertical align-middle">
+                                @*@{
                                     if (item.DesignationID == 1 || item.DesignationID == 4 || item.DesignationID == 5)
                                     {
                                         @Html.ActionLink("Class Time Table", "TeacherReport", "TimeTableReports", new { id = item.StaffID }, new { @class = "btn btn-primary" })
                                     }
-                                }
-                                @Html.ActionLink("Attendance", "StaffAttendance", "AttendanceReports", new { id = item.StaffID }, new { @class = "btn btn-info" })
+                                }*@
+                                @*@Html.ActionLink("Attendance", "StaffAttendance", "AttendanceReports", new { id = item.StaffID }, new { @class = "btn btn-info" })*@
                                 @Html.ActionLink("Edit", "Edit", new { id = item.StaffID }, new { @class = "btn btn-primary" })
                                 @Html.ActionLink("Details", "Details", new { id = item.StaffID }, new { @class = "btn btn-info" })
-                                @Html.ActionLink("Add Resume", "CheckCV", "Resume", new { id = item.StaffID }, new { @class = "btn btn-success" })
-                                @*@Html.ActionLink("Delete", "Delete", new { id=item.StaffID }, new {@class = "btn btn-danger"})*@
+                                @Html.ActionLink("Delete","Delete",new { id = item.StaffID}, new {@class = "btn btn-danger"})
+                                @*@Html.ActionLink("Add Resume", "CheckCV", "Resume", new { id = item.StaffID }, new { @class = "btn btn-success" })*@
                             </td>
                         </tr>
                     }

@@ -4,184 +4,68 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Delete</h2>
-
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>StaffTable</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ContactNo)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ContactNo)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.BasicSalary)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.BasicSalary)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.EmailAddress)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.EmailAddress)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Address)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Address)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Qualification)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Qualification)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Photo)
-        </dt>
-
-        <dd>
-            @{
-                string imagepath = Model.Photo;
-                <img src="@Url.Content(imagepath)" alt="Photo" style="width:100px;heigt:150px;max-width:100%;height:auto" />
-            }
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.IsActive)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.IsActive)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Gender)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Gender)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.HomePhone)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.HomePhone)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Doyouhaveanydisability)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Doyouhaveanydisability)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Ifdisabilityyesthengiveusdetail)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Ifdisabilityyesthengiveusdetail)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Areyoutakinganymedication)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Areyoutakinganymedication)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Ifedicationyesthengiveusdetail)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Ifedicationyesthengiveusdetail)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.AnyCriminaloffcenceagainstyou)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AnyCriminaloffcenceagainstyou)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Ifcriminaloffcenceyesthengiveusdetail)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Ifcriminaloffcenceyesthengiveusdetail)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.RegistrationDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.RegistrationDate)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DesignationTable.Title)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DesignationTable.Title)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.UserTable.FullName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.UserTable.FullName)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+<div class="container mt-4">
+    <div class="card shadow">
+        <div class="card-header text-white bg-gradient-danger">
+            <h3 class="m-0">Xóa Thông Tin Nhân Viên</h3>
         </div>
-    }
+        <div class="card-body">
+            <h3 class="text-danger">Bạn có chắc chắn muốn xóa thông tin này?</h3>
+            <div class="row">
+                <!-- Ảnh đại diện -->
+                <div class="col-md-4 text-center">
+                    @if (!string.IsNullOrEmpty(Model.Photo))
+                    {
+                        <img class="img-thumbnail rounded-circle mb-3" src="@Url.Content(Model.Photo)" alt="Staff Photo" style="width: 150px; height: 150px;">
+                    }
+                    else
+                    {
+                        <img class="img-thumbnail rounded-circle mb-3" src="default-avatar.png" alt="Default Photo" style="width: 150px; height: 150px;">
+                    }
+                    <h4>@Model.Name</h4>
+                </div>
+
+                <!-- Thông tin cá nhân -->
+                <div class="col-md-8">
+                    <h5 class="text-secondary">Thông Tin Cá Nhân</h5>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p><strong>Giới tính:</strong> @Model.Gender</p>
+                            <p><strong>Số điện thoại:</strong> @Model.ContactNo</p>
+                            <p><strong>Lương cơ bản:</strong> @Model.BasicSalary VND</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p><strong>Email:</strong> @Model.EmailAddress</p>
+                            <p><strong>Địa chỉ:</strong> @Model.Address</p>
+                            <p><strong>Trình độ:</strong> @Model.Qualification</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Thông tin công việc -->
+            <div class="mt-4">
+                <h5 class="text-secondary">Thông Tin Công Việc</h5>
+                <div class="row">
+                    <div class="col-md-6">
+                        <p><strong>Chức vụ:</strong> @Model.DesignationTable.Title</p>
+                        <p><strong>Ngày đăng ký:</strong> @Model.RegistrationDate.ToString("dd/MM/yyyy")</p>
+                    </div>
+                    @*<div class="col-md-6">
+                        <p><strong>Người dùng:</strong> @Model.UserTable.FullName</p>
+                    </div>*@
+                </div>
+            </div>
+
+            <!-- Nút thao tác -->
+            <div class="d-flex justify-content-end mt-4">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    <input type="submit" value="Delete" class="btn btn-danger" />
+                    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-info" });
+                }
+            </div>
+        </div>
+    </div>
 </div>

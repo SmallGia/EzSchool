@@ -17,13 +17,32 @@ namespace EzSchool.Controllers
         // GET: ExpensesTables
         public ActionResult Index()
         {
-            var expensesTables = db.ExpensesTables.Include(e => e.ExpenseTypeTable).Include(e => e.UserTable);
-            return View(expensesTables.ToList());
+            if (string.IsNullOrEmpty(Convert.ToString(Session["UserName"])))
+            {
+                return RedirectToAction("Login", "Home");
+            }
+            int userid = Convert.ToInt32(Convert.ToString(Session["UserID"]));
+            int usertypeid = Convert.ToInt32(Convert.ToString(Session["UserTypeID"]));
+            if (usertypeid == 1)
+            {
+                var expensesTables = db.ExpensesTables.Include(e => e.ExpenseTypeTable).Include(e => e.UserTable);
+                return View(expensesTables.ToList());
+            }
+            else
+            {
+                var expensesTables = db.ExpensesTables.Include(e => e.ExpenseTypeTable).Include(e => e.UserTable).Where(s => s.UserID == userid);
+                return View(expensesTables.ToList());
+            }
+
         }
 
         // GET: ExpensesTables/Details/5
         public ActionResult Details(int? id)
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["UserName"])))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -39,8 +58,13 @@ namespace EzSchool.Controllers
         // GET: ExpensesTables/Create
         public ActionResult Create()
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["UserName"])))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             ViewBag.ExpensesTypeID = new SelectList(db.ExpenseTypeTables, "ExpensesTypeID", "Name");
-            ViewBag.UserID = new SelectList(db.UserTables, "UserID", "FullName");
+            var filteruserid = db.UserTables.Where(s => s.UserTypeID != 1);
+            ViewBag.UserID = new SelectList(filteruserid, "UserID", "FullName");
             return View();
         }
 
@@ -49,8 +73,12 @@ namespace EzSchool.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ExpensesID,ExpensesTypeID,ExpensesDate,Amount,Reason,UserID")] ExpensesTable expensesTable)
+        public ActionResult Create(ExpensesTable expensesTable)
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["UserName"])))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             if (ModelState.IsValid)
             {
                 db.ExpensesTables.Add(expensesTable);
@@ -66,6 +94,10 @@ namespace EzSchool.Controllers
         // GET: ExpensesTables/Edit/5
         public ActionResult Edit(int? id)
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["UserName"])))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -85,8 +117,12 @@ namespace EzSchool.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ExpensesID,ExpensesTypeID,ExpensesDate,Amount,Reason,UserID")] ExpensesTable expensesTable)
+        public ActionResult Edit(ExpensesTable expensesTable)
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["UserName"])))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             if (ModelState.IsValid)
             {
                 db.Entry(expensesTable).State = EntityState.Modified;
@@ -101,6 +137,10 @@ namespace EzSchool.Controllers
         // GET: ExpensesTables/Delete/5
         public ActionResult Delete(int? id)
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["UserName"])))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -118,6 +158,10 @@ namespace EzSchool.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["UserName"])))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             ExpensesTable expensesTable = db.ExpensesTables.Find(id);
             db.ExpensesTables.Remove(expensesTable);
             db.SaveChanges();

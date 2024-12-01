@@ -1,50 +1,37 @@
 ﻿@model DatabaseAccess.SessionTable
 
 @{
-    ViewBag.Title = "Session";
+    ViewData["Title"] = "Details";
 }
 
-<h2>Details</h2>
-
-<div>
-    <h4>Session</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            Session
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-
-        <dt>
-            Start Date
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.StartDate)
-        </dd>
-
-        <dt>
-            End Date
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.EndDate)
-        </dd>
-
-        <dt>
-            User
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.UserTable.FullName)
-        </dd>
-
-    </dl>
+<div class="card shadow-lg">
+    <div class="card-header bg-gradient-primary text-white">
+        <h4 class="card-title">Session Details</h4>
+    </div>
+    <div class="card-body">
+        <table class="table table-bordered table-hover text-center">
+            <tbody>
+                <tr>
+                    <th class="bg-light">Session</th>
+                    <td>@Html.DisplayFor(model => model.Name)</td>
+                </tr>
+                <tr>
+                    <th class="bg-light">Start Date</th>
+                    <td>@Html.DisplayFor(model => model.StartDate)</td>
+                </tr>
+                <tr>
+                    <th class="bg-light">End Date</th>
+                    <td>@Html.DisplayFor(model => model.EndDate)</td>
+                </tr>
+                <tr>
+                    <th class="bg-light">User</th>
+                    <td>@Html.DisplayFor(model => model.UserTable.FullName)</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="card-footer text-center">
+        @Html.ActionLink("Edit", "Edit", new { id = Model.SessionID }, new { @class = "btn btn-primary mx-2" })
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-secondary mx-2" })
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.SessionID }, new { @class = "btn btn-primary" })
-    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-default" })
-</p>

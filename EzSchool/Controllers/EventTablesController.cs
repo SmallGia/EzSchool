@@ -21,8 +21,19 @@ namespace EzSchool.Controllers
             {
                 return RedirectToAction("Login", "Home");
             }
-            var eventTables = db.EventTables.Include(e => e.UserTable).OrderByDescending(e => e.EventID);
-            return View(eventTables.ToList());
+            int userid = Convert.ToInt32(Convert.ToString(Session["UserID"]));
+            int usertypeid = Convert.ToInt32(Convert.ToString(Session["UserTypeID"]));
+            if (usertypeid != 1)
+            {
+                var eventTables = db.EventTables.Include(e => e.UserTable).Where(s => s.UserID == userid).OrderByDescending(e => e.EventID);
+                return View(eventTables.ToList());
+            }
+            else
+            {
+                var eventTables = db.EventTables.Include(e => e.UserTable).OrderByDescending(e => e.EventID);
+                return View(eventTables.ToList());
+            }
+
         }
 
         // GET: EventTables/Details/5
@@ -51,7 +62,9 @@ namespace EzSchool.Controllers
             {
                 return RedirectToAction("Login", "Home");
             }
-            ViewBag.UserID = new SelectList(db.UserTables, "UserID", "FullName");
+
+            var filteredUsers = db.UserTables.Where(u => u.UserTypeID != 1).ToList();
+            ViewBag.UserID = new SelectList(filteredUsers, "UserID", "FullName");
             return View();
         }
 
@@ -67,7 +80,7 @@ namespace EzSchool.Controllers
                 return RedirectToAction("Login", "Home");
             }
             int userid = Convert.ToInt32(Convert.ToString(Session["UserID"]));
-            eventTable.UserID = userid;
+            //eventTable.UserID = userid;
             if (ModelState.IsValid)
             {
                 db.EventTables.Add(eventTable);

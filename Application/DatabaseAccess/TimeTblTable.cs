@@ -19,8 +19,10 @@ namespace DatabaseAccess
         public int UserID { get; set; }
         public int StaffID { get; set; }
         [DataType(DataType.Time)]
+        [Range(typeof(TimeSpan), "06:00:00", "18:00:00", ErrorMessage = "StartTime must be between 06:00 and 18:00")]
         public System.TimeSpan StartTime { get; set; }
         [DataType(DataType.Time)]
+        [Range(typeof(TimeSpan), "06:00:00", "18:00:00", ErrorMessage = "EndTime must be between 06:00 and 18:00")]
         public System.TimeSpan EndTime { get; set; }
         public string Day { get; set; }
         public int ClassSubjectID { get; set; }

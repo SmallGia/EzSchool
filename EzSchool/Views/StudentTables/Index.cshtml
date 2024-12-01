@@ -4,16 +4,23 @@
     ViewBag.Title = "Index";
 }
 
-<p>
-    @Html.ActionLink("New Regisieration", "Create", null, new { @class = "btn btn-success" })
-</p>
+@{
+    int usertypeid = Convert.ToInt32(Convert.ToString(Session["UserTypeID"]));
+    if (usertypeid == 1)
+    {
+        <p>
+            @Html.ActionLink("New Regisieration", "Create", null, new { @class = "btn btn-success" })
+        </p>
+    }
+}
+
 <div class="card shadow mb-4">
     <div class="card-header py-3">
         <h6 class="m-0 font-weight-bold text-primary">All Students</h6>
     </div>
     <div class="card-body">
         <div class="table-responsive">
-            <table class="table table-bordered text-center" id="dataTable" width="100%" cellspacing="0">
+            <table class="table table-bordered text-center align-middle" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
                         <th>
@@ -43,7 +50,6 @@
                         <th>
                             Class
                         </th>
-
                         <th>
                             Actions
                         </th>
@@ -53,49 +59,54 @@
                     @foreach (var item in Model)
                     {
                         <tr>
-                            <td>
+                            <td class="align-middle">
                                 @Html.DisplayFor(modelItem => item.StudentID)
                             </td>
-                            <td>
+                            <td class="align-middle">
                                 @Html.DisplayFor(modelItem => item.Name)
                             </td>
-                            <td>
+                            <td class="align-middle">
                                 @Html.DisplayFor(modelItem => item.FatherName)
                             </td>
-                            <td>
+                            <td class="align-middle">
                                 @Html.DisplayFor(modelItem => item.DateofBirth)
                             </td>
-                            <td>
+                            <td class="align-middle">
                                 @Html.DisplayFor(modelItem => item.Gender)
                             </td>
-                            <td>
+                            <td class="align-middle">
                                 @Html.DisplayFor(modelItem => item.ContactNo)
                             </td>
-                            <td>
+                            <td class="align-middle">
                                 @if (!string.IsNullOrEmpty(item.Photo))
                                 {
-                                    <img class="img-profile rounded-circle"
-                                         src="@Url.Content(item.Photo)" height="100" width="100">
+                                    <img class="img-profile rounded"
+                                         src="@Url.Content(item.Photo)" height="112" width="97">
                                 }
                             </td>
-                            <td>
+                            <td class="align-middle">
                                 @Html.DisplayFor(modelitem => item.UserTable.FullName)
                             </td>
-                            <td>
+                            <td class="align-middle">
                                 @Html.DisplayFor(modelItem => item.ClassTable.Name)
                             </td>
-
-                            <td class="btn-group">
+                            <td class="align-middle btn btn-group-vertical">
                                 @Html.ActionLink("Timetable", "StudentReport", "TimeTableReports", new { id = item.StudentID }, new { @class = "btn btn-info" })
                                 @Html.ActionLink("Attendance", "StudentAttendance", "AttendanceReports", new { id = item.StudentID }, new { @class = "btn btn-info" })
-                                @Html.ActionLink("Edit", "Edit", new { id = item.StudentID }, new { @class = "btn btn-primary" })
-                                @Html.ActionLink("Details", "Details", new { id = item.StudentID }, new { @class = "btn btn-info" })
-                                @Html.ActionLink("Delete", "Delete", new { id = item.StudentID }, new { @class = "btn btn-danger" })
+                                @{
+                                    if (usertypeid == 1)
+                                    {
+                                        @Html.ActionLink("Edit", "Edit", new { id = item.StudentID }, new { @class = "btn btn-info" })
+                                        @Html.ActionLink("Details", "Details", new { id = item.StudentID }, new { @class = "btn btn-info" })
+                                        @Html.ActionLink("Delete", "Delete", new { id = item.StudentID }, new { @class = "btn btn-info" })
+                                    }
+                                }
                             </td>
                         </tr>
                     }
                 </tbody>
             </table>
+
         </div>
     </div>
 </div>
