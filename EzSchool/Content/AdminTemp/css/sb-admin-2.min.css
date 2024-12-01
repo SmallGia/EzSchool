@@ -6152,6 +6152,9 @@ a.close.disabled {
     vertical-align: text-top !important
 }
 
+.bg-primary2 {
+    background-color: #032953 !important
+}
 .bg-primary {
     background-color: #4e73df !important
 }

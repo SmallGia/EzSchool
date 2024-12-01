@@ -62,7 +62,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav bg-primary2 sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
@@ -79,7 +79,7 @@
             <li class="nav-item active">
                 <a class="nav-link" href="~/Home/About">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span>
+                    <span>Home</span>
                 </a>
             </li>
 
@@ -241,11 +241,11 @@
                         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                             <div class="bg-white py-2 collapse-inner rounded">
                                 <h6 class="collapse-header">Custom Configuration:</h6>
-                                @Html.ActionLink("Session", "Index", "SessionTables", null, new { @class = "collapse-item" })
+                                @*@Html.ActionLink("Session", "Index", "SessionTables", null, new { @class = "collapse-item" })*@
                                 @Html.ActionLink("Subjects", "Index", "SubjectTables", null, new { @class = "collapse-item" })
                                 @Html.ActionLink("Programes", "Index", "ProgrameTables", null, new { @class = "collapse-item" })
                                 @Html.ActionLink("Designations", "Index", "DesignationTables", null, new { @class = "collapse-item" })
-                                @Html.ActionLink("Annual Fee/Promate Fee", "Index", "AnnualTables", null, new { @class = "collapse-item" })
+                                @*@Html.ActionLink("Annual Fee/Promate Fee", "Index", "AnnualTables", null, new { @class = "collapse-item" })*@
                             </div>
                         </div>
                     </li>

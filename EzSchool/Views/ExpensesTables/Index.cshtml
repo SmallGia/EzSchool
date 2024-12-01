@@ -48,22 +48,22 @@
                     @foreach (var item in Model)
                     {
                         <tr>
-                            <td>
+                            <td class="align-middle">
                                 @Html.DisplayFor(modelItem => item.ExpensesDate)
                             </td>
-                            <td>
+                            <td class="align-middle">
                                 @Html.DisplayFor(modelItem => item.Amount)
                             </td>
-                            <td>
+                            <td class="align-middle">
                                 @Html.DisplayFor(modelItem => item.Reason)
                             </td>
-                            <td>
+                            <td class="align-middle">
                                 @Html.DisplayFor(modelItem => item.ExpenseTypeTable.Name)
                             </td>
-                            <td>
+                            <td class="align-middle">
                                 @Html.DisplayFor(modelItem => item.UserTable.FullName)
                             </td>
-                            <td class="btn btn-group-vertical">
+                            <td class="btn btn-group-vertical align-middle">
                                 @{
                                     if (usertypeid == 1)
                                     {

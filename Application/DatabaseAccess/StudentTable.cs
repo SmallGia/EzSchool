@@ -26,27 +26,42 @@ namespace DatabaseAccess
             this.StudentPromotTables = new HashSet<StudentPromotTable>();
             this.SubmissionFeeTables = new HashSet<SubmissionFeeTable>();
         }
-    
+        [Required(ErrorMessage = "{0} Required Field!")]
         public int StudentID { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         public int SessionID { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         public int ProgrameID { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         public int ClassID { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         public int UserID { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         public string Name { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         public string FatherName { get; set; }
         [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public System.DateTime DateofBirth { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         public string Gender { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
+        [Phone(ErrorMessage = "Invalid Phone Number")]
         public string ContactNo { get; set; }
         public string Photo { get; set; }
         [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [Required(ErrorMessage = "{0} Required Field!")]
         public System.DateTime AddmissionDate { get; set; }
         public string PreviousSchool { get; set; }
         public Nullable<double> PreviousPercentage { get; set; }
 
         [EmailAddress(ErrorMessage = "Invalid Email Address")]
+        [Required(ErrorMessage = "{0} Required Field!")]
         public string EmailAddress { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         public string Address { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         public string Nationality { get; set; }
         [NotMapped]
         [Required(ErrorMessage = "{0} Required Field!")]

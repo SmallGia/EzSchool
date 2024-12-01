@@ -2192,6 +2192,7 @@
     <Content Include="Views\Home\ChangePassword.cshtml" />
     <Content Include="Views\TimeTblTables\Index2.cshtml" />
     <Content Include="Views\TimeTblTables\_ScheduleEventsPartial.cshtml" />
+    <Content Include="Views\TimeTblTables\Index3.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

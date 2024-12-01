@@ -42,15 +42,24 @@ namespace DatabaseAccess
             this.SubmissionFeeTables = new HashSet<SubmissionFeeTable>();
             this.TimeTblTables = new HashSet<TimeTblTable>();
         }
-    
+        [Required(ErrorMessage = "{0} Required Field!")]
+
         public int UserID { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         public int UserTypeID { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         public string FullName { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         public string UserName { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         public string Password { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
+        [Phone(ErrorMessage = "Invalid Phone Number")]
         public string ContactNo { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         [EmailAddress(ErrorMessage = "Invalid Email Address")]
         public string EmailAddress { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         public string Address { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

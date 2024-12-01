@@ -106,26 +106,35 @@ public class HomeController : Controller
     public ActionResult About()
     {
         int userId = Convert.ToInt32(Session["UserID"]);
-        var student = GetStudentByUserId(userId);
-        var sessionName = db.SessionTables
-                    .Where(s => s.SessionID == student.SessionID)
-                    .Select(s => s.Name)
-                    .FirstOrDefault();
-        var className = db.ClassTables
-                  .Where(c => c.ClassID == student.ClassID)
-                  .Select(c => c.Name)
-                  .FirstOrDefault();
+        int usertypeid = Convert.ToInt32(Session["UserTypeID"]);
+        if (usertypeid != 1) {
+            var student = GetStudentByUserId(userId);
+            var sessionName = db.SessionTables
+                        .Where(s => s.SessionID == student.SessionID)
+                        .Select(s => s.Name)
+                        .FirstOrDefault();
+            var className = db.ClassTables
+                      .Where(c => c.ClassID == student.ClassID)
+                      .Select(c => c.Name)
+                      .FirstOrDefault();
 
-        var programName = db.ProgrameTables
-                            .Where(p => p.ProgrameID == student.ProgrameID)
-                            .Select(p => p.Name)
-                            .FirstOrDefault();
-        ViewData["Message"] = "Welcome to EzSchool";
-        ViewBag.Student = student;
-        ViewBag.SessionName = sessionName;
-        ViewBag.ClassName = className;
-        ViewBag.ProgramName = programName;
-        return View();
+            var programName = db.ProgrameTables
+                                .Where(p => p.ProgrameID == student.ProgrameID)
+                                .Select(p => p.Name)
+                                .FirstOrDefault();
+            ViewData["Message"] = "Welcome to EzSchool";
+            ViewBag.Student = student;
+            ViewBag.SessionName = sessionName;
+            ViewBag.ClassName = className;
+            ViewBag.ProgramName = programName;
+            return View();
+        }
+        else
+        {
+            ViewData["Message"] = "Welcome to EzSchool";
+            return View();
+        }
+
     }
     public ActionResult ChangePassword()
     {
