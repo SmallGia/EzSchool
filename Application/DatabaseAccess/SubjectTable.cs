@@ -20,13 +20,17 @@ namespace DatabaseAccess
         {
             this.ClassSubjectTables = new HashSet<ClassSubjectTable>();
         }
-    
+        [Required(ErrorMessage = "{0} Required Field!")]
         public int SubjectID { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         public int UserID { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         public string Name { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         [DataType(DataType.Date)]
         public System.DateTime RegDate { get; set; }
         public string Description { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         public int TotalMarks { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

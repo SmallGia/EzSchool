@@ -11,15 +11,24 @@ namespace DatabaseAccess
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class ExamMarksTable
     {
+
+        [Required(ErrorMessage = "{0} Required Field!")]
         public int MarksID { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         public int ExamID { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         public int ClassSubjectID { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         public int StudentID { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         public int UserID { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         public int TotalMarks { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         public int ObtainMarks { get; set; }
     
         public virtual ClassSubjectTable ClassSubjectTable { get; set; }

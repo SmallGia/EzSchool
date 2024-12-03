@@ -15,17 +15,25 @@ namespace DatabaseAccess
 
     public partial class TimeTblTable
     {
+        [Required(ErrorMessage = "{0} Required Field!")]
         public int TimeTableID { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         public int UserID { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         public int StaffID { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         [DataType(DataType.Time)]
         [Range(typeof(TimeSpan), "06:00:00", "18:00:00", ErrorMessage = "StartTime must be between 06:00 and 18:00")]
         public System.TimeSpan StartTime { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         [DataType(DataType.Time)]
         [Range(typeof(TimeSpan), "06:00:00", "18:00:00", ErrorMessage = "EndTime must be between 06:00 and 18:00")]
         public System.TimeSpan EndTime { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         public string Day { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         public int ClassSubjectID { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         public bool IsActive { get; set; }
     
         public virtual ClassSubjectTable ClassSubjectTable { get; set; }

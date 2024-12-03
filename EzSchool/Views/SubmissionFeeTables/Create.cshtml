@@ -99,7 +99,7 @@
             </div>
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Create" class="btn btn-success" />
+                    <input type="submit" value="Create" class="btn btn-success" id="submitBtn" />
                     @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-defaut" })
                 </div>
             </div>
@@ -111,6 +111,70 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
+        $(document).ready(function () {
+            $('#submitBtn').click(function (event) {
+                var isValid = true;
+
+                // Check if PromoteID is selected
+                if ($('#promoteid').val() === "") {
+                    isValid = false;
+                    alert("Please select a Promote ID.");
+                }
+
+                // Check if StudentID is selected
+                if ($('#StudentID').val() === "") {
+                    isValid = false;
+                    alert("Please select a Student.");
+                }
+
+                // Check if ProgrameID is selected
+                if ($('#ProgrameID').val() === "") {
+                    isValid = false;
+                    alert("Please select a Program.");
+                }
+
+                // Check if ClassID is selected
+                if ($('#ClassID').val() === "") {
+                    isValid = false;
+                    alert("Please select a Class.");
+                }
+
+                // Check if Amount is entered
+                if ($('#Amount').val() === "") {
+                    isValid = false;
+                    alert("Please enter the Fee Amount.");
+                }
+
+                // Check if SubmissionDate is selected
+                if ($('#date').val() === "") {
+                    isValid = false;
+                    alert("Please select a Fee Submission Date.");
+                }
+
+                // Check if FeesMonth is entered
+                if ($('#feeofmonth').val() === "") {
+                    isValid = false;
+                    alert("Please enter the Fee of the Month.");
+                }
+
+                // Check if Description is entered
+                //if ($('#Description').val() === "") {
+                //    isValid = false;
+                //    alert("Please enter a Description.");
+                //}
+
+                // Check if UserID is selected
+                if ($('#UserID').val() === "") {
+                    isValid = false;
+                    alert("Please select a User.");
+                }
+
+                if (!isValid) {
+                    event.preventDefault(); // Prevent form submission if validation fails
+                }
+            });
+        });
+
 
         $('#FindPromoteRecord').click(function () {
             $.ajax({

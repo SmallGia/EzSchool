@@ -1844,6 +1844,7 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\EmployeePhoto\default.png" />
+    <Content Include="Content\img\vu2.png" />
     <Content Include="Content\StudentPhoto\default.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />

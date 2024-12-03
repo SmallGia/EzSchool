@@ -23,12 +23,18 @@ namespace DatabaseAccess
             this.SubmissionFeeTables = new HashSet<SubmissionFeeTable>();
             this.StudentTables = new HashSet<StudentTable>();
         }
-    
+
+        [Required(ErrorMessage = "{0} Required Field!")]
         public int ProgrameID { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         public int UserID { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         public string Name { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public System.DateTime StartDate { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         public bool IsActive { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

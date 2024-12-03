@@ -15,11 +15,17 @@ namespace DatabaseAccess
 
     public partial class AttendanceTable
     {
+        [Required(ErrorMessage = "{0} Required Field!")]
         public int AttendanceID { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         public int SessionID { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         public int StudentID { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public System.DateTime AttendDate { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         [DataType(DataType.Time)]
         public System.TimeSpan AttendTime { get; set; }
         public int ClassID { get; set; }

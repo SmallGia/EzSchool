@@ -11,7 +11,8 @@ namespace DatabaseAccess
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class UserTypeTable
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,8 +20,9 @@ namespace DatabaseAccess
         {
             this.UserTables = new HashSet<UserTable>();
         }
-    
+        [Required(ErrorMessage = "{0} Required Field!")]
         public int UserTypeID { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         public string TypeName { get; set; }
         public string Description { get; set; }
     

@@ -11,7 +11,8 @@ namespace DatabaseAccess
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class ClassTable
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -23,9 +24,11 @@ namespace DatabaseAccess
             this.ClassSubjectTables = new HashSet<ClassSubjectTable>();
             this.StudentTables = new HashSet<StudentTable>();
         }
-    
+        [Required(ErrorMessage = "{0} Required Field!")]
         public int ClassID { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         public string Name { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         public Nullable<bool> IsActive { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

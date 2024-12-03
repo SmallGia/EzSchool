@@ -15,12 +15,18 @@ namespace DatabaseAccess
 
     public partial class EventTable
     {
+        [Required(ErrorMessage = "{0} Required Field!")]
         public int EventID { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         public string EventTitle { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public System.DateTime EventDate { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         public string Location { get; set; }
         public string Description { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         public int UserID { get; set; }
     
         public virtual UserTable UserTable { get; set; }

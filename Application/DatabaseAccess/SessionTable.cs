@@ -21,13 +21,18 @@ namespace DatabaseAccess
             this.ProgrameSessionTables = new HashSet<ProgrameSessionTable>();
             this.StudentTables = new HashSet<StudentTable>();
         }
-    
+
+        [Required(ErrorMessage = "{0} Required Field!")]
         public int SessionID { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         public int UserID { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         public string Name { get; set; }
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [Required(ErrorMessage = "{0} Required Field!")]
         public System.DateTime StartDate { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public System.DateTime EndDate { get; set; }

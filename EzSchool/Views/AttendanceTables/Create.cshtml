@@ -59,9 +59,8 @@
 
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Create" class="btn btn-success" />
+                        <input type="submit" value="Create" class="btn btn-success" id="submitBtn" />
                         @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-info" })
-
                     </div>
                 </div>
             </div>
@@ -72,6 +71,43 @@
 <script src="~/Scripts/jquery-3.7.0.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function () {
+        $('#submitBtn').click(function (event) {
+            var isValid = true;
+
+            // Check if StudentID is selected
+            if ($('#StudentID').val() === "") {
+                isValid = false;
+                alert("Please select a Student.");
+            }
+
+            // Check if SessionID is selected
+            if ($('#SessionID').val() === "") {
+                isValid = false;
+                alert("Please select a Session.");
+            }
+
+            // Check if ClassID is selected
+            if ($('#ClassID').val() === "") {
+                isValid = false;
+                alert("Please select a Class.");
+            }
+
+            // Check if AttendDate is entered
+            if ($('#AttendDate').val() === "") {
+                isValid = false;
+                alert("Please enter the Attend Date.");
+            }
+
+            // Check if AttendTime is entered
+            if ($('#AttendTime').val() === "") {
+                isValid = false;
+                alert("Please enter the Attend Time.");
+            }
+
+            if (!isValid) {
+                event.preventDefault(); // Prevent form submission if validation fails
+            }
+        });
         $('#StudentID').change(function () {
             $('#ClassID').html('');
             $.ajax({

@@ -11,7 +11,8 @@ namespace DatabaseAccess
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class DesignationTable
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,10 +20,14 @@ namespace DatabaseAccess
         {
             this.StaffTables = new HashSet<StaffTable>();
         }
-    
+
+        [Required(ErrorMessage = "{0} Required Field!")]
         public int DesignationID { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         public int UserID { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         public string Title { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         public bool IsActive { get; set; }
     
         public virtual UserTable UserTable { get; set; }

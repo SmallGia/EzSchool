@@ -20,12 +20,17 @@ namespace DatabaseAccess
         {
             this.StudentPromotTables = new HashSet<StudentPromotTable>();
         }
-    
+        [Required(ErrorMessage = "{0} Required Field!")]
         public int ProgrameSessionID { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         public int UserID { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         public int SessionID { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         public int ProgrameID { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         public string Details { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public System.DateTime RegDate { get; set; }

@@ -41,9 +41,6 @@
                         <th>
                             Amount
                         </th>
-                        <th>
-                            Created By
-                        </th>
 
                         <th>Actions</th>
                     </tr>
@@ -72,9 +69,6 @@
                                 @Html.DisplayFor(modelItem => item.Amount)
                             </td>
 
-                            <td>
-                                @Html.DisplayFor(modelItem => item.UserTable.FullName)
-                            </td>
 
                             <td class="btn-group">
                                 @Html.ActionLink("Edit", "Edit", new { id = item.SubmissionFeeID }, new { @class = "btn btn-primary" })

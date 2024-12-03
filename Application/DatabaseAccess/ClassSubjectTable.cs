@@ -22,13 +22,14 @@ namespace DatabaseAccess
             this.TimeTblTables = new HashSet<TimeTblTable>();
         }
 
-        [Required]
+        [Required(ErrorMessage = "{0} Required Field!")]
         public int ClassSubjectID { get; set; }
         public int ClassID { get; set; }
-        [Required]
+        [Required(ErrorMessage = "{0} Required Field!")]
         public int SubjectID { get; set; }
-        [Required]
+        [Required(ErrorMessage = "{0} Required Field!")]
         public string Name { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         public Nullable<bool> IsActive { get; set; }
     
         public virtual ClassTable ClassTable { get; set; }

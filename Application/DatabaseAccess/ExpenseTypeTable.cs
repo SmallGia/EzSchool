@@ -11,7 +11,8 @@ namespace DatabaseAccess
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class ExpenseTypeTable
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,9 +20,11 @@ namespace DatabaseAccess
         {
             this.ExpensesTables = new HashSet<ExpensesTable>();
         }
-    
+        [Required(ErrorMessage = "{0} Required Field!")]
         public int ExpensesTypeID { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         public string Name { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         public bool IsActive { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

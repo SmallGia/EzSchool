@@ -15,6 +15,7 @@ namespace DatabaseAccess
 
     public partial class SubmissionFeeTable
     {
+        [Required(ErrorMessage = "{0} Required Field!")]
         public int SubmissionFeeID { get; set; }
         public int UserID { get; set; }
         [Required(ErrorMessage = "Please Select Student")]

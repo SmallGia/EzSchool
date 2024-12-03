@@ -20,13 +20,19 @@ namespace DatabaseAccess
         {
             this.ExamMarksTables = new HashSet<ExamMarksTable>();
         }
-    
+        [Required(ErrorMessage = "{0} Required Field!")]
         public int ExamID { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         public int UserID { get; set; }
+        [Required(ErrorMessage = "{0} Required Field!")]
         public string Title { get; set; }
         [DataType(DataType.Date)]
+        [Required(ErrorMessage = "{0} Required Field!")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public System.DateTime StartDate { get; set; }
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         [DataType(DataType.Date)]
+        [Required(ErrorMessage = "{0} Required Field!")]
         public System.DateTime EndDate { get; set; }
         [DataType(DataType.MultilineText)]
         public string Descrption { get; set; }
