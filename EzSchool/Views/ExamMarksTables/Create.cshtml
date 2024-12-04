@@ -16,75 +16,75 @@
         {
             @Html.AntiForgeryToken()
 
-            <div class="form-horizontal">
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-horizontal">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
 
-                <div class="row">
-                    <div class="col-md-5">
-                        <div class="form-group">
-                            @Html.Label("Promote ID", htmlAttributes: new { @class = "control-label" })
-                            @Html.DropDownList("PromoteID", new SelectList(ViewBag.PromoteIDs, "Value", "Text"), null, new { @class = "form-control", @id = "promoteid" })
-                        </div>
-                    </div>
-
-                    <div class="col-md-2">
-                        <div class="form-group">
-                            <input type="button" class="btn btn-primary" value="Find" id="FindPromoteRecord" />
-                        </div>
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="form-group">
+                        @Html.Label("Promote ID", htmlAttributes: new { @class = "control-label" })
+                        @Html.DropDownList("PromoteID", new SelectList(ViewBag.PromoteIDs, "Value", "Text"), null, new { @class = "form-control", @id = "promoteid" })
                     </div>
                 </div>
 
-
-                <div class="form-group">
-                    @Html.LabelFor(model => model.ExamID, "ExamID", htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-5">
-                        @Html.DropDownList("ExamID", null, htmlAttributes: new { @class = "form-control" })
-                        @Html.ValidationMessageFor(model => model.ExamID, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    @Html.LabelFor(model => model.StudentID, "StudentID", htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-5">
-                        @Html.DropDownList("StudentID", null, htmlAttributes: new { @class = "form-control", @id = "StudentID" })
-                        @Html.ValidationMessageFor(model => model.StudentID, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    @Html.LabelFor(model => model.ClassSubjectID, "Class Subject", htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-5">
-                        @Html.DropDownList("ClassSubjectID", null, htmlAttributes: new { @class = "form-control", @id = "ClassSubjectID" })
-                        @Html.ValidationMessageFor(model => model.ClassSubjectID, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    @Html.LabelFor(model => model.TotalMarks, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-5">
-                        @Html.EditorFor(model => model.TotalMarks, new { htmlAttributes = new { @class = "form-control", @id = "TotalMarks" } })
-                        @Html.ValidationMessageFor(model => model.TotalMarks, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    @Html.LabelFor(model => model.ObtainMarks, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-5">
-                        @Html.EditorFor(model => model.ObtainMarks, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.ObtainMarks, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-
-
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Create" class="btn btn-success" />
-                        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-defaut" })
-
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <input type="button" class="btn btn-primary" value="Find" id="FindPromoteRecord" />
                     </div>
                 </div>
             </div>
+
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.ExamID, "ExamID", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-5">
+                    @Html.DropDownList("ExamID", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.ExamID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.StudentID, "StudentID", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-5">
+                    @Html.DropDownList("StudentID", null, htmlAttributes: new { @class = "form-control", @id = "StudentID" })
+                    @Html.ValidationMessageFor(model => model.StudentID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.ClassSubjectID, "Class Subject", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-5">
+                    @Html.DropDownList("ClassSubjectID", null, htmlAttributes: new { @class = "form-control", @id = "ClassSubjectID" })
+                    @Html.ValidationMessageFor(model => model.ClassSubjectID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.TotalMarks, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-5">
+                    @Html.EditorFor(model => model.TotalMarks, new { htmlAttributes = new { @class = "form-control", @id = "TotalMarks" } })
+                    @Html.ValidationMessageFor(model => model.TotalMarks, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.ObtainMarks, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-5">
+                    @Html.EditorFor(model => model.ObtainMarks, new { htmlAttributes = new { @class = "form-control", @id = "ObtainMarks" } })
+                    @Html.ValidationMessageFor(model => model.ObtainMarks, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-success" />
+                    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-defaut" })
+
+                </div>
+            </div>
+        </div>
         }
     </div>
 </div>
@@ -109,6 +109,20 @@
                     for (var i = 0; i < response.subject.length; i++) {
                         $('#ClassSubjectID').append("<option value=" + response.subject[i].ClassSubjectID + ">" + response.subject[i].Name + "</option>");
                     }
+                     if ($('#ClassSubjectID').val()) {
+                     $.ajax({
+                         url: '@Url.Action("GetTotalMarks", "ExamMarksTables")',
+                         type: 'GET',
+                         data: { sid: $('#ClassSubjectID').val() },
+                         dataType: 'Json',
+                         success: function (response) {
+                             $('#TotalMarks').val(response.data);
+                         },
+                         error: function () {
+                             console.error("Error fetching total marks.");
+                         }
+                     });
+                 }
                 },
                 error: function (xhr, status, error) {
                     console.error("Error: " + error);
@@ -116,7 +130,7 @@
             });
         });
 
-        $('#ClassSubjectID').change(function () {
+        @*$('#ClassSubjectID').change(function () {
             $.ajax({
                 url: '@Url.Action("GetTotalMarks", "ExamMarksTables")',
                 type: 'GET',
@@ -129,6 +143,18 @@
 
                 }
             });
+        });*@
+        $('#ObtainMarks').on('input', function () {
+            var totalMarks = parseFloat($('#TotalMarks').val());
+            var obtainMarks = parseFloat($(this).val());
+
+            if (obtainMarks > totalMarks) {
+                alert('Obtain Marks cannot be greater than Total Marks.');
+                $(this).val(totalMarks);
+            } else if (obtainMarks < 0) {
+                alert('Obtain Marks cannot be negative.');
+                $(this).val(0);
+            }
         });
     });
 </script>

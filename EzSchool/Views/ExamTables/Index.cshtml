@@ -20,7 +20,7 @@
     </div>
     <div class="card-body">
         <div class="table-responsive">
-            <table class="table table-bordered text-center" id="dataTable" width="100%" cellspacing="0">
+            <table class="table table-bordered text-center align-middle" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
                         <th>
@@ -47,22 +47,22 @@
                     @foreach (var item in Model)
                     {
                         <tr>
-                            <td>
+                            <td  class="align-middle">
                                 @Html.DisplayFor(modelItem => item.Title)
                             </td>
-                            <td>
+                            <td class=" align-middle" >
                                 @Html.DisplayFor(modelItem => item.StartDate)
                             </td>
-                            <td>
+                            <td class=" align-middle">
                                 @Html.DisplayFor(modelItem => item.EndDate)
                             </td>
-                            <td>
+                            <td class=" align-middle">
                                 @Html.DisplayFor(modelItem => item.Descrption)
                             </td>
                             @*<td>
                                 @Html.DisplayFor(modelItem => item.UserTable.FullName)
                             </td>*@
-                        <td class="btn btn-group-vertical">
+                        <td class="btn btn-group-vertical  align-middle">
                             @{
                                 if (usertypeid == 1)
                                 {

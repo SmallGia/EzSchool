@@ -3805,7 +3805,7 @@ a {
 .cd-schedule__name, .cd-schedule__event a::before, .cd-schedule-modal__name, .cd-schedule-modal__date {
     display: block;
     color: hsl(0, 0%, 100%);
-    color: var(--color-white);
+    color: var(--color-black);
     font-weight: bold;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale

@@ -22,7 +22,7 @@
     </div>
     <div class="card-body">
         <div class="table-responsive">
-            <table class="table table-bordered text-center" id="dataTable" width="100%" cellspacing="0">
+            <table class="table table-bordered text-center align-middle" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
                         <th>
@@ -57,32 +57,32 @@
                     @foreach (var item in Model)
                     {
                         <tr>
-                            <td>
+                            <td class="align-middle">
                                 @Html.DisplayFor(modelItem => item.StudentPromotID)
                             </td>
-                            <td>
+                            <td class="align-middle">
                                 @Html.DisplayFor(modelItem => item.StudentTable.Name)
                             </td>
-                            <td>
+                            <td class="align-middle">
                                 @Html.DisplayFor(modelItem => item.PromoteDate)
                             </td>
-                            <td>
+                            <td class="align-middle">
                                 @Html.DisplayFor(modelItem => item.AnnualFee)
                             </td>
-                            <td>
+                            <td class="align-middle">
                                 @Html.DisplayFor(modelItem => item.IsActive)
                             </td>
-                            <td>
+                            <td class="align-middle">
                                 @Html.DisplayFor(modelItem => item.IsSubmit)
                             </td>
-                            <td>
+                            <td class="align-middle">
                                 @Html.DisplayFor(modelItem => item.ClassTable.Name)
                             </td>
-                            <td>
+                            <td class="align-middle">
                                 @Html.DisplayFor(modelItem => item.SectionTable.SectionName)
                             </td>
 
-                            <td class="btn-group">
+                            <td class="btn-group-vertical align-middle">
                                 @{
                                     if (usertypeid == 1)
                                     {

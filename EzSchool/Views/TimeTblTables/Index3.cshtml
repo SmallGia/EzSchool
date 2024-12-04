@@ -95,11 +95,9 @@
                                            data-end="@item.EndTime.ToString("hh\\:mm")"
                                            data-content="event-@item.TimeTableID"
                                            data-event="event-@item.ClassSubjectTable.SubjectID"
-                                           href="#0">
-                                            <em class="cd-schedule__name">@item.ClassSubjectTable.Name</em>
-                                            <em style="font-weight: bold; color: #ffffff; font-size: 0.7em;">Teacher: @item.StaffTable.Name</em>
-
-
+                                           href="#0" style="color: black;">
+                                            <em class="cd-schedule__name" style="color: black;">@item.ClassSubjectTable.Name</em>
+                                            <em style="font-weight: bold; color: #000000; font-size: 0.7em;">Teacher: @item.StaffTable.Name</em>
                                         </a>
                                     </li>
                                 }
