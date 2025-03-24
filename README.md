@@ -1,6 +1,6 @@
 # EzSchool
 
-EzSchool là một hệ thống quản lý trường học giúp đơn giản hóa các quy trình quản lý học sinh, giáo viên, khóa học và thời khóa biểu. Dự án này sử dụng công nghệ **ASP.NET, C#, JavaScript, SCSS** cùng với **MySQL** để lưu trữ dữ liệu.
+EzSchool là một hệ thống quản lý trường học giúp đơn giản hóa các quy trình quản lý học sinh, giáo viên, khóa học và thời khóa biểu. Dự án này sử dụng công nghệ **ASP.NET, C#, JavaScript, SCSS** cùng với **MySQL** để lưu trữ dữ liệu. Đây là đồ án cuối kì môn lập trình web.
 
 ## 🚀 Tính năng
 
@@ -62,9 +62,9 @@ Chúng tôi hoan nghênh mọi đóng góp để cải thiện EzSchool. Vui lò
    ```
 5. **Tạo Pull Request** trên GitHub.
 
-## 📜 Giấy phép
+## 📜 lIÊN HỆ
 
-Dự án này được phát hành theo **Giấy phép MIT**. Xem chi tiết trong [LICENSE](LICENSE).
+✉️ Email: thp.gia@gmail.com
 
 ---
 
